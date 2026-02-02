@@ -2,6 +2,13 @@
 
 Use the Given / When / Then format.
 
+
+## Core acceptance
+-	Given the website outputs how close the user is to average weight, when a user wants to view that information, then the website outputs it on the screen.
+-	Given the user isn’t logged in to the website, when the user tries to open the dashboard, then the website redirects the user to the login page.
+-	Given the user doesn’t have an account on the website, when the user enters their information and clicks register, then the website updates the database and redirects the user to the dashboard.
+-	Given a user account is in the database, when the user tries to delete their account then the website deletes the account alongside all the information about the user.
+
 ## Story: 1(Mary)
 Core criterias for Mary:
  as Mary, i want more motivation to go to the gym so that i stay more active and am able to gain weight and muscle
