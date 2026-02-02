@@ -19,7 +19,7 @@ Persona 2 Mary Thin
    1) Motivational to keep maintaining her progress towards her goals - The website may provide motivational quotes in banners.
    2) Diet plan, the user struggles with keeping up her food intake and maintaining progress - the app may provide a diet recommendation for the user.
  
-Persona 2 Dave Smith
+Persona 3 Dave Smith
 - 29 year old male
 - Works in hospitality
 - Dave works in hospitality and due to the long hours has always struggled to stay consistent in the gym and build muscle so is looking for an app to help him keep track and stay as motivated and possible.
