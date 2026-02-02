@@ -1,8 +1,6 @@
 # User Stories
 
-Use the format:
 
-> As a \<user>, I want \<goal> so that \<reason>.
 
 ## Story List
 
@@ -11,8 +9,7 @@ Use the format:
 3. as Dave. i want an app to track my progress within the gym so that im able to see what i did the last time i was in the gym and improve by increasing weight or reps
 4. as Jack, i want to be able to track my health conditions so that i am able to more accurately and safely lose weight compared to if i did not have the app
 
-(You can add IDs like US-01, US-02 if you want.)
 
 ## Notes
 
-(Any assumptions, constraints, or questions.)
+
