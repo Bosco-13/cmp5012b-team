@@ -7,7 +7,7 @@ A big insurance company is planning to design a health tracker application for u
 (List 3–5 high-level goals. Think value, impact, usability.)
 
 - Goal 1: Allow user to store and access their health information.
-- Goal 2: Allow user to set life style goals like exercise goals.
+- Goal 2: Allow user to set life style goals like exercise goals and diet/calorie goals.
 - Goal 3: Allow user to review their life style history and provide a visualised progression comparasion.
 - Goal 4: Provide structured data for insurance company or doctor to access user records if needed.
 
