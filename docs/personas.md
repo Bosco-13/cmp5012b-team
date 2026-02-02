@@ -25,5 +25,5 @@ Persona 2 Dave Smith
 - Dave works in hospitality and due to the long hours has always struggled to stay consistent in the gym and build muscle so is looking for an app to help him keep track and stay as motivated and possible.
 - Goals for Dave are to improve his diet and see his own progress based on how much he goes to the gym monthly and track progress in the gym and build muscle.
 - Challenges
-   1) Dave has a bad memory there fore being able to track his attendace in the gym is important for them.
+   1) Dave has a bad memory therefore being able to track his attendace in the gym is important for them.
    2) Struggling with motivation to go due to feeling tired or overworked from being up on his feet all day.
