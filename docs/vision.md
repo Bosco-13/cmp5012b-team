@@ -11,9 +11,9 @@
 - Goal 3:
 
 ## 3. Primary Users & Stakeholders
-- User group 1:
-- User group 2:
-- Other stakeholders:
+- User group 1: Staff
+- User group 2: Patient
+- Other stakeholders: Government
 
 ## 4. Success Criteria
 (What measurable outcomes indicate that this system is successful?)
