@@ -12,5 +12,5 @@
 
 
 ## Notes
-
+Important user stories: 2, 3, 4
 
