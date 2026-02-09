@@ -1,1 +1,15 @@
+In-scope responsibilities:
+- Ensuring the users health is in order
+- Reduce the amount of health problems (especially in the long run)
+- System should be responsible for alerting users wih meaningful notifications so Mary could stay motivated 
+- System should be responsible for responding correctly to specific user inputs(Mary needs calculator for her diet energy levels and it helps to regulate that)
+- 
+
+
+Out-scope:
+- Data should be protected and kept from the third parties
+- Emails should be encrypted
+- System should be responsible for authentication
+- National health organization will monitor the advice we provide to customers to ensure the correctness/validity
+- Accessiblity for the insurance company (not final)
 
