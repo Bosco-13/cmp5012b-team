@@ -11,9 +11,9 @@ Persona 1  Jack Williams
    5) User might face the problem of understanding medical terms and graphs.
    6) User wants to workout with his friends and the app may provide a way for the group to track the collective progress
 
-Persona 2 Mary Thin
+Persona 2 Mary Johnson
 - 23 year old female
-- Part time barrista and University student
+- Part time barrista and Nursing University student
 - Goals are to gain weight to reach a healthy average while still maintaining her university coursework and her part time job however due to burnout she suffers from motivational issues.
 - Challenges
    1) Motivational to keep maintaining her progress towards her goals - The website may provide motivational quotes in banners.
