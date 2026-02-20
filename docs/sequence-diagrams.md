@@ -41,6 +41,7 @@ sequenceDiagram
     Database-->>Mary: Output diet plan
     
 ```
+---
 ```mermaid
 sequenceDiagram
     actor Jack
