@@ -11,14 +11,13 @@ Use the Given / When / Then format.
 
 ## Story: 1(Mary)
 Core criterias for Mary:
- as Mary, i want more motivation to go to the gym so that i stay more active and am able to gain weight and muscle
-- Given desire of Mary to see the diet plan to help Mary increase her motivation, when motivational quotes and different transformations examples from individuals who have been in similar situations. Then this will inspire Mary to be more active. 
+As Mary, I want more motivation to go to the gym to ensure that I can stay more active, gain weight and muscle mass. 
 
- as Mary, i want a diet plan so that i eat less unhealthy food and regulate what im eating to help with my diet and energy levels to help increase my weight
- - Given desire of Mary to see the diet plan
-   When system provides best set of meals based on her profile stats (like wieght) etc
-   Then Mary can enter her weight change after some amount of time, for example each 2 weeks.
-   
+Given desire of Mary to see the diet plan to help Mary increase her motivation, when motivational quotes and different transformations examples from individuals who have been in similar situations. Then this will inspire Mary to be more active. 
+
+As Mary, I want a diet plan to ensure that I eat less unhealthy food and regulate what I’m eating to help with my diet and energy levels to help increase my weight. 
+
+Given desire of Mary to see the diet plan: When the system will provide the best set of meals based on her profile statistics such as weight, height and BMI. Then, the system will allow Mary to enter her weight change every 2 weeks. 
 Edge criterias:
   as Mary, i want more motivation to go to the gym so that i stay more active and am able to gain weight and muscle
   - Given  desire of Mary to gain more motivation
