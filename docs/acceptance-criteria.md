@@ -12,9 +12,7 @@ Use the Given / When / Then format.
 ## Story: 1(Mary)
 Core criterias for Mary:
  as Mary, i want more motivation to go to the gym so that i stay more active and am able to gain weight and muscle
-- Given desire of Mary to gain more motivation
-  When  motivational quotes or providing example of other people who went through the same trouble the Mary faces
-  Then it would definately inspire Mary to get more active
+- Given desire of Mary to see the diet plan to help Mary increase her motivation, when motivational quotes and different transformations examples from individuals who have been in similar situations. Then this will inspire Mary to be more active. 
 
  as Mary, i want a diet plan so that i eat less unhealthy food and regulate what im eating to help with my diet and energy levels to help increase my weight
  - Given desire of Mary to see the diet plan
