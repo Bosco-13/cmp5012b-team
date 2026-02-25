@@ -73,8 +73,10 @@ sequenceDiagram
     Dave ->> Frontend: Inputs the data at the end of the training ot the app
     activate Frontend
     Frontend ->> Backend: Validiy check,checks whether data is correct has no issues
+    activate Backend
     Frontend ->> Backend: Sends HTTP requests for adding/removing training data
     Backend ->> Database: Saves data to the database
+    activate Database
     Backend -->> Frontend: Sends appropriate response about success
     rect rgb(0,255,0)
     Frontend -->> Dave: Displays confirmation message
@@ -85,7 +87,9 @@ sequenceDiagram
     Dave ->> Frontend: Results button has been pressed
     Frontend ->> Backend: Sends HTTP request for retireving training progress
     Backend ->> Database: Retrieving rellavent data about Dave's results
+    deactivate Database
     Backend -->> Frontend: Sends data
+    deactivate Backend
     Frontend -->> Dave: Displays appropriate digram/stats
     deactivate Frontend
 ```
