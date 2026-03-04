@@ -4,61 +4,39 @@ sequenceDiagram
     actor Mary
     Participant Frontend
     Participant Backend
-    Participant Generate Plan
     Participant Database
 
 
-    Mary->>Frontend:  Create username & password
-    activate Frontend
-    Frontend->>Backend: Create credentials
-    activate Backend
-    Backend-->>Frontend: Session/token
-    deactivate Backend
     Frontend-->>Mary: What are your goals
-    deactivate Frontend
     Mary->>Frontend: Input goals, height, weight, fitness levels.
     activate Frontend
     activate Frontend
     Frontend->>Database: Save goals, height, weight, and fitness levels.
     activate Database
     activate Database
-    Frontend->>Generate Plan: Request fitness plan
-    activate Generate Plan
-    Generate Plan-->>Frontend: Generate fitness plan
-    deactivate Generate Plan
-    Generate Plan->>Database: Save fitness plan
+    Frontend->>Backend: Request fitness plan
+    activate Backend
+    Backend-->>Frontend: Generate fitness plan
+    deactivate Backend
+    Backend->>Database: Save fitness plan
 
     rect rgb(0,255,0)
-    Mary->>Frontend: View fitness plan
-    Frontend->>Database:Fetch fitness plan
-    Database-->>Frontend: Output fitness plan
+    Mary->>Frontend: View diet plan
+    Frontend->>Database:Fetch diet plan
+    Database-->>Frontend: Output diet plan
     deactivate Database
-    Frontend-->>Mary: Output fitness plan
+    Frontend-->>Mary: Output diet plan
     deactivate Frontend
     end
 
     rect rgb(255,0,0)
-    Mary->>Frontend:View fitness plan
-    Frontend->>Database:Fetch fitness plan
+    Mary->>Frontend:View diet plan
+    Frontend->>Database:Fetch diet plan
     Database-->>Frontend: Error 404 - not found
     deactivate Database
-    Frontend-->>Mary: Output error - fitness plan not found
+    Frontend-->>Mary: Output error - diet plan not found
     deactivate Frontend
     end
-
-    Mary->>Frontend: Input food diary
-    activate Frontend
-    Frontend->>Generate Plan: Request diet plan
-    activate Generate Plan
-    Generate Plan-->>Frontend: Generate diet plan
-    Generate Plan->>Database: Save diet plan
-    deactivate Generate Plan
-    activate Database
-    Mary->>Frontend: View diet plan
-    Frontend->>Database: Fetch diet plan
-    Database-->>Mary: Output diet plan
-    deactivate Database
-    deactivate Frontend
     
 ```
 ---
@@ -69,7 +47,6 @@ sequenceDiagram
     participant Frontend
     participant Backend
     participant Database
-    participant UI/UX
     Dave ->> Frontend: Inputs the data at the end of the training ot the app
     activate Frontend
     Frontend ->> Backend: Validiy check,checks whether data is correct has no issues
