@@ -186,3 +186,403 @@ footer {
 h3 {
     font-weight: 600;
 }
+
+
+/* Sleep Monitoring CODE: */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: white;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 95%;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* The cards/container boxes: */
+
+.card {
+    background: #1b2338;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-align: center;
+    max-width: none;
+    position: relative;
+    z-index: 1;
+}
+
+.large.card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+
+    min-width: 0;
+
+}
+
+.large.card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.large {
+    width: 100%;
+    padding: 30px;
+}
+
+.label {
+    font-size: 14px;
+}
+
+.small {
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Top Cards: */
+
+.top-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    margin-bottom: 30px;
+    padding-right: 40px;
+    
+   
+}
+
+.top-cards .card {
+    flex: 1;
+}
+
+.top-cards .card:last-child {
+    position: relative;
+    left: 50px;
+}
+
+/* Layout: */
+
+.main-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 70px;
+    align-items: start;
+}
+
+.large {
+    grid-column: 1 / span 2;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: flex-start;
+    justify-self: end;
+    grid-column: 3;
+    margin-left: 20px;
+    position: relative;
+    left: 20px;
+   
+    
+}
+
+.right .card {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.main-grid > div {
+    width: 100%;
+}
+
+/* Progress Bar: */
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #2c3553;
+    border-radius: 10px;
+    margin: 15px 0;
+
+}
+
+.progress {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #6b7cff, #8fa0ff);
+    border-radius: 10px;
+}
+
+.days {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.days div {
+    background: #2c3553;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* Bars: */
+.bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.bar {
+    width: 20px;
+    height: 60px;
+    background: #6b7cff;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.bar.tall {
+    height: 80px;
+}
+
+.bar.taller {
+    height: 100px;
+}
+
+.bar.tallest {
+    height: 120px;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-item span {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+header {
+    position: relative;
+    z-index: 9999;
+    background: #0b1220 !important;
+}
+
+nav {
+    background: #0b1220 !important;
+}
+
+nav a {
+    background: transparent !important;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+nav a.active {
+    background: #6b7cff;
+    color: white;
+}
+
+
+/* This code below is to override the dashboard layout: */
+
+main {
+    background: transparent !important;
+    display: block !important;
+}
+
+.container {
+   max-width: 1400px;
+   width: 95%;
+   margin: 0 auto;
+   padding: 40px 20px;
+}
+
+body {
+    background: #0b1220 !important;
+}
+
+section {
+    background: transparent !important;
+}
+
+
+
+/* Goal Management Code: */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.main-grid {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.left, .right {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: #1b2338;
+    padding: 25px;
+    border-radius: 16px;
+
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #2c3553;
+    border-radius: 999px;
+    margin-top: 10px;
+}
+
+.progress {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, #6b7cff, #8fa0ff);
+    border-radius: 10px;
+}
+
+.progress-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    background: conic-gradient(#6b7cff 70%, #2c3553 0%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+
+}
+
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #1b2338;
+    border-radius: 50%;
+}
+
+.progress-circle span {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.progress-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.progress-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-70 {
+    width: 70%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    background: #2c3553;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.info {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.goal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.goal-sub {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
