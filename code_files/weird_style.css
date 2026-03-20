@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #2F6BFF 0%, #F3F6FB 30%);
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background: #2F6BFF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a.active {
+    color: #2F6BFF;
+    font-weight: bold;
+}
+
+.profile {
+    background: white;
+    color: #2F6BFF;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+/* Title */
+h1 {
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    font-size: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Graph */
+.graph {
+    background: #E5E7EB;
+    margin-top: 40px;
+    padding: 80px;
+    border-radius: 14px;
+    text-align: center;
+    color: #555;
+    font-weight: 500;
+    width: 100%;
+    max-width: 800px;
+}
+
+.graph h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    width: auto;
+    background: linear-gradient(135deg, #22C55E, #16A34A);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px 12px 0 0;
+    width: 98%;
+}
+
+/* Workout List */
+.workout-list {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.workout-list h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.workout-item {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    font-size: 15px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.workout-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+h3 {
+    font-weight: 600;
+}
