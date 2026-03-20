@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(to bottom, #2F6BFF 0%, #F3F6FB 30%);
 }
 
 /* Container */
@@ -79,6 +78,7 @@ h1 {
     justify-content: center;
     width: 100%;
     max-width: 800px;
+    justify-items: center;
 }
 
 .card {
@@ -190,14 +190,12 @@ h3 {
 
 /* Sleep Monitoring CODE: */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+.sleep-page {
     background: #0b1220;
     color: white;
 }
 
-.container {
+.sleep-page .container {
     max-width: 1500px;
     margin: 0 auto;
     width: 95%;
@@ -211,7 +209,7 @@ h1 {
 
 /* The cards/container boxes: */
 
-.card {
+.sleep-page .card {
     background: #1b2338;
     padding: 25px;
     border-radius: 16px;
@@ -390,17 +388,17 @@ h1 {
 
 }
 
-header {
+.sleep-page header {
     position: relative;
     z-index: 9999;
     background: #0b1220 !important;
 }
 
-nav {
+.sleep-page nav {
     background: #0b1220 !important;
 }
 
-nav a {
+.sleep-page nav a {
     background: transparent !important;
     color: white !important;
     padding: 8px 16px;
@@ -408,7 +406,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a.active {
+.sleep-page nav a.active {
     background: #6b7cff;
     color: white;
 }
@@ -421,37 +419,14 @@ main {
     display: block !important;
 }
 
-.container {
-   max-width: 1400px;
-   width: 95%;
-   margin: 0 auto;
-   padding: 40px 20px;
-}
-
-body {
-    background: #0b1220 !important;
-}
 
 section {
     background: transparent !important;
 }
 
 
-
 /* Goal Management Code: */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1220;
-    color: white;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px;
-}
 
 .main-grid {
     display:grid;
@@ -465,7 +440,7 @@ body {
     gap: 20px;
 }
 
-.card {
+.goal-page .card {
     background: #1b2338;
     padding: 25px;
     border-radius: 16px;
