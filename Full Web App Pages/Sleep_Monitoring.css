@@ -25,17 +25,29 @@ h1 {
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     text-align: center;
+    max-width: none;
+    position: relative;
+    z-index: 1;
 }
 
 .large.card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     text-align: center;
+
+    min-width: 0;
+
+}
+
+.large.card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .large {
-    height: 100%;
+    width: 100%;
+    padding: 30px;
 }
 
 .label {
@@ -52,8 +64,10 @@ h1 {
 .top-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 70px;
     margin-bottom: 30px;
+    padding-right: 40px;
+    
    
 }
 
@@ -61,26 +75,50 @@ h1 {
     flex: 1;
 }
 
+.top-cards .card:last-child {
+    position: relative;
+    left: 50px;
+}
+
 /* Layout: */
 
 .main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 70px;
+    align-items: start;
+}
+
+.large {
+    grid-column: 1 / span 2;
 }
 
 .right {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 40px;
+    justify-content: flex-start;
+    justify-self: end;
+    grid-column: 3;
+    margin-left: 20px;
+    position: relative;
+    left: 20px;
+   
+    
 }
 
 .right .card {
     text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* Progess Bar: */
+.main-grid > div {
+    width: 100%;
+}
+
+/* Progress Bar: */
 .progress-bar {
     width: 100%;
     height: 14px;
@@ -140,7 +178,7 @@ h1 {
 
 .chart {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
     margin-top: 20px;
 }
@@ -149,6 +187,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
 }
 
 .chart-item span {
@@ -159,3 +198,48 @@ h1 {
 
 }
 
+header {
+    position: relative;
+    z-index: 9999;
+    background: #0b1220 !important;
+}
+
+nav {
+    background: #0b1220 !important;
+}
+
+nav a {
+    background: transparent !important;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+nav a.active {
+    background: #6b7cff;
+    color: white;
+}
+
+
+/* This code below is to override the dashboard layout: */
+
+main {
+    background: transparent !important;
+    display: block !important;
+}
+
+.container {
+   max-width: 1400px;
+   width: 95%;
+   margin: 0 auto;
+   padding: 40px 20px;
+}
+
+body {
+    background: #0b1220 !important;
+}
+
+section {
+    background: transparent !important;
+}
