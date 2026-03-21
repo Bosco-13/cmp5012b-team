@@ -417,6 +417,7 @@ h3 {
     color:blue;
 }
 
+
 /* Edit plan page */
 .editplan{
     display:flex;
@@ -449,15 +450,25 @@ h3 {
     justify-self: left;
     background: green;
     border: none;
-    border-radius: 10px;    
+    border-radius: 10px;
+    color:white; 
 }
 .result__header button:hover{
+    max-height: 2rem;
     text-decoration: underline;
     color:blue;
 }
 .result__info{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     background-color: lightgray;
+}
+.result__info img{
+    width: 10rem;
+    min-height: 10rem;
+    border: 2px solid
+}
+.result__info p{
+    margin-inline-start: 1rem;
 }
