@@ -1,0 +1,569 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background: #2F6BFF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a.active {
+    color: #2F6BFF;
+    font-weight: bold;
+}
+
+.profile {
+    background: white;
+    color: #2F6BFF;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+/* Title */
+h1 {
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    justify-items: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    font-size: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Graph */
+.graph {
+    background: #E5E7EB;
+    margin-top: 40px;
+    padding: 80px;
+    border-radius: 14px;
+    text-align: center;
+    color: #555;
+    font-weight: 500;
+    width: 100%;
+    max-width: 800px;
+}
+
+.graph h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    width: auto;
+    background: linear-gradient(135deg, #22C55E, #16A34A);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px 12px 0 0;
+    width: 98%;
+}
+
+/* Workout List */
+.workout-list {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.workout-list h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.workout-item {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    font-size: 15px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.workout-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+h3 {
+    font-weight: 600;
+}
+
+
+/* Sleep Monitoring CODE: */
+
+.sleep-page {
+    background: #0b1220;
+    color: white;
+}
+
+.sleep-page .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 95%;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* The cards/container boxes: */
+
+.sleep-page .card {
+    background: #1b2338;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-align: center;
+    max-width: none;
+    position: relative;
+    z-index: 1;
+}
+
+.large.card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+
+    min-width: 0;
+
+}
+
+.large.card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.large {
+    width: 100%;
+    padding: 30px;
+}
+
+.label {
+    font-size: 14px;
+}
+
+.small {
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Top Cards: */
+
+.top-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    margin-bottom: 30px;
+    padding-right: 40px;
+    
+   
+}
+
+.top-cards .card {
+    flex: 1;
+}
+
+.top-cards .card:last-child {
+    position: relative;
+    left: 50px;
+}
+
+/* Layout: */
+
+.sleep-page .main-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 70px;
+    align-items: start;
+}
+
+.large {
+    grid-column: 1 / span 2;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: flex-start;
+    justify-self: end;
+    grid-column: 3;
+    margin-left: 20px;
+    position: relative;
+    left: 20px;
+   
+    
+}
+
+.right .card {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.main-grid > div {
+    width: 100%;
+}
+
+/* Progress Bar: */
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #2c3553;
+    border-radius: 10px;
+    margin: 15px 0;
+
+}
+
+.progress {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #6b7cff, #8fa0ff);
+    border-radius: 10px;
+}
+
+.days {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.days div {
+    background: #2c3553;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* Bars: */
+.bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.bar {
+    width: 20px;
+    height: 60px;
+    background: #6b7cff;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.bar.tall {
+    height: 80px;
+}
+
+.bar.taller {
+    height: 100px;
+}
+
+.bar.tallest {
+    height: 120px;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-item span {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.sleep-page header {
+    position: relative;
+    z-index: 9999;
+    background: #0b1220 !important;
+}
+
+.sleep-page nav {
+    background: #0b1220 !important;
+}
+
+.sleep-page nav a {
+    background: transparent !important;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.sleep-page nav a.active {
+    background: #6b7cff;
+    color: white;
+}
+
+
+/* This code below is to override the dashboard layout: */
+
+main {
+    background: transparent !important;
+    display: block !important;
+}
+
+
+section {
+    background: transparent !important;
+}
+
+
+/* Goal Management Code: */
+
+.goal-page {
+    background: #0b1220;
+    color: white;
+}
+
+.goal-page .main-grid {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.goal-page .left, 
+.goal-page .right {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.goal-page .card {
+    background: #1b2338;
+    padding: 25px;
+    border-radius: 16px;
+
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #2c3553;
+    border-radius: 999px;
+    margin-top: 10px;
+}
+
+.progress {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, #6b7cff, #8fa0ff);
+    border-radius: 10px;
+}
+
+.progress-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    background: conic-gradient(#6b7cff 70%, #2c3553 0%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+
+}
+
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #1b2338;
+    border-radius: 50%;
+}
+
+.progress-circle span {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.progress-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.progress-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-70 {
+    width: 70%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    background: #2c3553;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.info {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.goal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.goal-sub {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
