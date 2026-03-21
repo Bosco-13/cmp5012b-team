@@ -272,7 +272,7 @@ h1 {
 
 /* Layout: */
 
-.main-grid {
+.sleep-page .main-grid {
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 70px;
@@ -427,18 +427,24 @@ section {
 
 /* Goal Management Code: */
 
+.goal-page {
+    background: #0b1220;
+    color: white;
+}
 
-.main-grid {
+.goal-page .main-grid {
     display:grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
 
-.left, .right {
+.goal-page .left, 
+.goal-page .right {
     display: flex; 
     flex-direction: column;
     gap: 20px;
 }
+
 
 .goal-page .card {
     background: #1b2338;
