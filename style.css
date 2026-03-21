@@ -186,3 +186,193 @@ footer {
 h3 {
     font-weight: 600;
 }
+
+/* Nutrition breakdown page */
+.nutrition{
+    display: flex;
+}
+
+.left{
+    flex: 1;
+}
+
+.right{
+    flex: 1;
+}
+
+.chart{
+    display: flex;
+    place-content: center;
+    flex-flow: wrap;
+    gap: 2rem;
+}
+
+.chart__pie{
+    flex: 1 0 225px;
+    max-width: 325px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    
+    background-image: 
+    conic-gradient(
+        /* carbs 33% fat 12% protein 55% */
+        var(--crabs) 33%, 
+        var(--fat) 33% 45%,
+        var(--protein) 45%
+    )
+    ;
+}
+
+.chart__legends{
+    margin-inline-start: 1rem;
+    margin-block-end: 2rem;
+    font-size: 0.9rem;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    gap: 0.2rem;
+}
+
+.chart__legends span{
+    margin-inline-end: 0.8rem;
+}
+
+.chart__legends div{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.chart__legends__color--carbs{
+    background-color: var(--crabs);
+}
+
+.chart__legends__color--fat{
+    background-color: var(--fat);
+}
+
+.chart__legends__color--protein{
+    background-color: var(--protein);
+}
+
+.list__header{
+    display: flex;
+}
+.list__header__title{
+    max-width: auto;
+    flex:1;
+}
+.list__header__btn{
+    flex:1;
+    max-width: auto;
+    background: none;
+    border: none;
+}
+
+/* Dietplan page */
+.dietdate{
+    display: flex;
+    justify-content: right;
+}
+.datebutton{
+    margin: 1rem;
+    padding: 0.5rem;
+    width: auto;
+    border-radius: 10px;
+    background-color: green;
+    place-content: center;
+    color: white;
+}
+.datebutton button{
+    background: none;
+    border: none;
+    color: white;
+}
+
+.dayplan{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+.day{
+    flex:1;
+    margin-left: 1.5rem;
+}
+.day__header{
+    display:flex;
+    gap: 1rem;
+}
+.day__header h3{
+    flex: 1;
+}
+.day__header button{
+    justify-self: left;
+    background: none;
+    border: none;    
+}
+.day__header button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+.day__contentlist{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: lightgray;
+}
+.day__contentlist button{
+    margin-left: 1.5rem;
+    background: none;
+    border: none;
+}
+.day__contentlist button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+
+/* Edit plan page */
+.editplan{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.editplan__title{
+    margin-left: 1.5rem;
+}
+.editplan__rules{
+    margin-left:1.5rem;
+    display:flex;
+}
+.editplan__rules input{
+    flex: 1;
+}
+
+.result{
+    flex:1;
+    margin-left: 1.5rem;
+}
+.result__header{
+    display:flex;
+    gap: 1rem;
+}
+.result__header h3{
+    flex: 1;
+}
+.result__header button{
+    justify-self: left;
+    background: green;
+    border: none;
+    border-radius: 10px;    
+}
+.result__header button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+.result__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: lightgray;
+}

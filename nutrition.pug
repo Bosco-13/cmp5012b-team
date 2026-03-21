@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UFT-8")
+        meta(name="viewport", content="width=device-width", initial-scale=1.0)
+        title Nutrition Breakdown
+        link(rel="stylesheet", href="style.css")
+    body
+        header
+            img(src="logo.png").logo
+            nav
+                a(href="index.html") Dashboard
+                a(href="nutrition.html") Nutrition 
+                a(href="#") Workouts 
+                a(href="#") Sleep
+            <div class="profile">👤</div>
+        main 
+            div.nutrition.container
+                div.left
+                    h1 dish name 
+                    figure.chart
+                        div.chart__pie
+                        figcaption.chart__legends
+                            div.chart__legends__color--carbs
+                            span Crabs: xx% 
+                            div.chart__legends__color--fat
+                            span Fat: xx%
+                            div.chart__legends__color--protein
+                            span Protein: xx%
+                div.right
+                    div.list
+                        div.list__header 
+                            h2.list__header__title Ingredients
+                            button.list__header__btn -
+                        div.list__content 
+                            p place holder
+                        div.list__header 
+                            h2.list__header__title Recepy
+                            button.list__header__btn +
+                        div.list__content 
+                            p place holder
+                        div.list__header 
+                            h2.list__header__title Other dishes
+                            button.list__header__btn +
+                        div.list__content 
+                            p place holder
