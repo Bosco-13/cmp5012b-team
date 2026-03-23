@@ -1,0 +1,119 @@
+:root {
+  --blue: #0f5ea8;
+  --blue-dark: #0a4b88;
+  --green: #39b54a;
+  --green-dark: #2d933c;
+  --bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --text: #18324a;
+  --text-light: #5f7285;
+  --line: #d9e3ec;
+  --card-shadow: 0 10px 30px rgba(15, 94, 168, 0.12);
+  --focus-ring: rgba(57, 181, 74, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef4fa 0%, #f7fbf8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card-bg);
+  padding: 36px 30px;
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: var(--blue);
+}
+
+p {
+  color: var(--text-light);
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdff;
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+input::placeholder {
+  color: #8a9aaa;
+}
+
+button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+a {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--green-dark);
+}
+
+#message {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--green-dark);
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  margin-bottom: 12px;
+}
