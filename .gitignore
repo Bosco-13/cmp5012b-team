@@ -13,6 +13,7 @@ logs/
 # OS junk
 .DS_Store
 Thumbs.db
+**/.DS_Store
 
 # Editors
 .vscode/*
@@ -30,3 +31,5 @@ coverage/
 .env
 .env.local
 .env.*
+**/.env
+**/node_modules
