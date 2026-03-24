@@ -791,3 +791,119 @@ h3 {
 .list__content li {
     margin-bottom: 6px;
 }
+
+/* Dietplan page */
+.dietdate{
+    display: flex;
+    justify-content: right;
+}
+.datebutton{
+    margin: 1rem;
+    padding: 0.5rem;
+    width: auto;
+    border-radius: 10px;
+    background-color: green;
+    place-content: center;
+    color: white;
+}
+.datebutton button{
+    background: none;
+    border: none;
+    color: white;
+}
+
+.dayplan{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+.day{
+    flex:1;
+    margin-left: 1.5rem;
+}
+.day__header{
+    display:flex;
+    gap: 1rem;
+}
+.day__header h3{
+    flex: 1;
+}
+.day__header button{
+    justify-self: left;
+    background: none;
+    border: none;    
+}
+.day__header button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+.day__contentlist{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: lightgray;
+}
+.day__contentlist button{
+    margin-left: 1.5rem;
+    background: none;
+    border: none;
+}
+.day__contentlist button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+
+/* Edit plan page */
+.editplan{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.editplan__title{
+    margin-left: 1.5rem;
+}
+.editplan__rules{
+    margin-left:1.5rem;
+    display:flex;
+}
+.editplan__rules input{
+    flex: 1;
+}
+
+.result{
+    flex:1;
+    margin-left: 1.5rem;
+}
+.result__header{
+    display:flex;
+    gap: 1rem;
+}
+.result__header h3{
+    flex: 1;
+}
+.result__header button{
+    justify-self: left;
+    background: green;
+    border: none;
+    border-radius: 10px;
+    color:white; 
+}
+.result__header button:hover{
+    max-height: 2rem;
+    text-decoration: underline;
+    color:blue;
+}
+.result__info{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: lightgray;
+}
+.result__info img{
+    width: 10rem;
+    min-height: 10rem;
+    border: 2px solid
+}
+.result__info p{
+    margin-inline-start: 1rem;
+}
