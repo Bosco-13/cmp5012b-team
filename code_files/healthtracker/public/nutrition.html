@@ -20,41 +20,78 @@
 
       </nav><div class="profile">👤</div>
     </header>
-    <main> 
-      <div class="nutrition container">
+    <main class="nutrition-main"> 
+      <div class="nutrition-container">
         <div class="left">
-          <h1>dish name </h1>
+          <h1 class="nutrition-title">Dish Name</h1>
+          <p class="nutrition-sub">Macro breakdown</p>
+          <div class="nutrition-meta">
+            <span>Meal: Lunch</span>
+            <span>Time: 12:30 PM</span>
+          </div>
           <figure class="chart">
-            <div class="chart__pie"></div>
+            <div class="chart__pie">
+              <div class="pie-overlay">
+                <span class="calories">520 kcal</span>
+              </div>
+            </div>
             <figcaption class="chart__legends">
-              <div class="chart__legends__color--carbs"></div><span>Crabs: xx% </span>
-              <div class="chart__legends__color--fat"></div><span>Fat: xx%</span>
-              <div class="chart__legends__color--protein"></div><span>Protein: xx%</span>
+              <div class="chart__legends__item">
+                <div class="chart__legends__color--carbs"></div><span>Carbs: 45%</span>
+              </div>
+              <div class="chart__legends__item">
+                <div class="chart__legends__color--fat"></div><span>Fats: 25%</span>
+              </div>
+              <div class="chart__legends__item">
+                <div class="chart__legends__color--protein"></div><span>Proteins: 30%</span>
+              </div>
             </figcaption>
+            <div class="macro-summary">
+              <span>Protein: 30g</span>
+              <span>Carbs: 60g</span>
+              <span>Fat: 20g</span>
+            </div>
           </figure>
         </div>
         <div class="right">
           <div class="list">
-            <div class="list__header"> 
-              <h2 class="list__header__title">Ingredients</h2>
-              <button class="list__header__btn">-</button>
+            <div class="panel">
+              <div class="list__header"> 
+                <h2 class="list__header__title">Ingredients</h2>
+                <button class="list__header__btn">-</button>
+              </div>
+              <div class="list__content"> 
+                <ol>
+                  <li>Chicken Breast (200g)</li>
+                  <li>Brown Rice (150g)</li>
+                  <li>Broccoli</li>
+                  <li>Olive Oil</li>
+                </ol>
+              </div>
             </div>
-            <div class="list__content"> 
-              <p>place holder</p>
+
+            <div class="panel">
+              <div class="list__header"> 
+                <h2 class="list__header__title">Recipe</h2>
+                <button class="list__header__btn">+</button>
+              </div>
+              <div class="list__content"> 
+                <p>Grill the chicken, boil the rice, and steam the broccoli. Combine and drizzle with olive oil.</p>
+              </div>
             </div>
-            <div class="list__header"> 
-              <h2 class="list__header__title">Recepy</h2>
-              <button class="list__header__btn">+</button>
-            </div>
-            <div class="list__content"> 
-              <p>place holder</p>
-            </div>
-            <div class="list__header"> 
-              <h2 class="list__header__title">Other dishes</h2>
-              <button class="list__header__btn">+</button>
-            </div>
-            <div class="list__content"> 
-              <p>place holder</p>
+
+            <div class="panel">
+              <div class="list__header"> 
+                <h2 class="list__header__title">Other dishes</h2>
+                <button class="list__header__btn">+</button>
+              </div>
+              <div class="list__content"> 
+                <ul>
+                  <li>Salmon & Quinoa Bowl</li>
+                  <li>Turkey Wrap</li>
+                  <li>Veggie Stir Fry</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
