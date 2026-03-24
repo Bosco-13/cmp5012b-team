@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+/*********** Sign up ***********/
+.body {
+    background: url(../img/backg.png) no-repeat center top/cover;
+}
+
 /* Container */
 .container {
     max-width: 900px;
