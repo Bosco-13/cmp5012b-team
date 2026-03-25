@@ -6,8 +6,82 @@ body {
 /*********** Sign up ***********/
 .body {
     background: url(../img/backg.png) no-repeat center top/cover;
+    
 }
 
+.background{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.wrapper{
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    padding: 30px 10px;
+    text-align: center;
+    border-radius: 18px;
+
+}
+
+.wrapper > *:not(:last-child){
+    margin-bottom: 20px;
+}
+.wrapper__top_title{
+    margin: 0;
+    color: #0f5ea8;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.wrapper__top_subtitle{
+    text-align: center;
+}
+
+.wrapper__top_logo{
+    display: block;
+    width: 90px;
+    height: auto;
+    margin: 0 auto;
+    
+    
+}
+.wrapper__form > *:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.wrapper__form{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    
+}
+
+.wrapper__form_lbl{
+    display: block;
+    float: left;
+}
+.wrapper__form_input{
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper__form_btn{
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #1e5aa8, #2ecc71);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    
+    
+}
 /* Container */
 .container {
     max-width: 900px;
