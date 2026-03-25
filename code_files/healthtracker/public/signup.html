@@ -14,18 +14,22 @@
                 <h1 class="wrapper__top_title">Sign Up</h1>
                 <span class="wrapper__top_subtitle">Create account to get starded</span>
             </div>
-            <form action="" class="wrapper__form">
-                <input type="text" class="wrapper__form_input" placeholder="Full name">
-                <input type="text" class="wrapper__form_input" placeholder="Email">
-                <input type="text" class="wrapper__form_input" placeholder="Password">
-                <input type="text" class="wrapper__form_input" placeholder="Confirm password">
-                <button class="wrapper__form_btn">Create account</button>
+            <form action="" class="wrapper__form" id="signupForm">
+                <input type="text" class="wrapper__form_input" placeholder="Full name" id="realName" name="real_name">
+                <input id="username" name="username" type="text" class="wrapper__form_input" placeholder="Username" required>
+                <input type="email" class="wrapper__form_input" placeholder="Email" id="email" name="email">
+                <input type="password" class="wrapper__form_input" placeholder="Password" id="password" name="password">
+                <input type="password" class="wrapper__form_input" placeholder="Confirm password" id="confirmPassword" name="confirm_password">
+                <button type="submit" class="wrapper__form_btn">Create account</button>
             </form>
+            <p id="message"></p>
             <div class="wrapper__switch">
                 <span class="wrapper__switch_span">Already have an account?</span>
-                <a href="login.html" class="wrapper__switch_login"></a>
+                <a href="login.html" class="wrapper__switch_login">Login</a>
             </div>
         </div>
     </main>
+    <script src="js/common.js"></script>
+    <script src="js/signup.js"></script>
 </body>
 </html>
