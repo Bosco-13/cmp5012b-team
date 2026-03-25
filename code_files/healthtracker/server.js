@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
-const authRoutes = require('./routes/auth');
+const loginRoutes = require('./routes/login');
+const signupRoutes = require('./routes/signup');
 //const profileRoutes = require('./routes/profile');
 //const workoutRoutes = require('./routes/workouts');
 //const sleepRoutes = require('./routes/sleep');
@@ -18,7 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(authRoutes);
+app.use(loginRoutes);
+app.use(signupRoutes);
 //app.use(profileRoutes);
 //app.use(workoutRoutes);
 //app.use(sleepRoutes);
