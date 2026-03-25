@@ -269,8 +269,9 @@ h3 {
 
 /* -------------Sleep CSS------------- */
 
-.sleep-page {
-    color: #222;
+body.sleep-page {
+    background: #0b1220;
+    color: white;
 }
 
 .sleep-page .container {
@@ -279,182 +280,126 @@ h3 {
     padding: 40px 20px;
 }
 
-.sleep-page h1 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-
-.top-cards {
+.sleep-page .top-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 40px;
 }
 
-.sleep-page .card {
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.sleep-page .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-}
-
-.label {
-    font-size: 13px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.sleep-page .card h2 {
-    font-size: 26px;
-    margin-bottom: 5px;
-}
-
-.sleep-page .card span {
-    font-size: 13px;
-    color: #666;
-}
-
-
-.main-grid {
+.sleep-page .main-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
+    align-items: stretch;
 }
 
-.large.card {
+.sleep-page .card {
+    background: #1b2338;
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.sleep-page .large.card {
     padding: 30px;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 25px;
-    align-items: start;
+    
 }
 
-.large.card h3,
-.large.card .progress-bar,
-.large.card .small,
-.large.card .chart {
-    grid-column: 1;
-}
-
-.large.card h3:last-of-type {
-    grid-column: 1;
-    margin-top: 10px;
-}
-
-.large.card .chart {
-    grid-column: 2;
-    grid-row: 1 / span 4;
-    justify-content: center;
-}
-
-.large.card .progress-bar {
-    margin: 10px 0;
-}
-
-.bar {
-    width: 16px;
-    border-radius: 8px;
-}
-
-.chart {
-    gap: 12px;
-}
-
-.large.card h3 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-}
-
-
-.progress-bar {
+.sleep-page .progress-bar {
     width: 100%;
     height: 14px;
-    background: #E5E7EB;
+    background: #e5e7eb;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.progress {
+.sleep-page .progress {
     width: 75%;
     height: 100%;
     background: linear-gradient(135deg, #2F6BFF, #1D4ED8);
     border-radius: 10px;
 }
 
-.small {
-    font-size: 13px;
-    color: #666;
+.sleep-page .large.card .progress-bar {
+    margin: 10px 0;
+}
+
+.sleep-page .chart {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+   
+}
+
+.sleep-page .chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    max-width: none;
+    
+}
+
+.sleep-page .bar {
+    width: 18px;
+    height: 60px;
+    background: linear-gradient(180deg, #2F6BFF, #1D4ED8);
+    border-radius: 6px;
+}
+
+.sleep-page .bar.tall {
+    height: 80px;
+}
+
+.sleep-page .bar.taller {
+    height: 100px;
+}
+
+.sleep-page .bar.tallest {
+    height: 120px;
+}
+
+.sleep-page .chart-item span {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
     text-align: center;
 }
 
-
-.chart {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 20px;
-}
-
-.chart-item {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 8px;
-}
-
-.bar {
-    width: 18px;
-    background: linear-gradient(180deg, #2F6BFF, #1D4ED8);
-    border-radius: 6px;
-    height: 60px;
-}
-
-.chart-item span {
-    font-size: 12px;
-    color: #555;
-}
-
-.bar.tall { height: 80px; }
-.bar.taller { height: 100px; }
-.bar.tallest { height: 120px; }
-
-
-
-
-.right {
+.sleep-page .right {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
+
 }
 
-.right .card {
-    padding: 25px;
-    text-align: left;
+.sleep-page .right .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: none;
+
 }
 
-.right h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
+.sleep-page .label,
+.sleep-page .small,
+.sleep-page .card span,
+.sleep-page .right p {
+    color: rgba(255,255,255,0.7);
 }
 
-.right p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 6px;
+.sleep-page h1,
+.sleep-page h2,
+.sleep-page h3,
+.sleep-page .right h3 {
+    color: white;
 }
-
 
 .sleep-page header {
     background: #2F6BFF !important;
@@ -474,11 +419,107 @@ h3 {
     font-weight: bold;
 }
 
-
-main, section {
-    background: transparent !important;
+.sleep-page h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
+
+.sleep-page .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+
+.sleep-page .card h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.sleep-page .large.card .progress-bar {
+    margin: 10px 0;
+}
+
+
+.sleep-page .large.card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+.sleep-page .progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #E5E7EB;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sleep-page .progress {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(135deg, #2F6BFF, #1D4ED8);
+    border-radius: 10px;
+}
+
+.sleep-page .container {
+    max-width: 1300px !important;
+}
+
+
+.sleep-page .chart-item span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
+}
+
+.bar.tall { height: 80px; }
+.bar.taller { height: 100px; }
+.bar.tallest { height: 120px; }
+
+.sleep-page .label,
+.sleep-page .card span,
+.sleep-page .small,
+.sleep-page .right p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sleep-page .right h3,
+.sleep-page .large.card h3 {
+    color: white;
+}
+
+.sleep-page .right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sleep-page .right .card {
+    padding: 25px;
+    text-align: left;
+}
+
+.sleep-page header {
+    background: #2F6BFF !important;
+}
+
+.sleep-page nav {
+    background: white !important;
+}
+
+.sleep-page nav a {
+    color: #555 !important;
+}
+
+.sleep-page nav a.active {
+    background: transparent;
+    color: #2F6BFF !important;
+    font-weight: bold;
+}
 
 /* -------------- GOAL MANAGEMENT CSS --------------- */
 
@@ -488,15 +529,25 @@ main, section {
 }
 
 .goal-page .main-grid {
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .goal-page .column {
     display: flex; 
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    flex: 1;
+    min-width: 0;
+}
+
+.goal-page .column:first-child {
+    flex: 2;
+}
+
+.goal-page .column:last-child {
+    flex: 1;
 }
 
 
@@ -504,7 +555,27 @@ main, section {
     background: #1b2338;
     padding: 25px;
     border-radius: 16px;
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+.goal-page .card .progress-bar {
+    margin: 10px 0;
+}
+
+.goal-page .container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.goal-page .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
 }
 
 .progress-bar {
@@ -621,83 +692,11 @@ h3 {
     opacity: 0.7;
 }
 
-
-
-
-/* ---------------------- FORM  ------------------------- */
-
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    width: 100%;
-}
-
-.form-card {
-    background: white;
-    padding: 35px 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    width: 100%;
-    max-width: 420px;
-}
-
-.form-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 22px;
-    color: #222;
-}
-
-.form-label {
-    display: block;
-    font-size: 14px;
+.add-goal {
     margin-top: 15px;
-    margin-bottom: 6px;
-    color: #444;
-    font-weight: 500;
 }
 
-.form-input,
-.form-select {
-    width: 93%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    outline: none;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
-}
 
-.form-input:focus,
-.form-select:focus {
-    border-color: #2F6BFF;
-    box-shadow: 0 0 0 2px rgba(47,107,255,0.15);
-}
-
-.form-btn {
-    width: 100%;
-    margin-top: 25px;
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(135deg, #2F6BFF, #1D4ED8);
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.form-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.form-btn:active {
-    transform: scale(0.98);
-}
 
 
 /* ------------------- NUTRITION CSS -------------------------- */
