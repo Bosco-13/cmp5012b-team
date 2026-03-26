@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <div class="container">
-    <img src="img/logo.png" alt="Health Tracker logo" class="logo">
-    <h1>Login</h1>
-    <form id="loginForm">
-      <input type="text" name="username" placeholder="Full name" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
+  <div class="box">
+    <img src="img/logo.png" alt="Health Tracker logo" class="box__logo">
+    <h1 class="box__title">Login</h1>
+    <form id="loginForm" class="box__form">
+      <input type="text" name="username" placeholder="Full name" required class="box__form_input">
+      <input type="password" name="password" placeholder="Password" required class="box__form_input">
+      <button class="box__form_btn" type="submit">Login</button>
     </form>
-    <p id="message"></p>
-    <a href="signup.html">Create an account</a>
+    <p class="box__text" id="message"></p>
+    <a class="box__link" href="register.html">Create an account</a>
   </div>
 
   <script src="js/common.js"></script>

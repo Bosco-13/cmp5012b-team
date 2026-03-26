@@ -27,7 +27,7 @@ body {
   color: var(--text);
 }
 
-.container {
+.box {
   width: 100%;
   max-width: 380px;
   background: var(--card-bg);
@@ -38,40 +38,40 @@ body {
   text-align: center;
 }
 
-h1 {
+.box__title {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 2rem;
   color: var(--blue);
 }
 
-p {
+.box__text{
   color: var(--text-light);
 }
 
-input {
+.box__form_input{
   width: 100%;
   padding: 13px 14px;
   margin: 10px 0;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #e8f6ff;
+  background: #fbfdff;
   font-size: 16px;
   color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input:focus {
-  outline: auto;
+.box__form_input:focus {
+  outline: none;
   border-color: var(--green);
-  
+  box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
-input::placeholder {
+.box__form_input::placeholder {
   color: #8a9aaa;
 }
 
-button {
+.box__form_btn {
   width: 100%;
   margin-top: 14px;
   padding: 13px;
@@ -94,7 +94,7 @@ button:active {
   transform: translateY(0);
 }
 
-a {
+.box__link {
   display: inline-block;
   margin-top: 16px;
   color: var(--blue);
@@ -112,7 +112,7 @@ a:hover {
   color: var(--green-dark);
 }
 
-.logo {
+.box__logo {
   width: 90px;
   height: auto;
   margin-bottom: 12px;

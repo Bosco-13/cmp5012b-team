@@ -74,15 +74,17 @@ body {
     margin: 10px 0;
     border: 1px solid var(--line);
     border-radius: 10px;
-    background: #e8f6ff;
+    background: #e9f6ff;
     font-size: 16px;
     color:#18324a;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    opacity: 90%;
 }
 
 input:focus {
-  outline: auto;
+  outline: none;
   border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
   
 }
 
