@@ -55,16 +55,16 @@ input {
   margin: 10px 0;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fbfdff;
-  font-size: 1rem;
+  background: #e8f6ff;
+  font-size: 16px;
   color: var(--text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus {
-  outline: none;
+  outline: auto;
   border-color: var(--green);
-  box-shadow: 0 0 0 4px var(--focus-ring);
+  
 }
 
 input::placeholder {
