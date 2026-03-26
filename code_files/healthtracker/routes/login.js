@@ -15,6 +15,11 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid login details' });
     }
 
+    req.session.userId = result.rows[0].id;
+
+    console.log('DB user id:', result.rows[0].id);
+    console.log('Session user id:', req.session.userId);
+
     res.json({ message: 'Login successful', user: result.rows[0] });
   } catch (error) {
     console.error(error);

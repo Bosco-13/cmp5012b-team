@@ -7,7 +7,7 @@ if (profileForm) {
 
     try {
       const data = formToObject(profileForm);
-      const { response, result } = await postJson('/profile', data);
+      const { response, result } = await postJson('/form', data);
 
       if (message) {
         message.textContent = result.message;
