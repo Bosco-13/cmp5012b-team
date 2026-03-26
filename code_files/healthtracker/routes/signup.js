@@ -3,9 +3,9 @@ const router = express.Router();
 const pool = require('../db');
 
 router.post('/signup', async (req, res) => {
-    const { real_name, username, email, password } = req.body;
+    const { real_name, email, password } = req.body;
 
-    if (!real_name || !username || !email || !password) {
+    if (!real_name || !email || !password) {
         return res.status(400).json({
             message: 'All fields are required.'
         });
@@ -13,8 +13,8 @@ router.post('/signup', async (req, res) => {
 
     try {
         const existingUser = await pool.query(
-            'SELECT * FROM users WHERE email = $1 OR username = $2',
-            [email, username]
+            'SELECT * FROM users WHERE email = $1',
+            [email]
         );
 
         if (existingUser.rows.length > 0) {
@@ -24,8 +24,8 @@ router.post('/signup', async (req, res) => {
         }
 
         await pool.query(
-            'INSERT INTO users (real_name, username, email, password) VALUES ($1, $2, $3, $4)',
-            [real_name, username, email, password]
+            'INSERT INTO users (real_name, email, password) VALUES ($1, $2, $3)',
+            [real_name, email, password]
         );
 
         res.status(201).json({

@@ -8,7 +8,6 @@ signupForm.addEventListener('submit', async (event) => {
 
   if (
     !formData.real_name ||
-    !formData.username ||
     !formData.email ||
     !formData.password ||
     !formData.confirm_password
@@ -25,7 +24,6 @@ signupForm.addEventListener('submit', async (event) => {
   try {
     const { response, result } = await postJson('/signup', {
       real_name: formData.real_name,
-      username: formData.username,
       email: formData.email,
       password: formData.password
     });

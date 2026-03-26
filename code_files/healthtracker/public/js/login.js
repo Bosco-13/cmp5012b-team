@@ -7,7 +7,6 @@ if (loginForm) {
 
     try {
       const data = formToObject(loginForm);
-
       const { response, result } = await postJson('/login', data);
 
       if (message) {
