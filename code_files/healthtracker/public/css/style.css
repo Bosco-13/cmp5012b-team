@@ -502,15 +502,27 @@ main, section {
 }
 
 .goal-page .main-grid {
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .goal-page .column {
     display: flex; 
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    flex: 1;
+    min-width: 0;
+}
+
+.goal-page .column:first-child {
+    flex: 2;
+}
+
+.goal-page .column:last-child {
+    flex: 1;
 }
 
 
@@ -518,7 +530,28 @@ main, section {
     background: #1b2338;
     padding: 25px;
     border-radius: 16px;
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+.goal-page .card .progress-bar {
+    margin: 10px 0;
+}
+
+.goal-page .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.goal-page .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
 }
 
 .progress-bar {
@@ -633,6 +666,48 @@ h3 {
 .goal-sub {
     font-size: 13px;
     opacity: 0.7;
+}
+
+.add-goal {
+    margin-top: 15px;
+}
+
+.insights-list li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: start;
+    column-gap: 10px;
+    margin-bottom: 12px;
+    color: #d1d5db;
+   
+}
+
+.insights-list li::before {
+    content: "✔";
+    color: #6b7cff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.insights-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.insights-card {
+    text-align: center;
+}
+
+.goal-page .card.overall-progress {
+    justify-self: start;
+    
+}
+
+.goal-page .overall-progress h3 {
+    text-align: left;
+    margin: 0 0 15px 0;
 }
 
 /* ---------------------- FORM  ------------------------- */
