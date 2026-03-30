@@ -49,9 +49,7 @@ body {
     
     
 }
-.wrapper__form > *:not(:last-child){
-    margin-bottom: 20px;
-}
+
 
 .wrapper__form{
     display: block;
@@ -71,7 +69,7 @@ body {
     margin: 0 auto;
     width: 90%;
     padding: 13px 14px;
-    margin: 10px 0;
+    margin-bottom: 20px;
     border: 1px solid var(--line);
     border-radius: 10px;
     background: #e9f6ff;
@@ -87,10 +85,22 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
   
 }
+.last{
+    margin-bottom: 10px;
+}
+
+.wrapper__form_link{
+    float: right;
+    margin-bottom: 15px;
+    color: #0f5ea8;
+    text-decoration: none;
+}
+.wrapper__form_link:hover{
+    color: #2ecc71;
+}
 
 .wrapper__form_btn{
     width: 100%;
-    margin-top: 14px;
     padding: 13px;
     border: none;
     border-radius: 10px;
