@@ -106,9 +106,23 @@ input:focus {
     border-radius: 10px;
     background: linear-gradient(to right, #1e5aa8, #2ecc71);
     color: white;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
     
+}
+
+.wrapper__form_button{
+    display: block;
+    width: 90%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #1e5aa8, #2ecc71);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 13px ;
 }
 
 .wrapper__switch_login{
