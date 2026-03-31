@@ -1150,3 +1150,56 @@ h3 {
 .result__info p{
     margin-inline-start: 1rem;
 }
+
+/* -------------------- Settings Page -------------------*/
+
+.settings-page .card button {
+    margin-top: 15px;
+}
+
+.settings-page main {
+    align-items: center;
+}
+
+.settings-page h1 {
+    margin-bottom: 40px;
+}
+
+.settings-page .container {
+    max-width: 1200px;
+}
+
+.settings-page .card {
+    max-width: none;
+    width: 100%;
+    padding: 30px;
+   
+}
+
+.settings-page .settings-row {
+    display: grid;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.settings-page .three {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.settings-page .two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.settings-page .two .card:only-child {
+    grid-column: span 2;
+    max-width: 500px;
+    justify-self: center;
+
+}
+
+
