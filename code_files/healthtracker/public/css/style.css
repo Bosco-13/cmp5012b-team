@@ -1158,7 +1158,8 @@ h3 {
 }
 
 .settings-page main {
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
 }
 
 .settings-page h1 {
@@ -1166,40 +1167,69 @@ h3 {
 }
 
 .settings-page .container {
-    max-width: 1200px;
+    max-width: 1500px;
+    width: 100%;
+    padding: 20px 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .settings-page .card {
-    max-width: none;
     width: 100%;
-    padding: 30px;
-   
+    min-height: 220px;
+    padding: 28px 24px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0 0.06);
+    max-width: none;
+
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.settings-page .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+
 }
 
 .settings-page .settings-row {
     display: grid;
-    gap: 40px;
-    margin: 50px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-    justify-content: center;
-    margin-bottom: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    
+
 }
 
 .settings-page .three {
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 24px;
 }
 
 .settings-page .two {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
-.settings-page .two .card:only-child {
-    grid-column: span 2;
-    max-width: 500px;
-    justify-self: center;
+.settings-page .card h3 {
+    margin-bottom: 8px;
+}
 
+.settings-page .card p {
+    margin: 6px 0;
+}
+
+.settings-page .card button {
+    margin-top: 20px;
+}
+
+.settings-page .card p:first-of-type {
+    margin-top: 10px;
 }
 
 
