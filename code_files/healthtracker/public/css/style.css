@@ -135,8 +135,8 @@ input:focus {
 }
 /* Container */
 .container {
-    max-width: 900px;
-    margin: auto;
+    width: 1100px;
+    margin: 0 auto;
     padding: 30px 20px;
 }
 
@@ -191,35 +191,44 @@ nav a.active {
     padding: 6px 10px;
     font-size: 14px;
 }
-
+/***************** Workouts ************/
 /* Title */
-h1 {
-    font-size: 22px;
-    text-align: center;
-    margin: 20px 0 10px;
+
+.main{
+    background: #f4f6f9;;
 }
+
+
 
 /* Cards */
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 58px;
     margin-top: 30px;
-    justify-content: center;
     width: 100%;
     max-width: 800px;
-    justify-items: center;
 }
 
-.card {
-    background: white;
-    padding: 20px;
+.cards__card {
+    background: #fff;
+    padding: 12px 20px ;
     border-radius: 14px;
-    text-align: center;
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     font-size: 15px;
-    width: 100%;
-    max-width: 350px;
+    width: 600px;
+    
+}
+
+.cards__card_title{
+    width: 200px;
+    opacity: 70%;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.cards__card_text{
+    font-size: 30px;
+    margin: 10px 0;
 }
 
 /* Graph */
@@ -513,9 +522,7 @@ h3 {
 }
 
 
-main, section {
-    background: transparent !important;
-}
+
 
 
 /* -------------- GOAL MANAGEMENT CSS --------------- */
