@@ -1,3 +1,4 @@
+<!-- cd /d G:\seproj\cmp5012b-team\code_files\healthtracker -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +47,91 @@
                 </div>
             </div>
         </section>
-        <section class="graph">
-            <h3>Weekly Workout Progress</h3>
-            <p>(Last 7 days)</p>
+        <section class="record">
+            <div class="record__log">
+                <h3 class="record__log_title"><b>Log today's workout</b></h3>
+                <div class="record__log_name">
+                    <label for="name" class="record__log_name-lbl">Workout name</label>
+                    <input type="text" class="record__log_name-field" placeholder="Workout" id="name">
+                </div>
+                <div class="record__log_labels">
+                    <label for="exercise" class="record__log_labels-lbl">Exercise</label>
+                    <label for="" class="record__log_labels-lbl">Sets</label>
+                    <label for="" class="record__log_labels-lbl">Reps</label>
+                    
+                </div>
+                <div class="record__log_inputs">
+                    <input type="text" class="record__log_inputs-ipt" id="exercise" placeholder="Exercise">
+                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of sets">
+                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of reps">
+                    <div class="ex-del">✕</div>
+                </div>
+                <button class="record__log_addbtn">+ add exercise</button>
+                <label for="exercise" class="record__log_lbl">Duration(hrs): </label>
+                <input type="text" class="record__log_time" placeholder="Workout duration">
+                <button class="record__log_savebtn">Save workout</button>
+            </div>
+            <div class="record__schedule">
+                <h3 class="record__schedule_title">Training schedule — last 4 weeks</h3>
+                <div class="record__schedule_days">
+                    <span></span>
+                    <span class="record__schedule_days-day">M</span>
+                    <span class="record__schedule_days-day">T</span>
+                    <span class="record__schedule_days-day">W</span>
+                    <span class="record__schedule_days-day">T</span>
+                    <span class="record__schedule_days-day">F</span>
+                    <span class="record__schedule_days-day">S</span>
+                    <span class="record__schedule_days-day">S</span>
+                </div>
+                <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Mar 30</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 6</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 13</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 20</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                <div class="record__schedule_colors">
+                    <label for="" class="record__schedule_colors-lbl">Days Off - </label>
+                    <div class="record__schedule_colors-box"></div>
+                    <label for="" class="record__schedule_colors-lbl2">Training days - </label>
+                    <div class="record__schedule_colors-box1"></div>
+                    
+                </div>
+
+            </div>
         </section>
         <section class="workout-list">
             <h3>Recent Workouts</h3>
