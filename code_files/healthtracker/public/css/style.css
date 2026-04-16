@@ -325,7 +325,7 @@ nav a.active {
     color: #111827;
     background: #fff;
     font-family: var(--font-sans);
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .record__schedule_days{
