@@ -1,3 +1,4 @@
+<!-- cd /d G:\seproj\cmp5012b-team\code_files\healthtracker -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +47,93 @@
                 </div>
             </div>
         </section>
-        <section class="graph">
-            <h3>Weekly Workout Progress</h3>
-            <p>(Last 7 days)</p>
+        <section class="record">
+            <div class="record__log">
+                <h3 class="record__log_title"><b>Log today's workout</b></h3>
+                <div class="record__log_name">
+                    <label for="name" class="record__log_name-lbl">Workout name</label>
+                    <input type="text" class="record__log_name-field" placeholder="Workout" id="name">
+                </div>
+                <div class="record__log_labels">
+                    <label for="exercise" class="record__log_labels-lbl">Exercise</label>
+                    <label for="" class="record__log_labels-lbl">Sets</label>
+                    <label for="" class="record__log_labels-lbl">Reps</label>
+                    
+                </div>
+                <div class="record__log_inputs">
+                    <input type="text" class="record__log_inputs-ipt" id="exercise" placeholder="Exercise">
+                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of sets">
+                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of reps">
+                    <div class="ex-del">✕</div>
+                </div>
+                <button class="record__log_addbtn">+ add exercise</button>
+                <label for="exercise" class="record__log_lbl">Duration(hrs): </label>
+                <input type="text" class="record__log_time" placeholder="Workout duration">
+                <label for="exercise" class="record__log_lbl">Date(dd/mm/yyyy):  </label>
+                <input type="text" class="record__log_time" placeholder="Date">
+                <button class="record__log_savebtn">Save workout</button>
+            </div>
+            <div class="record__schedule">
+                <h3 class="record__schedule_title">Training schedule — last 4 weeks</h3>
+                <div class="record__schedule_days">
+                    <span></span>
+                    <span class="record__schedule_days-day">M</span>
+                    <span class="record__schedule_days-day">T</span>
+                    <span class="record__schedule_days-day">W</span>
+                    <span class="record__schedule_days-day">T</span>
+                    <span class="record__schedule_days-day">F</span>
+                    <span class="record__schedule_days-day">S</span>
+                    <span class="record__schedule_days-day">S</span>
+                </div>
+                <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Mar 30</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 6</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 13</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                 <div class="record__schedule_row">
+                    <label for="" class="record__schedule_row-lbl">Apr 20</label>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                    <div class="record__schedule_row-box"></div>
+                </div>
+                <div class="record__schedule_colors">
+                    <label for="" class="record__schedule_colors-lbl">Days Off - </label>
+                    <div class="record__schedule_colors-box"></div>
+                    <label for="" class="record__schedule_colors-lbl2">Training days - </label>
+                    <div class="record__schedule_colors-box1"></div>
+                    
+                </div>
+
+            </div>
         </section>
         <section class="workout-list">
             <h3>Recent Workouts</h3>
@@ -60,7 +145,69 @@
             <button class="primary">Add Workout</button>
         </section> -->
     </main>
-    <footer>A Track © 2026</footer>
+    <footer>
+        <div class="container">
+            <div class="head">
+                <div class="head__info">
+                    <div class="head__info_head">
+                        <img src="img/logo.png" alt="" class="head__info_head-logo">
+                        <h2 class="head__info_head-title">HealthTracker</h2>
+                    </div>
+                    <p class="head__info_text">Your all-in-one fitness companion. Track workouts, plan meals, and crush your goals every day</p>
+                    <div class="head__info_media">
+                        <a class="head__info_media-link">
+                            <img src="img/inst.svg" alt="" class="media-inst">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/x.svg" alt="" class="media-x">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/youtube.svg" alt="" class="media-yt">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/discord.svg" alt="" class="media-dis">
+                        </a>
+                    </div>
+                </div>
+                <div class="head__pages">
+                    <h4 class="head__pages_title">Features</h4>
+                    <a href="" class="head__pages_link">Dashboard</a>
+                    <a href="" class="head__pages_link">Workouts</a>
+                    <a href="" class="head__pages_link">Diet Planning</a>
+                    <a href="" class="head__pages_link">Sleep Tracker</a>
+                    <a href="" class="head__pages_link">Goals</a>
+                    <a href="" class="head__pages_link">Edit Planning</a>
+                </div>
+                <div class="head__contacts">
+                    <h4 class="head__contacts_title">Support</h4>
+                    <a href="" class="head__contacts_link">Help Center</a>
+                    <a href="" class="head__contacts_link">Getting Started</a>
+                    <a href="" class="head__contacts_link">Community</a>
+                    <a href="" class="head__contacts_link">Contact us</a>
+                    <a href="" class="head__contacts_link">Report a Bug</a>
+                     
+                </div>
+                <div class="head__sub">
+                    <h4 class="head_sub_title">Stay Updated</h4>
+                    <p class="head__sub_text">Get weekly fitness tips and feature updates.</p>
+                    <div class="head__sub_wrap">
+                        <input type="email" class="head__sub_wrap-inpt" placeholder="your@email.com">
+                        <button class="head__sub_wrap-btn">Subscribe</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rights">
+                <span class="rights__span">© 2026 All rights reserved.</span>
+                <div class="rights__box">
+                    <a href="" class="rights__box_link">Privacy Policy</a>
+                    <a href="" class="rights__box_link">Terms of Service</a>
+                    <a href="" class="rights__box_link">Cookie Settings</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="js/common.js"></script>
 </html>
