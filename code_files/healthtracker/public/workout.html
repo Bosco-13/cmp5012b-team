@@ -50,29 +50,38 @@
         <section class="record">
             <div class="record__log">
                 <h3 class="record__log_title"><b>Log today's workout</b></h3>
+
                 <div class="record__log_name">
                     <label for="name" class="record__log_name-lbl">Workout name</label>
                     <input type="text" class="record__log_name-field" placeholder="Workout" id="name">
                 </div>
+
                 <div class="record__log_labels">
                     <label for="exercise" class="record__log_labels-lbl">Exercise</label>
                     <label for="" class="record__log_labels-lbl">Sets</label>
                     <label for="" class="record__log_labels-lbl">Reps</label>
-                    
                 </div>
-                <div class="record__log_inputs">
-                    <input type="text" class="record__log_inputs-ipt" id="exercise" placeholder="Exercise">
-                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of sets">
-                    <input type="text" class="record__log_inputs-ipt"  placeholder="Number of reps">
-                    <div class="ex-del">✕</div>
+
+                <div id="exercise-list">
+                    <div class="record__log_inputs workout-row">
+                        <input type="text" class="record__log_inputs-ipt exercise-name" id="exercise" placeholder="Exercise">
+                        <input type="number" class="record__log_inputs-ipt exercise-sets" placeholder="Number of sets" min="1">
+                        <input type="number" class="record__log_inputs-ipt exercise-reps" placeholder="Number of reps" min="1">
+                        <div class="ex-del">✕</div>
+                    </div>
                 </div>
-                <button class="record__log_addbtn">+ add exercise</button>
-                <label for="exercise" class="record__log_lbl">Duration(hrs): </label>
-                <input type="text" class="record__log_time" placeholder="Workout duration">
-                <label for="exercise" class="record__log_lbl">Date(dd/mm/yyyy):  </label>
-                <input type="text" class="record__log_time" placeholder="Date">
-                <button class="record__log_savebtn">Save workout</button>
+
+                <button type="button" class="record__log_addbtn" id="add-exercise-btn">+ add exercise</button>
+
+                <label for="duration" class="record__log_lbl">Duration(hrs): </label>
+                <input type="number" step="0.1" min="0.1" class="record__log_time" placeholder="Workout duration" id="duration">
+
+                <label for="workout-date" class="record__log_lbl">Date: </label>
+                <input type="date" class="record__log_time" id="workout-date">
+
+                <button type="button" class="record__log_savebtn" id="save-workout-btn">Save workout</button>
             </div>
+
             <div class="record__schedule">
                 <h3 class="record__schedule_title">Training schedule — last 4 weeks</h3>
                 <div class="record__schedule_days">
@@ -130,21 +139,18 @@
                     <div class="record__schedule_colors-box"></div>
                     <label for="" class="record__schedule_colors-lbl2">Training days - </label>
                     <div class="record__schedule_colors-box1"></div>
-                    
                 </div>
-
             </div>
         </section>
+
         <section class="workout-list">
             <h3>Recent Workouts</h3>
             <div class="workout-item">Push Day</div>
             <div class="workout-item">Pull Day</div>
             <div class="workout-item">Cardio</div>
         </section>
-        <!-- <section class="actions">
-            <button class="primary">Add Workout</button>
-        </section> -->
     </main>
+
     <footer>
         <div class="container">
             <div class="head">
@@ -158,13 +164,13 @@
                         <a class="head__info_media-link">
                             <img src="img/inst.svg" alt="" class="media-inst">
                         </a>
-                        <a class="head__info_media-link" >
+                        <a class="head__info_media-link">
                             <img src="img/x.svg" alt="" class="media-x">
                         </a>
-                        <a class="head__info_media-link" >
+                        <a class="head__info_media-link">
                             <img src="img/youtube.svg" alt="" class="media-yt">
                         </a>
-                        <a class="head__info_media-link" >
+                        <a class="head__info_media-link">
                             <img src="img/discord.svg" alt="" class="media-dis">
                         </a>
                     </div>
@@ -185,7 +191,6 @@
                     <a href="" class="head__contacts_link">Community</a>
                     <a href="" class="head__contacts_link">Contact us</a>
                     <a href="" class="head__contacts_link">Report a Bug</a>
-                     
                 </div>
                 <div class="head__sub">
                     <h4 class="head_sub_title">Stay Updated</h4>
@@ -194,7 +199,6 @@
                         <input type="email" class="head__sub_wrap-inpt" placeholder="your@email.com">
                         <button class="head__sub_wrap-btn">Subscribe</button>
                     </div>
-
                 </div>
             </div>
             <div class="rights">
@@ -204,10 +208,10 @@
                     <a href="" class="rights__box_link">Terms of Service</a>
                     <a href="" class="rights__box_link">Cookie Settings</a>
                 </div>
-
             </div>
         </div>
     </footer>
 </body>
 <script src="js/common.js"></script>
+<script src="js/workout.js"></script>
 </html>

@@ -7,6 +7,7 @@ const pool = require('./db');
 
 const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
+const workoutRoutes = require('./routes/workout');
 const formRoutes = require('./routes/form');
 const pageRoutes = require('./routes/pages');
 const debugRoutes = require('./routes/debug');
@@ -49,6 +50,7 @@ app.use(express.static(publicPath));
 
 app.use(loginRoutes);
 app.use(signupRoutes);
+app.use(workoutRoutes);
 app.use(formRoutes);
 app.use(debugRoutes);
 
