@@ -434,13 +434,177 @@ footer {
     margin-top: 60px;
     padding: 25px 20px;
     text-align: center;
-    font-size: 13px;
-    color: #666;
-    background: rgba(189, 190, 186, 0.6);
-    backdrop-filter: blur(10px);
+    background: #1a1f36;
+    color: #fff;
     border-top: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px 12px 0 0;
     width: 98%;
+}
+
+.head{
+    display: flex;
+    gap: 100px;
+}
+.head__info{
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.head__info_head{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    
+}
+
+.head__info_head-title{
+    font-size:23px;
+}
+
+.head__info_head-logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.head__info_text{
+    font-size: 16px;
+    text-align: left;
+    width: 210px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 25px;
+    margin-bottom: 20px;
+    
+}
+
+.head__info_media{
+   display: flex;
+   align-items: center;
+   justify-content: left;
+}
+
+.head__info_media-link{
+    margin: 0;
+    padding: 0;
+}
+
+.media-inst{
+    width: 45px;
+    
+}
+.media-x{
+    width: 45px;
+    margin-right: 5px;
+}
+.media-yt{
+    width: 35px;
+    background-color: #a80f0f;
+    margin-right: 10px;
+}
+.media-dis{
+    width: 35px;
+    background-color: #0f5ea8;
+    
+}
+
+.head__pages{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    
+}
+
+.head__pages_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.head__pages_link:hover{
+    color: #fff;
+}
+
+.head__contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+
+}
+
+.head__contacts_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.head__contacts_link:hover{
+    color: #fff;
+}
+
+.head__sub{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+}
+
+.head__sub_text{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+   
+}
+
+.head__sub_wrap{
+    display: flex;
+    gap: 10px;
+}
+
+.head__sub_wrap-inpt{
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #fff;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    width: 200px;
+    transition: border-color 0.2s;
+}
+  
+
+.rights{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.rights__span{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.rights__box{
+    display: flex;
+    gap: 15px;
+}
+
+.rights__box_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    
+}
+.rights__box_link:hover{
+    color: #fff;
 }
 
 /* Workout List */
