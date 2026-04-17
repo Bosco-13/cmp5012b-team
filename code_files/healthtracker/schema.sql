@@ -1,11 +1,5 @@
-DROP TABLE IF EXISTS healthsystem.heartrate CASCADE;
-DROP TABLE IF EXISTS healthsystem.activity CASCADE;
-DROP TABLE IF EXISTS healthsystem.calories CASCADE;
-DROP TABLE IF EXISTS healthsystem.dashboard CASCADE;
-DROP TABLE IF EXISTS healthsystem.profiles CASCADE;
-DROP TABLE IF EXISTS healthsystem.users CASCADE;
-
-CREATE SCHEMA IF NOT EXISTS healthsystem;
+DROP SCHEMA IF EXISTS healthsystem CASCADE;
+CREATE SCHEMA healthsystem;
 
 SET search_path TO healthsystem, public;
 
@@ -57,4 +51,20 @@ CREATE TABLE heartrate (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     bpm INTEGER,
     date_recorded TIMESTAMP
+);
+
+CREATE TABLE workouts (
+    workout_id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    workout_name VARCHAR(100) NOT NULL,
+    duration_hours NUMERIC(4,2) NOT NULL CHECK (duration_hours > 0),
+    workout_date DATE NOT NULL
+);
+
+CREATE TABLE workout_exercises (
+    exercise_id SERIAL PRIMARY KEY,
+    workout_id INTEGER NOT NULL REFERENCES workouts(workout_id) ON DELETE CASCADE,
+    exercise_name VARCHAR(100) NOT NULL,
+    sets INTEGER NOT NULL CHECK (sets > 0),
+    reps INTEGER NOT NULL CHECK (reps > 0)
 );
