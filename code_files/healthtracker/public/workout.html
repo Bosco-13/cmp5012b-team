@@ -17,7 +17,14 @@
             <a href="editplan.html">Edit Planning</a>
             <a href="form.html">Form (Testing)</a>
         </nav>
-        <div class="profile">👤</div>
+        <div class="menu">
+            <div class="menu__profile">👤</div>
+            <div class="menu__ddm">
+                <a href="settings.html" class="menu__ddm_link">Settings</a>
+                <a href="" class="menu__ddm_link">Logout</a>
+            </div>
+        </div>
+        
     </header>
     <main class="main">
         <section class="one">
@@ -48,7 +55,7 @@
             </div>
         </section>
         <section class="record">
-            <div class="record__log">
+            <div  class="record__log">
                 <h3 class="record__log_title"><b>Log today's workout</b></h3>
 
                 <div class="record__log_name">
@@ -61,6 +68,7 @@
                     <label for="" class="record__log_labels-lbl">Sets</label>
                     <label for="" class="record__log_labels-lbl">Reps</label>
                 </div>
+
 
                 <div id="exercise-list">
                     <div class="record__log_inputs workout-row">
@@ -80,6 +88,10 @@
                 <input type="date" class="record__log_time" id="workout-date">
 
                 <button type="button" class="record__log_savebtn" id="save-workout-btn">Save workout</button>
+
+              
+                
+
             </div>
 
             <div class="record__schedule">
@@ -212,6 +224,7 @@
         </div>
     </footer>
 </body>
+<script src="js/workout.js"></script>
 <script src="js/common.js"></script>
 <script src="js/workout.js"></script>
 </html>
