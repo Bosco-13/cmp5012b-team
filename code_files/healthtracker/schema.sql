@@ -1,4 +1,4 @@
-
+CREATE SCHEMA healthsystem;
 SET search_path TO healthsystem, public;
 
 CREATE TABLE users (
@@ -33,7 +33,6 @@ CREATE TABLE dishes (
     dish_id INTEGER,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     date_logged DATE
-    PRIMARY KEY (user_id, product_id)
 );
 
 CREATE TABLE dishinfo (
@@ -45,7 +44,7 @@ CREATE TABLE dishinfo (
     protein INTEGER CHECK (protein > 0),
     receipe VARCHAR(1000),
     ingridient VARCHAR(1000)
-)
+);
 
 CREATE TABLE activity (
     activity_id SERIAL PRIMARY KEY,
@@ -67,14 +66,7 @@ CREATE TABLE sleep (
     sleep_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     start_time TIMESTAMP,
-    end_time TIMESTAMP,
-);
-
-CREATE TABLE sleep (
-    sleep_id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    start_time TIMESTAMP,
-    end_time TIMESTAMP,
+    end_time TIMESTAMP
 );
 
 CREATE TABLE workouts (

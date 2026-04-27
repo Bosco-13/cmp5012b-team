@@ -13,7 +13,10 @@ const pageRoutes = require('./routes/pages');
 const debugRoutes = require('./routes/debug');
 // const sleepRoutes = require('./routes/sleep');
 // const goalRoutes = require('./routes/goals');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30c3c67b26a504b3b9a1aa2142d5ea280b659730
 // const dietPlanRoutes = require('./routes/dietPlan');
 // const dashboardRoutes = require('./routes/dashboard');
 
@@ -28,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   store: new pgSession({
     pool: pool,
+    schemaName: 'healthsystem',
     tableName: 'session',
     createTableIfMissing: true
   }),
@@ -58,6 +62,7 @@ app.use(loginRoutes);
 app.use(signupRoutes);
 app.use(workoutRoutes);
 app.use(formRoutes);
+<<<<<<< HEAD
 // <<<<<<< HEAD
 // app.use(sleepRoutes);
 // // app.use(goalRoutes);
@@ -66,8 +71,11 @@ app.use(formRoutes);
 
 // =======
 // app.use(workoutRoutes);
+=======
+app.use(workoutRoutes);
+>>>>>>> 30c3c67b26a504b3b9a1aa2142d5ea280b659730
 //app.use(sleepRoutes);
-// app.use(goalRoutes);
+//app.use(goalRoutes);
 //app.use(dietPlanRoutes);
 //app.use(dashboardRoutes);
 
