@@ -19,7 +19,7 @@ CREATE TABLE profiles (
     target_weight NUMERIC(5,2),
     preferred_workout_type VARCHAR(50),
     dietary_preference VARCHAR(50),
-    target_sleep_hour INTEGER CHECK (target_sleep_hour BETWEEN 0 AND 23)
+    target_sleep_hour INTEGER CHECK (target_sleep_hour BETWEEN 0 AND 23),
     target_sleep_minitues INTEGER CHECK (target_sleep_minitues BETWEEN 0 AND 59)
 );
 
