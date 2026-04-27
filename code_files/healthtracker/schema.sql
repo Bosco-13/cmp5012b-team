@@ -1,10 +1,9 @@
 DROP TABLE IF EXISTS heartrate CASCADE;
 DROP TABLE IF EXISTS activity CASCADE;
-DROP TABLE IF EXISTS dishes CASCADE;
+DROP TABLE IF EXISTS calories CASCADE;
 DROP TABLE IF EXISTS dashboard CASCADE;
 DROP TABLE IF EXISTS profiles CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS sleep CASCADE;
 
 CREATE SCHEMA IF NOT EXISTS healthsystem;
 
@@ -27,9 +26,7 @@ CREATE TABLE profiles (
     activity_level VARCHAR(20),
     target_weight NUMERIC(5,2),
     preferred_workout_type VARCHAR(50),
-    dietary_preference VARCHAR(50),
-    target_sleep_hour INTEGER CHECK (target_sleep_hour BETWEEN 0 AND 23)
-    target_sleep_minitues INTEGER CHECK (target_sleep_minitues BETWEEN 0 AND 59)
+    dietary_preference VARCHAR(50)
 );
 
 CREATE TABLE dashboard (
@@ -38,23 +35,13 @@ CREATE TABLE dashboard (
     page_name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE dishes (
-    dish_id INTEGER,
+CREATE TABLE calories (
+    calorie_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    food_item VARCHAR(100),
+    calories INTEGER,
     date_logged DATE
-    PRIMARY KEY (user_id, product_id)
 );
-
-CREATE TABLE dishinfo (
-    dish_id INTEGER,
-    food_title VARCHAR(100),
-    food_image VARCHAR(150),
-    calories INTEGER CHECK (calories > 0),
-    fat INTEGER CHECK (fat > 0),
-    protein INTEGER CHECK (protein > 0),
-    receipe VARCHAR(1000),
-    ingridient VARCHAR(1000)
-)
 
 CREATE TABLE activity (
     activity_id SERIAL PRIMARY KEY,
@@ -70,11 +57,4 @@ CREATE TABLE heartrate (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     bpm INTEGER,
     date_recorded TIMESTAMP
-);
-
-CREATE TABLE sleep (
-    sleep_id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    start_time TIMESTAMP,
-    end_time TIMESTAMP,
 );

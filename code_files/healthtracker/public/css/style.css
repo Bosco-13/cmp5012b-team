@@ -623,9 +623,9 @@ h3 {
     color: #555;
 }
 
-/* .bar.tall { height: 80px; }
+.bar.tall { height: 80px; }
 .bar.taller { height: 100px; }
-.bar.tallest { height: 120px; } */
+.bar.tallest { height: 120px; }
 
 
 .right {
@@ -1031,14 +1031,7 @@ h3 {
     align-items: center;
     font-weight: bold;
     font-size: 18px;
-    border-radius: 50%;
-    color: white;
-    background-image: 
-    conic-gradient(from 30deg,
-        #F59E0B var(--carbs),
-        #EF4444 var(--carbs) var(--fat),
-        #10B981 0
-    );
+    color: #333;
 }
 
 .chart__legends {
