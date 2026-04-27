@@ -1,4 +1,5 @@
-
+DROP SCHEMA IF EXISTS healthsystem CASCADE;
+CREATE SCHEMA healthsystem;
 SET search_path TO healthsystem, public;
 
 CREATE TABLE users (

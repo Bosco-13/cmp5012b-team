@@ -9,12 +9,12 @@ const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const workoutRoutes = require('./routes/workout');
 const formRoutes = require('./routes/form');
-// const workoutRoutes = require('./routes/workouts');
-// const sleepRoutes = require('./routes/sleep');
+const sleepRoutes = require('./routes/sleep');
 // const goalRoutes = require('./routes/goals');
-// const dietPlanRoutes = require('./routes/dietPlan');
-// const dashboardRoutes = require('./routes/dashboard');
-
+const dietPlanRoutes = require('./routes/dietPlan');
+//const dashboardRoutes = require('./routes/dashboard');
+const pageRoutes = require('./routes/pages');
+const debugRoutes = require('./routes/debug');
 
 const app = express();
 const PORT = 3000;
@@ -49,20 +49,18 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(pageRoutes);
+//app.use(pageRoutes);
 app.use(express.static(publicPath));
 
 app.use(loginRoutes);
 app.use(signupRoutes);
 app.use(workoutRoutes);
 app.use(formRoutes);
-// app.use(workoutRoutes);
 app.use(sleepRoutes);
 // app.use(goalRoutes);
 app.use(dietPlanRoutes);
-app.use(dashboardRoutes);
-const pageRoutes = require('./routes/pages');
-const debugRoutes = require('./routes/debug');
+//app.use(dashboardRoutes);
+
 
 
 app.listen(PORT, () => {
