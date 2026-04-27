@@ -471,7 +471,7 @@ button:active {
 
 /* Footer */
 footer {
-    margin-top: 60px;
+    
     padding: 25px 20px;
     text-align: center;
     background: #1a1f36;
@@ -686,11 +686,10 @@ h3 {
     color: #222;
 }
 
-.sleep-page .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.wrap {
+    background: #f4f6f9;
 }
+
 
 .sleep-page h1 {
     font-size: 36px;
@@ -715,10 +714,7 @@ h3 {
     transition: all 0.2s ease;
 }
 
-.sleep-page .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-}
+
 
 .label {
     font-size: 13px;
@@ -747,7 +743,7 @@ h3 {
     flex-direction: column;
     gap: 20px;
     padding: 30px;
-    width: 100%;
+    width: 90%;
 }
 
 .large.card .chart {
@@ -882,7 +878,7 @@ h3 {
 
 .goal-page {
     background: #0b1220;
-    color: white;
+    color: #000;
 }
 
 .goal-page .main-grid {
@@ -911,7 +907,7 @@ h3 {
 
 
 .goal-page .card {
-    background: #1b2338;
+    background: #fff;
     padding: 25px;
     border-radius: 16px;
     max-width: none;
@@ -966,6 +962,10 @@ h3 {
     flex-shrink: 0;
     position: relative;
 
+}
+
+.progress-circle__span{
+    color: #fff;
 }
 
 .progress-circle::before {
