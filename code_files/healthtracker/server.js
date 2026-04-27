@@ -10,9 +10,9 @@ const loginRoutes = require('./routes/login');
 const signupRoutes = require('./routes/signup');
 const formRoutes = require('./routes/form');
 // const workoutRoutes = require('./routes/workouts');
-// const sleepRoutes = require('./routes/sleep');
+ const sleepRoutes = require('./routes/sleep');
 // const goalRoutes = require('./routes/goals');
-// const dietPlanRoutes = require('./routes/dietPlan');
+ const dietPlanRoutes = require('./routes/dietplan');
 // const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
@@ -52,9 +52,9 @@ app.use(loginRoutes);
 app.use(signupRoutes);
 app.use(formRoutes);
 // app.use(workoutRoutes);
-// app.use(sleepRoutes);
+app.use(sleepRoutes);
 // app.use(goalRoutes);
-// app.use(dietPlanRoutes);
+app.use(dietPlanRoutes);
 // app.use(dashboardRoutes);
 
 //js debugging routes 
