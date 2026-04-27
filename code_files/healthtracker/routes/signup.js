@@ -12,13 +12,10 @@ router.post('/signup', async (req, res) => {
         });
     }
 
-    const normalizedRealName = real_name.trim();
-    const normalizedEmail = email.trim().toLowerCase();
-
     try {
         const existingUser = await pool.query(
-            'SELECT id FROM healthsystem.users WHERE email = $1',
-            [normalizedEmail]
+            'SELECT id FROM users WHERE email = $1',
+            [email]
         );
 
         if (existingUser.rows.length > 0) {
@@ -31,26 +28,17 @@ router.post('/signup', async (req, res) => {
         const passwordHash = await bcrypt.hash(password, saltRounds);
 
         const result = await pool.query(
-            `INSERT INTO healthsystem.users (real_name, email, password_hash)
+            `INSERT INTO users (real_name, email, password_hash)
              VALUES ($1, $2, $3)
              RETURNING id, real_name, email`,
-            [normalizedRealName, normalizedEmail, passwordHash]
+            [real_name, email, passwordHash]
         );
 
         req.session.userId = result.rows[0].id;
 
-        req.session.save((err) => {
-            if (err) {
-                console.error('Session save error:', err);
-                return res.status(500).json({
-                    message: 'Server error.'
-                });
-            }
-
-            res.status(201).json({
-                message: 'Account created successfully.',
-                user: result.rows[0]
-            });
+        res.status(201).json({
+            message: 'Account created successfully.',
+            user: result.rows[0]
         });
     } catch (error) {
         console.error('Signup route error:', error);
