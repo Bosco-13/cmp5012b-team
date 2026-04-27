@@ -33,19 +33,19 @@
     <div class = "top-cards">
         <div class = "card">
             <p class = "label"> Sleep Score:</p>
-            <h2> 95</h2>
-            <span> Increase of 6 points from yesterday!</span>
+            <h2 id ="score"> 95</h2>
+            <span id="score-text"> Increase of 6 points from yesterday!</span>
         </div>
 
         <div class = "card">
             <p class = "label"> Target Sleep:</p>
-            <h2> 8h 45m</h2>
+            <h2 id="target"> 8h 45m</h2>
             <span> Suggest Nightly Target:</span>
         </div>
 
         <div class = "card">
             <p class = "label"> Current Streak:</p>
-            <h2> 7 nights</h2>
+            <h2 id="streak"> 7 nights</h2>
             <span> Meeting your target!</span>
         </div>
 
@@ -64,7 +64,7 @@
                 <div class = "progress"></div>
             </div>
 
-            <p class = "small"> 7h 30m recorded (Goal: 8h 45m)</p>
+            <p class = "small" id = "record-time"> 7h 30m recorded (Goal: 8h 45m)</p>
 
             <h3> Weekly Goal Status:</h3>
 
@@ -72,33 +72,31 @@
        
             <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Monday</span>
-            </div>
-               <div class = "chart-item">
-                <div class = "bar tall"></div>
-                <span>Tuesday</span>
+                <span class = "bar-text">Monday</span>
             </div>
                <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Wednesday</span>
-            </div>
-               <div class = "chart-item">
-                <div class = "bar taller"></div>
-                <span>Thursday</span>
+                <span class = "bar-text">Tuesday</span>
             </div>
                <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Friday</span>
+                <span class = "bar-text">Wednesday</span>
+            </div>
+               <div class = "chart-item">
+                <div class = "bar"></div>
+                <span class = "bar-text">Thursday</span>
+            </div>
+               <div class = "chart-item">
+                <div class = "bar"></div>
+                <span class = "bar-text">Friday</span>
                </div>
                <div class = "chart-item">
-                <div class = "bar tallest"></div>
-                <span>Saturday</span>
+                <div class = "bar"></div>
+                <span class = "bar-text">Saturday</span>
             </div>
-
-
                <div class = "chart-item">
-                <div class = "bar tall"></div>
-                <span>Sunday</span>
+                <div class = "bar"></div>
+                <span class = "bar-text">Sunday</span>
             </div>
             </div>
         </div>
@@ -123,6 +121,7 @@
     
 </div>
 <script src="js/common.js"></script>
+<script src="js/sleep.js"></script>
 </body>
 
 <footer>A Track © 2026</footer>
