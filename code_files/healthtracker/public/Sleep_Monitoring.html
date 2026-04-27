@@ -22,30 +22,35 @@
         <a href="form.html">Form (Testing)</a>  
     </nav>
 
-     <div class="profile">👤</div>
+      <div class="menu">
+            <div class="menu__profile">👤</div>
+            <div class="menu__ddm">
+                <a href="settings.html" class="menu__ddm_link">Settings</a>
+                <a href="" class="menu__ddm_link">Logout</a>
+            </div>
+      </div>
 
 </header>
-
-<div class = "container">
+<main class="main">
+    <div class = "container">
 
     <h1> Sleep Goals</h1>
-    
     <div class = "top-cards">
         <div class = "card">
             <p class = "label"> Sleep Score:</p>
-            <h2> 95</h2>
-            <span> Increase of 6 points from yesterday!</span>
+            <h2 id ="score"> 95</h2>
+            <span id="score-text"> Increase of 6 points from yesterday!</span>
         </div>
 
         <div class = "card">
             <p class = "label"> Target Sleep:</p>
-            <h2> 8h 45m</h2>
+            <h2 id="target"> 8h 45m</h2>
             <span> Suggest Nightly Target:</span>
         </div>
 
         <div class = "card">
             <p class = "label"> Current Streak:</p>
-            <h2> 7 nights</h2>
+            <h2 id="streak"> 7 nights</h2>
             <span> Meeting your target!</span>
         </div>
 
@@ -64,7 +69,7 @@
                 <div class = "progress"></div>
             </div>
 
-            <p class = "small"> 7h 30m recorded (Goal: 8h 45m)</p>
+            <p class = "small" id = "record-time"> 7h 30m recorded (Goal: 8h 45m)</p>
 
             <h3> Weekly Goal Status:</h3>
 
@@ -72,33 +77,31 @@
        
             <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Monday</span>
-            </div>
-               <div class = "chart-item">
-                <div class = "bar tall"></div>
-                <span>Tuesday</span>
+                <span class = "bar-text">Monday</span>
             </div>
                <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Wednesday</span>
-            </div>
-               <div class = "chart-item">
-                <div class = "bar taller"></div>
-                <span>Thursday</span>
+                <span class = "bar-text">Tuesday</span>
             </div>
                <div class = "chart-item">
                 <div class = "bar"></div>
-                <span>Friday</span>
+                <span class = "bar-text">Wednesday</span>
+            </div>
+               <div class = "chart-item">
+                <div class = "bar"></div>
+                <span class = "bar-text">Thursday</span>
+            </div>
+               <div class = "chart-item">
+                <div class = "bar"></div>
+                <span class = "bar-text">Friday</span>
                </div>
                <div class = "chart-item">
-                <div class = "bar tallest"></div>
-                <span>Saturday</span>
+                <div class = "bar"></div>
+                <span class = "bar-text">Saturday</span>
             </div>
-
-
                <div class = "chart-item">
-                <div class = "bar tall"></div>
-                <span>Sunday</span>
+                <div class = "bar"></div>
+                <span class = "bar-text">Sunday</span>
             </div>
             </div>
         </div>
@@ -122,9 +125,72 @@
      </div>
     
 </div>
+</main>
+
+<footer>
+        <div class="container">
+            <div class="head">
+                <div class="head__info">
+                    <div class="head__info_head">
+                        <img src="img/logo.png" alt="" class="head__info_head-logo">
+                        <h2 class="head__info_head-title">HealthTracker</h2>
+                    </div>
+                    <p class="head__info_text">Your all-in-one fitness companion. Track workouts, plan meals, and crush your goals every day</p>
+                    <div class="head__info_media">
+                        <a class="head__info_media-link">
+                            <img src="img/inst.svg" alt="" class="media-inst">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/x.svg" alt="" class="media-x">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/youtube.svg" alt="" class="media-yt">
+                        </a>
+                        <a class="head__info_media-link" >
+                            <img src="img/discord.svg" alt="" class="media-dis">
+                        </a>
+                    </div>
+                </div>
+                <div class="head__pages">
+                    <h4 class="head__pages_title">Features</h4>
+                    <a href="" class="head__pages_link">Dashboard</a>
+                    <a href="" class="head__pages_link">Workouts</a>
+                    <a href="" class="head__pages_link">Diet Planning</a>
+                    <a href="" class="head__pages_link">Sleep Tracker</a>
+                    <a href="" class="head__pages_link">Goals</a>
+                    <a href="" class="head__pages_link">Edit Planning</a>
+                </div>
+                <div class="head__contacts">
+                    <h4 class="head__contacts_title">Support</h4>
+                    <a href="" class="head__contacts_link">Help Center</a>
+                    <a href="" class="head__contacts_link">Getting Started</a>
+                    <a href="" class="head__contacts_link">Community</a>
+                    <a href="" class="head__contacts_link">Contact us</a>
+                    <a href="" class="head__contacts_link">Report a Bug</a>
+                     
+                </div>
+                <div class="head__sub">
+                    <h4 class="head_sub_title">Stay Updated</h4>
+                    <p class="head__sub_text">Get weekly fitness tips and feature updates.</p>
+                    <div class="head__sub_wrap">
+                        <input type="email" class="head__sub_wrap-inpt" placeholder="your@email.com">
+                        <button class="head__sub_wrap-btn">Subscribe</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rights">
+                <span class="rights__span">© 2026 All rights reserved.</span>
+                <div class="rights__box">
+                    <a href="" class="rights__box_link">Privacy Policy</a>
+                    <a href="" class="rights__box_link">Terms of Service</a>
+                    <a href="" class="rights__box_link">Cookie Settings</a>
+                </div>
+
+            </div>
+        </div>
+</footer>
 <script src="js/common.js"></script>
+<script src="js/sleep.js"></script>
 </body>
-
-<footer>A Track © 2026</footer>
-
 </html>

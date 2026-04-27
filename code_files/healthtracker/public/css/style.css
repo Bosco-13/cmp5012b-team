@@ -184,12 +184,51 @@ nav a.active {
     font-weight: bold;
 }
 
-.profile {
+.menu{
+    position: relative;
+    display: inline-block;
+}
+
+.menu:hover .menu__ddm {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu__profile {
     background: white;
     color: #2F6BFF;
     border-radius: 8px;
     padding: 6px 10px;
     font-size: 14px;
+}
+
+.menu__ddm{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    min-width: 60px;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+    transform-origin: top right;
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu__ddm_link{
+    color: #000;
+    text-decoration: none;
+}
+.menu__ddm_link:hover{
+    color: #2ecc71;
 }
 /***************** Workouts ************/
 /* Title */
@@ -346,6 +385,7 @@ nav a.active {
     padding: 12px 20px;
     border-radius: 14px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    height: 300px;
 }
 .record__schedule_row{
     display: grid;
@@ -391,7 +431,7 @@ nav a.active {
     background-color: #51e451;
 }
 
-.ex-del::hover{
+.ex-del:hover{
     color: #ff0000;
     cursor: pointer;
 }
@@ -431,16 +471,180 @@ button:active {
 
 /* Footer */
 footer {
-    margin-top: 60px;
+    
     padding: 25px 20px;
     text-align: center;
-    font-size: 13px;
-    color: #666;
-    background: rgba(189, 190, 186, 0.6);
-    backdrop-filter: blur(10px);
+    background: #1a1f36;
+    color: #fff;
     border-top: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px 12px 0 0;
     width: 98%;
+}
+
+.head{
+    display: flex;
+    gap: 100px;
+}
+.head__info{
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.head__info_head{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    
+}
+
+.head__info_head-title{
+    font-size:23px;
+}
+
+.head__info_head-logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.head__info_text{
+    font-size: 16px;
+    text-align: left;
+    width: 210px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 25px;
+    margin-bottom: 20px;
+    
+}
+
+.head__info_media{
+   display: flex;
+   align-items: center;
+   justify-content: left;
+}
+
+.head__info_media-link{
+    margin: 0;
+    padding: 0;
+}
+
+.media-inst{
+    width: 45px;
+    
+}
+.media-x{
+    width: 45px;
+    margin-right: 5px;
+}
+.media-yt{
+    width: 35px;
+    background-color: #a80f0f;
+    margin-right: 10px;
+}
+.media-dis{
+    width: 35px;
+    background-color: #0f5ea8;
+    
+}
+
+.head__pages{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    
+}
+
+.head__pages_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.head__pages_link:hover{
+    color: #fff;
+}
+
+.head__contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+
+}
+
+.head__contacts_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.head__contacts_link:hover{
+    color: #fff;
+}
+
+.head__sub{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+}
+
+.head__sub_text{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: left;
+   
+}
+
+.head__sub_wrap{
+    display: flex;
+    gap: 10px;
+}
+
+.head__sub_wrap-inpt{
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #fff;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    width: 200px;
+    transition: border-color 0.2s;
+}
+  
+
+.rights{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.rights__span{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.rights__box{
+    display: flex;
+    gap: 15px;
+}
+
+.rights__box_link{
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    
+}
+.rights__box_link:hover{
+    color: #fff;
 }
 
 /* Workout List */
@@ -482,11 +686,10 @@ h3 {
     color: #222;
 }
 
-.sleep-page .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.wrap {
+    background: #f4f6f9;
 }
+
 
 .sleep-page h1 {
     font-size: 36px;
@@ -511,10 +714,7 @@ h3 {
     transition: all 0.2s ease;
 }
 
-.sleep-page .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-}
+
 
 .label {
     font-size: 13px;
@@ -543,7 +743,7 @@ h3 {
     flex-direction: column;
     gap: 20px;
     padding: 30px;
-    width: 100%;
+    width: 90%;
 }
 
 .large.card .chart {
@@ -623,9 +823,9 @@ h3 {
     color: #555;
 }
 
-.bar.tall { height: 80px; }
+/* .bar.tall { height: 80px; }
 .bar.taller { height: 100px; }
-.bar.tallest { height: 120px; }
+.bar.tallest { height: 120px; } */
 
 
 .right {
@@ -678,7 +878,7 @@ h3 {
 
 .goal-page {
     background: #0b1220;
-    color: white;
+    color: #000;
 }
 
 .goal-page .main-grid {
@@ -707,7 +907,7 @@ h3 {
 
 
 .goal-page .card {
-    background: #1b2338;
+    background: #fff;
     padding: 25px;
     border-radius: 16px;
     max-width: none;
@@ -762,6 +962,10 @@ h3 {
     flex-shrink: 0;
     position: relative;
 
+}
+
+.progress-circle__span{
+    color: #fff;
 }
 
 .progress-circle::before {
@@ -1031,7 +1235,14 @@ h3 {
     align-items: center;
     font-weight: bold;
     font-size: 18px;
-    color: #333;
+    border-radius: 50%;
+    color: white;
+    background-image: 
+    conic-gradient(from 30deg,
+        #F59E0B var(--carbs),
+        #EF4444 var(--carbs) var(--fat),
+        #10B981 0
+    );
 }
 
 .chart__legends {
