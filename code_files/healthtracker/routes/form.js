@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../db');
-const requireLogin = require('../middleware/requireLogin');
 
-router.post('/form', requireLogin, async (req, res) => {
+router.post('/form', async (req, res) => {
   console.log('Profile route session user id:', req.session.userId);
 
   const userId = req.session.userId;
@@ -37,7 +36,7 @@ router.post('/form', requireLogin, async (req, res) => {
 
   try {
     await pool.query(
-      `INSERT INTO healthsystem.profiles (
+      `INSERT INTO profiles (
         user_id,
         age,
         gender,
