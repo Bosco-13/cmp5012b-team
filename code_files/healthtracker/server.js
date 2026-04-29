@@ -13,10 +13,6 @@ const pageRoutes = require('./routes/pages');
 const debugRoutes = require('./routes/debug');
 // const sleepRoutes = require('./routes/sleep');
 // const goalRoutes = require('./routes/goals');
-<<<<<<< HEAD
-
-=======
->>>>>>> 30c3c67b26a504b3b9a1aa2142d5ea280b659730
 // const dietPlanRoutes = require('./routes/dietPlan');
 // const dashboardRoutes = require('./routes/dashboard');
 
@@ -62,18 +58,9 @@ app.use(loginRoutes);
 app.use(signupRoutes);
 app.use(workoutRoutes);
 app.use(formRoutes);
-<<<<<<< HEAD
-// <<<<<<< HEAD
-// app.use(sleepRoutes);
-// // app.use(goalRoutes);
-// app.use(dietPlanRoutes);
-// //app.use(dashboardRoutes);
 
-// =======
-// app.use(workoutRoutes);
-=======
 app.use(workoutRoutes);
->>>>>>> 30c3c67b26a504b3b9a1aa2142d5ea280b659730
+
 //app.use(sleepRoutes);
 //app.use(goalRoutes);
 //app.use(dietPlanRoutes);

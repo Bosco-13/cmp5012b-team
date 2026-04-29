@@ -6,13 +6,13 @@ router.get('/sleep', async(req, res) => {
     try{
         const result = await pool.query(
             `SELECT sleep_id, start_time, end_time, (end_time - start_time) AS duration
-             FROM sleep
+             FROM healthsystem.sleep
              WHERE user_id = $1`,
             [req.session.userId]
         )
         const target = await pool.query(
             `SELECT (target_hour * 60 * 60 * 1000 + target_minutes * 60* 1000) AS target
-            FROM profiles
+            FROM healthsystem.profiles
             WHERE user_id = $1`,
             [req.session.userId]
         )
@@ -22,12 +22,14 @@ router.get('/sleep', async(req, res) => {
                 records: null,
                 target: null
             })
+            
         }
         res.json({
             message: "Record found: " + result.rows.length + " records",
             records: result.rows,
             target: target.rows[0].target
         })
+        
     }
     catch(error){
         console.error("Sleep route error:", error);
