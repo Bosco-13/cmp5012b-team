@@ -13,7 +13,7 @@ const pageRoutes = require('./routes/pages');
 const debugRoutes = require('./routes/debug');
 const sleepRoutes = require('./routes/sleep');
 const goalRoutes = require('./routes/goals');
-const dietPlanRoutes = require('./routes/dietPlan');
+const dietPlanRoutes = require('./routes/dietplan');
 // const dashboardRoutes = require('./routes/dashboard');
 
 
