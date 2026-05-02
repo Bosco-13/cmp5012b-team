@@ -1,8 +1,10 @@
 // calender should be a li object
-function generateMonth(month, year, active_date){
+function generateMonth(month, year, active_date){ //fixed
     calender = document.querySelector(".days");
-    startOfMonth = new Date(year, month, 1);
-    day = startOfMonth.getWeek();
+    startOfMonth = new Date(year, month-1, 1);
+    day = startOfMonth.getDay();
+    console.log(startOfMonth);
+    console.log(day);
     daysInMonth = (month, year) => {
         if (month == 2) {
             return (year % 4 == 0) ? 29 : 28;
@@ -13,57 +15,71 @@ function generateMonth(month, year, active_date){
         }
         return 31;
     }
+    totalDays = daysInMonth(month,year);
+    calenderDates = document.getElementsByClassName("diet-calender-day");
+    console.log(totalDays);
+    console.log(day);
 
-    calenderDates = calender.querySelectorAll("li");
-
-    for (i = 0; i < daysInMonth; i++){
-        calenderDates[startOfMonth + i].text = i+1;
-        calenderDates[startOfMonth + i].querySelector("a").href = "/" + i;
-        if (i == active_date){
-            calenderDates[startOfMonth + i].classList.add("active");
+    for (i = 0; i < calenderDates.length; i++){
+        if(i < day || i > totalDays+day-1){
+            href = "#";
+            content = "-";
         }
+        else{
+            href = `#`;
+            content = i-day + 1
+        }
+        
+        //console.log(href);
+        calenderDates[i].textContent = content;
+        calenderDates[i].href = href;
     }
 }
 
 monthArray = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
 
-function updateCalenderTitle(month, year){
-    monthText = byId("month");
-    monthText = monthArray[month-1];
-    yearText = byId("year");
-    yearText.text = year;
+function updateCalenderTitle(month, year){ //fixed
+    monthText = byId("title-month");
+    monthText.textContent = monthArray[month-1];
+    yearText = document.createElement("span")
+    yearText.style = "font-size:18px";
+    yearText.textContent = year;
+    monthText.appendChild(document.createElement("br"));
+    monthText.appendChild(yearText);
+    
 }
 
 function loadDishes(dishes, date,  element){
     buttons = element.querySelector(".day__container").querySelectorAll("button");
     document.querySelector(".day__header").text = date.getDate() + " " + monthArray[date.getMonth()];
     for (i=0; i<buttons.length;i++){
-        buttons.text = dishes[i].food_title;
+        buttons.textContent = dishes[i].food_title;
     }
     
 }
 
 // LOAD data when the page is first loaded
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("./routes/dietplan")
+    fetch("./dietplan")
     .then(response => response.json())
     .then(data => {
-        activeMonth = res.active_date.getMonth();
-        activeYear = res.active_date.getFullYear();
-        activeDay = res.active_date.getDate();
-        generateMonth(activeMonth, activeYear, activeDay);
-        updateCalenderTitle(activeMonth, activeYear);
-        dayContainers = document.querySelectorAll(".day");
+        rows = data.records;
+        console.log(rows);
+        activedate = splitTimeStamp(data.active_date);
+        console.log(activedate);
+        generateMonth(activedate[1], activedate[0], activedate[2]);
+        updateCalenderTitle(activedate[1], activedate[0]);
+        // dayContainers = document.querySelectorAll(".day");
 
-        for (i = 0; i < dayContainers.length; i++){
-            containerDate = active_date.getDate() + i;
-            dishes = records.filter(record => record.date_logged == (containerDate));
-            if (dishes){
-                loadDishes(dishes, dayContainers[i]);
-            }
-            editButton = dayContainers[i].querySelector(".day__header__edit");
-            editButton.href = "/editplan/" + containerDate;
-        }
+        // for (i = 0; i < dayContainers.length; i++){
+        //     containerDate = active_date.getDate() + i;
+        //     dishes = records.filter(record => record.date_logged == (containerDate));
+        //     if (dishes){
+        //         loadDishes(dishes, dayContainers[i]);
+        //     }
+        //     editButton = dayContainers[i].querySelector(".day__header__edit");
+        //     editButton.href = "/editplan/" + containerDate;
+        // }
     })
 })
 
