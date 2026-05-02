@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-    <meta charset = "UTF-8">
-    <title> Sleep Goals</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Goals</title>
     <link rel = "stylesheet" href = "css/style.css">
     <link rel = "stylesheet" href = "css/Sleep_Monitoring.css">
 
@@ -110,9 +111,19 @@
         <div class = "right">
 
             <div class = "card">
-                <h3> Sleep Schedule:</h3>
-                <p>Bedtime: 11:30PM</p>
-                <p>Wake Time: 8:15AM</p>
+                <h3>Log Last Night's Sleep</h3>
+                <form id="sleep-log-form">
+                    <div class="goal-item">
+                        <label>Hours slept</label>
+                        <input type="number" id="sleep-hours" min="0" max="24" placeholder="e.g. 7" required>
+                    </div>
+                    <div class="goal-item">
+                        <label>Minutes</label>
+                        <input type="number" id="sleep-minutes" min="0" max="59" placeholder="e.g. 30" required>
+                    </div>
+                    <button type="submit" class="add-goal">Log Sleep</button>
+                    <p id="sleep-log-msg" class="goal-sub"></p>
+                </form>
             </div>
 
             <div class = "card">

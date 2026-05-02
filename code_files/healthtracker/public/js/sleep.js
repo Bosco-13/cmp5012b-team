@@ -59,28 +59,11 @@ function updateScore(score, lastScore){ //fixed
         scoreText.textContent = `same`;
     }
 }
-// dates is array of date if no record found date input as null
-function updateStreak(dates){ //fixed
+// streak is an integer from the DB
+function updateStreak(streak){
     streakText = byId("streak");
-    if(!dates){
-        streakText.textContent = `0 nights`;
-    }
-     else{
-        streak = 0;
-        dates.sort((a, b) => b - a);
-        for(i = 1; i<dates.length; i++){
-            current = splitTimeStamp(dates[i])[2];
-            privous = splitTimeStamp(dates[i-1])[2];
-            diff = current - privous;
-            if (diff == 0 || diff == 1  || diff == 6) {
-                streak++;
-            }
-            else{
-                break
-            }
-        }
-        streakText.textContent = `${streak} nights`;
-    }
+    const n = streak || 0;
+    streakText.textContent = `${n} night${n === 1 ? '' : 's'}`;
 }
 
 // if no data found time == -999
@@ -136,40 +119,55 @@ function updateWeekStatus(week, target){
     }}
 }
 
-//load data when page is load
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("http://localhost:3000/sleep")
+    loadSleepData();
+
+    const form = document.getElementById("sleep-log-form");
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const hours = parseInt(document.getElementById("sleep-hours").value, 10);
+            const minutes = parseInt(document.getElementById("sleep-minutes").value, 10);
+            const msg = document.getElementById("sleep-log-msg");
+
+            const { response, result } = await postJson("/sleep", { hours, minutes });
+
+            if (!response.ok) {
+                msg.textContent = result.message || "Something went wrong.";
+                return;
+            }
+
+            updateStreak(result.streak);
+            msg.textContent = result.met_goal
+                ? `Goal met! Streak is now ${result.streak} 🔥`
+                : `Below goal. Streak reset to 0.`;
+            form.reset();
+        });
+    }
+});
+
+function loadSleepData() {
+    fetch("/sleep")
     .then(response => response.json())
     .then(data => {
         if (data.records.length == 0 || data.target.length == 0){
-            console.log("Not enough data fetched.");
             updateScore(-999, -999);
-            updateStreak(null);
+            updateStreak(0);
             updateTargetSleep(-999, -999);
             updateProgress(-999, -999);
-            console.log("Not enough data fetched this time.");
         }
         else{
             rows = data.records;
-            rows.sort((a,b) => a.sleep_id - b.sleep_id); // sort from past to present
-            const day = new Date();
-            day.setDate(day.getDate() - 1)
-            const currentDate = new Date(
-                day.getFullYear(),
-                day.getMonth(),
-                day.getDate()
-            );
+            rows.sort((a,b) => a.sleep_id - b.sleep_id);
             todayRecord = rows[rows.length-1];
             target = data.target[0];
             target1 = [target.target_sleep_hour, target.target_sleep_minitues, 0];
             dateArray = rows.map(record => record.start_time);
             updateScore(999, 998); // place holder
-            updateStreak(dateArray);
-            updateTargetSleep(target.target_sleep_hour, target.target_sleep_minitues); // place holder
-            console.log(getDuration(todayRecord.start_time, todayRecord.end_time));
+            updateStreak(target.sleep_streak || 0);
+            updateTargetSleep(target.target_sleep_hour, target.target_sleep_minitues);
             updateProgress(target1, getDuration(todayRecord.start_time, todayRecord.end_time));
-            updateWeekStatus(dateArray.slice(-7)); 
+            updateWeekStatus(dateArray.slice(-7));
         }
-    })
-    
-});
+    });
+}

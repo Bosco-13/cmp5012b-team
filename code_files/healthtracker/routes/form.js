@@ -21,7 +21,8 @@ router.post('/form', requireLogin, async (req, res) => {
     activity_level,
     target_weight,
     preferred_workout_type,
-    dietary_preference
+    dietary_preference,
+    sleep_target
   } = req.body;
 
   if (
@@ -47,7 +48,8 @@ router.post('/form', requireLogin, async (req, res) => {
         activity_level,
         target_weight,
         preferred_workout_type,
-        dietary_preference
+        dietary_preference,
+        sleep_target
       )
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
       ON CONFLICT (user_id)
@@ -60,7 +62,8 @@ router.post('/form', requireLogin, async (req, res) => {
         activity_level = EXCLUDED.activity_level,
         target_weight = EXCLUDED.target_weight,
         preferred_workout_type = EXCLUDED.preferred_workout_type,
-        dietary_preference = EXCLUDED.dietary_preference`,
+        dietary_preference = EXCLUDED.dietary_preference,
+        sleep_target = EXCLUDED.sleep_target`
       [
         userId,
         age,
@@ -71,7 +74,8 @@ router.post('/form', requireLogin, async (req, res) => {
         activity_level,
         target_weight,
         preferred_workout_type,
-        dietary_preference
+        dietary_preference,
+        sleep_target
       ]
     );
 

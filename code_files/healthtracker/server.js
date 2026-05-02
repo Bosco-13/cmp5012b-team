@@ -12,8 +12,8 @@ const formRoutes = require('./routes/form');
 const pageRoutes = require('./routes/pages');
 const debugRoutes = require('./routes/debug');
 const sleepRoutes = require('./routes/sleep');
-// const goalRoutes = require('./routes/goals');
-const dietPlanRoutes = require('./routes/dietplan');
+const goalRoutes = require('./routes/goals');
+const dietPlanRoutes = require('./routes/dietPlan');
 // const dashboardRoutes = require('./routes/dashboard');
 
 
@@ -62,7 +62,7 @@ app.use(formRoutes);
 app.use(workoutRoutes);
 
 app.use(sleepRoutes);
-//app.use(goalRoutes);
+app.use(goalRoutes);
 app.use(dietPlanRoutes);
 //app.use(dashboardRoutes);
 

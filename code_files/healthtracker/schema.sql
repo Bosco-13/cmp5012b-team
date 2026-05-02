@@ -20,7 +20,8 @@ CREATE TABLE profiles (
     preferred_workout_type VARCHAR(50),
     dietary_preference VARCHAR(50),
     target_sleep_hour INTEGER CHECK (target_sleep_hour BETWEEN 0 AND 23),
-    target_sleep_minitues INTEGER CHECK (target_sleep_minitues BETWEEN 0 AND 59)
+    target_sleep_minitues INTEGER CHECK (target_sleep_minitues BETWEEN 0 AND 59),
+    sleep_streak INTEGER DEFAULT 0
 );
 
 CREATE TABLE dashboard (
