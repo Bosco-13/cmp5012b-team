@@ -68,7 +68,6 @@ function updateScore(score, lastScore){ //fixed
         scoreText.textContent = `same`;
     }
 }
-// streak is an integer from the DB
 function updateStreak(streak){
     streakText = byId("streak");
     const n = streak || 0;
