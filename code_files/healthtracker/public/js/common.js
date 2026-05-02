@@ -52,6 +52,27 @@ function $(selector) {
     });
   }
   
+  function setupMobileNav() {
+    const header = document.querySelector('header');
+    const nav = document.querySelector('nav');
+    if (!header || !nav) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'nav-toggle';
+    btn.innerHTML = '☰';
+    header.insertBefore(btn, nav);
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('nav--open');
+    });
+
+    // close nav when a link is tapped
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('nav--open'));
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     setActiveNavLink();
+    setupMobileNav();
   });

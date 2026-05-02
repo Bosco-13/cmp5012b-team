@@ -135,9 +135,11 @@ input:focus {
 }
 /* Container */
 .container {
-    width: 1100px;
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     padding: 30px 20px;
+    box-sizing: border-box;
 }
 
 main {
@@ -1639,3 +1641,154 @@ h3 {
     display: none;
 }
 
+.nav-toggle {
+    display: none;
+}
+
+/* ------------------- MOBILE (max-width: 450px) ------------------- */
+
+@media (max-width: 450px) {
+    
+    .container {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    header {
+        padding: 10px 15px;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle {
+        display: block;
+        background: white;
+        color: #2F6BFF;
+        border: none;
+        font-size: 20px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        order: 2;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 8px 0;
+        gap: 0;
+        z-index: 200;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        border-radius: 0 0 10px 10px;
+    }
+
+    nav.nav--open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 15px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .goal-page .main-grid {
+        flex-direction: column;
+    }
+
+    .goal-page .column,
+    .goal-page .column:first-child,
+    .goal-page .column:last-child {
+        flex: unset;
+        width: 100%;
+    }
+
+    .top-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .sleep-page .card,
+    .goal-page .card {
+        padding: 18px;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards__card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .record {
+        flex-direction: column;
+    }
+
+    .record__log {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .record__log_labels,
+    .record__log_inputs {
+        grid-template-columns: 1fr 1fr 1fr 20px;
+        gap: 8px;
+    }
+
+    .nutrition-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+  footer {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    .head {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .head__sub {
+        width: 100%;
+    }
+
+    .head__sub_wrap {
+        flex-direction: column;
+    }
+
+    .head__sub_wrap-inpt {
+        width: 100%;
+    }
+
+    .rights {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .rights__box {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
