@@ -39,15 +39,6 @@ function getDuration(startTime, endTime){
     }
 }
 
-function splitTimeStamp(timeStamp){
-    dateTime = timeStamp.split("T");
-    date = dateTime[0];
-    time = dateTime[1].slice(0, -1);
-    datesplit = date.split("-");
-    timesplit = time.split(":");
-    return datesplit.concat(timesplit); //[year, month, day, hour, minitues, seconds]
-}
-
 // score and lastScore are integer both parameter == -999 means no record found
 function updateScore(score, lastScore){ //fixed
     scoreNum = document.getElementById("score");
