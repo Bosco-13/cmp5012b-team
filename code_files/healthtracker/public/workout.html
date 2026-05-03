@@ -105,50 +105,11 @@
                     <span class="record__schedule_days-day">S</span>
                     <span class="record__schedule_days-day">S</span>
                 </div>
-                <div class="record__schedule_row">
-                    <label for="" class="record__schedule_row-lbl">Mar 30</label>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                </div>
-                 <div class="record__schedule_row">
-                    <label for="" class="record__schedule_row-lbl">Apr 6</label>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                </div>
-                 <div class="record__schedule_row">
-                    <label for="" class="record__schedule_row-lbl">Apr 13</label>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                </div>
-                 <div class="record__schedule_row">
-                    <label for="" class="record__schedule_row-lbl">Apr 20</label>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                    <div class="record__schedule_row-box"></div>
-                </div>
+                <div id="calendar-grid"></div>
                 <div class="record__schedule_colors">
-                    <label for="" class="record__schedule_colors-lbl">Days Off - </label>
+                    <label class="record__schedule_colors-lbl">Days Off - </label>
                     <div class="record__schedule_colors-box"></div>
-                    <label for="" class="record__schedule_colors-lbl2">Training days - </label>
+                    <label class="record__schedule_colors-lbl2">Training days - </label>
                     <div class="record__schedule_colors-box1"></div>
                 </div>
             </div>
@@ -222,8 +183,17 @@
             </div>
         </div>
     </footer>
+    <!-- Workout popup modal -->
+    <div id="workout-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button id="modal-close" class="modal-close">✕</button>
+            <p class="modal-date" id="modal-date"></p>
+            <h3 class="modal-name" id="modal-name"></h3>
+            <p class="modal-detail" id="modal-detail"></p>
+        </div>
+    </div>
+
 </body>
-<script src="js/workout.js"></script>
 <script src="js/common.js"></script>
 <script src="js/workout.js"></script>
 </html>

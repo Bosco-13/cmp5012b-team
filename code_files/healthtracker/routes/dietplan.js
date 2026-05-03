@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
-router.get('/dietplan', (req,res) => {
-    res.sendFile(path.join(__dirname, "/dietplan.html"));
+router.get('/dietplan', async (req,res) => {
     try{
-        const result = pool.query(
-            `SELECT food_title, date_logged 
-            FROM dishes 
-            WHERE user_id = $1`,
-            [res.session.userId]
+        const result = await pool.query(
+            `SELECT d.dish_id, di.food_title, d.date_logged 
+            FROM healthsystem.dishes d 
+            INNER JOIN healthsystem.dishinfo di
+            ON d.dish_id = di.dish_id
+            WHERE d.user_id = $1`,
+            [req.session.userId]
         )
         if (result.rows.length == 0){
             return res.json({
@@ -25,7 +26,10 @@ router.get('/dietplan', (req,res) => {
         })
     }
     catch(error){
-
+        console.error(error);
+        res.status(500).json({
+            message: "Server error"
+        });
     }
 })
 

@@ -34,8 +34,8 @@ function updateWorkoutStreak(dates) {
         return;
     }
 
-    // normalize to date-only strings (YYYY-MM-DD) for comparison
-    const unique = [...new Set(dates.map(d => d.toString().slice(0, 10)))].sort().reverse();
+    const dateStrings = dates.map(d => d.toString().slice(0, 10));
+    const unique = [...new Set(dateStrings)].sort().reverse();
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -43,7 +43,6 @@ function updateWorkoutStreak(dates) {
     let streak = 0;
     let expected = new Date(today);
 
-    // allow streak to start from today or yesterday
     const mostRecent = new Date(unique[0]);
     const diffFromToday = Math.round((today - mostRecent) / 86400000);
     if (diffFromToday > 1) {

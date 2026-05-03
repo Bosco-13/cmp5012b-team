@@ -41,10 +41,14 @@ Read the [student guide](student-guide.md) for more detailed information on how 
 
 Add your team details here:
 
-- Team name:
+- Team name: The Six Men
 - Module: CMP-5012B – Software Engineering
-- Year:
+- Year: 2
 - Team members:
-  - Name 1 (GitHub: `@username`)
-  - Name 2 (GitHub: `@username`)
-  - ...
+  
+  - Alex McKenna (GitHub: `@AlexMcKenna1`)
+  - Tommy Nguyen (GitHub: `@TommyNguyen9`)
+  - Bosco Chan (GitHub: `@Bosco-13`)
+  - Yarisolav Halik (GitHub: `@Yaroichi`)
+  - James Scott (GitHub: `@Jscott5151`)
+  - Ayrton Cook (GitHub: `@AyrtonHCook`)

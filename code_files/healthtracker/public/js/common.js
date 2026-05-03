@@ -76,3 +76,12 @@ function $(selector) {
     setActiveNavLink();
     setupMobileNav();
   });
+
+  function splitTimeStamp(timeStamp){
+    dateTime = timeStamp.split("T");
+    date = dateTime[0];
+    time = dateTime[1].slice(0, -1);
+    datesplit = date.split("-");
+    timesplit = time.split(":");
+    return datesplit.concat(timesplit); //[year, month, day, hour, minitues, seconds]
+  }

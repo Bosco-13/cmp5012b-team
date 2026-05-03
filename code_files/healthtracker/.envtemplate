@@ -1,6 +1,6 @@
-DB_USER=postgres
-DB_HOST=localhost
-DB_NAME= 
+DB_USER=outlookid/localhost
+DB_HOST=cmpstudb-01.cmp.uea.ac.uk
+DB_NAME=outlookid/localhost
 DB_PASSWORD=
 DB_PORT=5432
 SESSION_SECRET="fjdajfdjklafjdslafj"

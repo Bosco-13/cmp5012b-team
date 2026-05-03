@@ -3,6 +3,22 @@ const router = express.Router();
 const pool = require('../db');
 const requireLogin = require('../middleware/requireLogin');
 
+router.get('/workouts', requireLogin, async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT workout_id, workout_name, workout_date, duration_hours
+       FROM healthsystem.workouts
+       WHERE user_id = $1
+       ORDER BY workout_date DESC`,
+      [req.session.userId]
+    );
+    return res.json({ workouts: result.rows });
+  } catch (error) {
+    console.error('Workout GET error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
 router.post('/workouts', requireLogin, async (req, res) => {
   const userId = req.session.userId;
 
