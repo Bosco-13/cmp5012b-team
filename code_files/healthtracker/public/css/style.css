@@ -403,7 +403,7 @@ nav a.active {
     background-color: #0f5ea8;
 
 }
-.record__schedule_row-lbl{
+.record__schedule_row-lbl {
     
 }
 .box-color{
@@ -442,6 +442,7 @@ nav a.active {
 }
 
 /* Buttons */
+
 .actions {
     display: flex;
     justify-content: center;
@@ -481,7 +482,12 @@ footer {
     border-top: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px 12px 0 0;
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer .container {
+    padding: 0 20px;
 }
 
 /* Some title fixes */
@@ -489,11 +495,13 @@ footer {
 .footer h4 {
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
+
+
 
 .head {
 
@@ -501,7 +509,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
 }
 
 .head__info {
@@ -536,8 +544,8 @@ footer {
     text-align: left;
     width: 210px;
     color: rgba(255, 255, 255, 0.5);
-    line-height: 25px;
-    margin-bottom: 15px;
+    line-height: 22px;
+    margin-bottom: 10px;
     
 }
 
@@ -598,8 +606,8 @@ footer {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     text-align: left;
-    margin-bottom: 8px;
-    font-size: 15px;
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
 .head__pages_link,
@@ -682,7 +690,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 15px;
     flex-wrap: wrap;
 }
 
