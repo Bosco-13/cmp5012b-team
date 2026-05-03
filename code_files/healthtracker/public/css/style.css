@@ -472,94 +472,119 @@ button:active {
 }
 
 /* Footer */
+
 footer {
     
-    padding: 25px 20px;
     text-align: center;
     background: #1a1f36;
     color: #fff;
     border-top: 1px solid rgba(0,0,0,0.05);
     border-radius: 12px 12px 0 0;
-    width: 98%;
+    width: 100%;
+    padding: 30px 0;
 }
 
-.head{
-    display: flex;
-    gap: 100px;
+/* Some title fixes */
+
+.footer h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 16px;
+    text-transform: uppercase;
 }
-.head__info{
+
+.head {
+
     display: flex;
-    
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.head__info {
+
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 1.5;
+    min-width: 250px;
 }
 
-.head__info_head{
+.head__info_head {
+
     display: flex;
     gap: 25px;
     align-items: center;
     
 }
 
-.head__info_head-title{
+.head__info_head-title {
     font-size:23px;
 }
 
-.head__info_head-logo{
+.head__info_head-logo {
     width: 50px;
     height: 50px;
     border-radius: 10px;
 }
 
-.head__info_text{
+.head__info_text {
     font-size: 16px;
     text-align: left;
     width: 210px;
     color: rgba(255, 255, 255, 0.5);
     line-height: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     
 }
 
-.head__info_media{
+.head__info_media {
    display: flex;
    align-items: center;
    justify-content: left;
 }
 
-.head__info_media-link{
+.head__info_media-link {
     margin: 0;
     padding: 0;
 }
 
-.media-inst{
+.media-inst {
     width: 45px;
     
 }
-.media-x{
-    width: 45px;
+
+.media-x {
+    width: 40px;
     margin-right: 5px;
 }
-.media-yt{
+.media-yt {
     width: 35px;
     background-color: #a80f0f;
     margin-right: 10px;
 }
-.media-dis{
-    width: 35px;
+
+.media-dis {
+
+    width: 32px;
     background-color: #0f5ea8;
     
 }
 
-.head__pages{
+.head__pages {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 200px;
+    
+    flex: 1;
+    min-width: 180px;
     
 }
 
-.head__pages_link{
+.head__pages_link {
     display: block;
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
@@ -567,19 +592,45 @@ footer {
     margin-bottom: 10px;
 }
 
-.head__pages_link:hover{
+.head__pages_link,
+.head__contacts_link {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.head__pages_link,
+.head__contacts_link,
+.rights__box_link {
+    transition: all 0.2s ease;
+}
+
+/* A nice hover effect: */
+
+.head__pages_link:hover,
+.head__contacts_link:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.rights__box_link:hover {
     color: #fff;
 }
 
-.head__contacts{
+.head__contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 200px;
 
+    flex: 1;
+    min-width: 180px;
+   
 }
 
-.head__contacts_link{
+.head__contacts_link {
     display: block;
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
@@ -587,15 +638,18 @@ footer {
     margin-bottom: 10px;
 }
 
-.head__contacts_link:hover{
+.head__contacts_link:hover {
     color: #fff;
 }
 
-.head__sub{
+.head__sub {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 500px;
+
+    flex: 1.5;
+    min-width: 280px;
+   
 }
 
 .head__sub_text{
@@ -624,29 +678,34 @@ footer {
 }
   
 
-.rights{
+.rights {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-.rights__span{
+.rights__span {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.rights__box{
+.rights__box {
     display: flex;
     gap: 15px;
 }
 
-.rights__box_link{
+.rights__box_link {
     display: block;
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    
+    transition: all 0.2s ease;
+
 }
-.rights__box_link:hover{
+
+.rights__box_link:hover {
     color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Workout List */
