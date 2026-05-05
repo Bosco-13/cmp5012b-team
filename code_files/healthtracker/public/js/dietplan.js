@@ -1,3 +1,13 @@
+daysInMonth = (month, year) => {
+    if (month == 2) {
+        return (year % 4 == 0) ? 29 : 28;
+    }
+    if ([4, 6, 9, 11].includes(month)) {
+        return 30;
+    }
+    return 31;
+}
+
 // calender should be a li object
 function generateMonth(month, year, active_date){ //fixed
     calender = document.querySelector(".days");
@@ -5,16 +15,6 @@ function generateMonth(month, year, active_date){ //fixed
     day = startOfMonth.getDay();
     console.log(startOfMonth);
     console.log(day);
-    daysInMonth = (month, year) => {
-        if (month == 2) {
-            return (year % 4 == 0) ? 29 : 28;
-        }
-
-        if ([4, 6, 9, 11].includes(month)) {
-            return 30;
-        }
-        return 31;
-    }
     totalDays = daysInMonth(month,year);
     calenderDates = document.getElementsByClassName("diet-calender-day");
     console.log(totalDays);
@@ -23,7 +23,7 @@ function generateMonth(month, year, active_date){ //fixed
     for (i = 0; i < calenderDates.length; i++){
         if(i < day || i > totalDays+day-1){
             href = "#";
-            content = "-";
+            content = " ";
         }
         else{
             href = `#`;
@@ -49,14 +49,29 @@ function updateCalenderTitle(month, year){ //fixed
     
 }
 
-function loadDishes(dishes, date,  element){
-    buttons = element.querySelector(".day__container").querySelectorAll("button");
-    document.querySelector(".day__header").text = date.getDate() + " " + monthArray[date.getMonth()];
-    for (i=0; i<buttons.length;i++){
-        buttons.textContent = dishes[i].food_title;
-    }
-    
+function setActiveDate(date){
+    days = document.getElementsByClassName("diet-calender-day");
+    dayNum = daysInMonth(date[1], date[0]);
+
 }
+
+weekdays = ["Monday", "Tuesday", "Wedesday", "Thursday", "Friday", "Saturday", "Sunday"]
+function loadDateTitle(date, element){ //fixed
+    console.log(element);
+    weekday = new Date(date[0], date[1], date[2]);
+    week  = weekday.getDay();
+    if (week==0){
+        week = 7;
+    }
+    element.textContent = `${date[2]}/${monthArray[date[1]-1]} ${weekdays[week-1]}`;
+}
+
+
+function loadDishes(dish, element){ //fixed
+    element.textContent = dish;
+}
+
+let activedate;
 
 // LOAD data when the page is first loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -64,47 +79,83 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then(data => {
         rows = data.records;
+        rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
         console.log(rows);
-        activedate = splitTimeStamp(data.active_date);
+        // for debug uses
+        activedate = ["2026", "4", "29", "00", "00","00"];
+        //activedate = splitTimeStamp(data.active_date);
         console.log(activedate);
+
+        //if data found
+        //load calender
         generateMonth(activedate[1], activedate[0], activedate[2]);
         updateCalenderTitle(activedate[1], activedate[0]);
-        // dayContainers = document.querySelectorAll(".day");
 
-        // for (i = 0; i < dayContainers.length; i++){
-        //     containerDate = active_date.getDate() + i;
-        //     dishes = records.filter(record => record.date_logged == (containerDate));
-        //     if (dishes){
-        //         loadDishes(dishes, dayContainers[i]);
-        //     }
-        //     editButton = dayContainers[i].querySelector(".day__header__edit");
-        //     editButton.href = "/editplan/" + containerDate;
-        // }
+        //load diet plan
+        dates = [];
+        for(i = 0; i<5; i++){
+            nextDate = [Number(activedate[0]), Number(activedate[1]), Number(activedate[2])];
+            console.log("i"+i);
+            nextDate[2] = nextDate[2] + i;
+            console.log("d" + nextDate[2]);
+            if(nextDate[2]>daysInMonth(nextDate[1], nextDate[0])){
+                nextDate[2] = nextDate[2] - daysInMonth(nextDate[1], nextDate[0]);
+                nextDate[1] =nextDate[1] + 1;
+                if(nextDate[1] > 12){
+                    nextDate[0] = nextDate[0] + 1;
+                    nextDate[1] = 1;
+                }
+            }
+            dates.push(nextDate);
+        }
+        console.log(dates);
+        dayTitles = document.getElementsByClassName("day__header");
+        dayPlanLists = document.getElementsByClassName("day__contentlist")
+        for(i = 0; i < dates.length; i++){ // load day title fixed, dish name fixed
+            loadDateTitle(dates[i],dayTitles[i].querySelector('h3'));
+            formatedDate = `${dates[i][0]}-${String(dates[i][1]).padStart(2, '0')}-${String(dates[i][2]).padStart(2, '0')}`
+            result = rows.filter(row => row.date_logged.startsWith(formatedDate));
+            buttons = dayPlanLists[i].querySelectorAll("button");
+            console.log(dates[i].join("-"));
+            console.log(result);
+            console.log("");
+            console.log(buttons);
+            if(result.length > 0){
+                for (j = 0; j < result.length; j++){
+                    loadDishes(result[j].food_title, buttons[j]);
+                }
+            }
+        }
+
+        // update the calender when prev or next button is pressed
+        const next = document.querySelector(".next");
+        const prev = document.querySelector(".prev");
+
+        nextTitle = [Number(activedate[0]), Number(activedate[1])];
+        next.addEventListener("click", () => { //fixed
+            console.log("next")
+            console.log(nextTitle);
+            nextTitle[1] = nextTitle[1] + 1;
+            if (nextTitle[1] > 12){
+                nextTitle[1] = 1;
+                nextTitle[0] += 1;
+            }
+            console.log(nextTitle);
+            updateCalenderTitle(nextTitle[1], nextTitle[0]);
+            generateMonth(nextTitle[1], nextTitle[0]);
+        })
+
+        prev.addEventListener("click", () => { //fixed
+            console.log("prev")
+            nextTitle[1] = nextTitle[1] - 1;
+            if (nextTitle[1] < 1){
+                nextTitle[1] = 12;
+                nextTitle[0] -= 1;
+            }
+            console.log(nextTitle);
+            updateCalenderTitle(nextTitle[1], nextTitle[0]);
+            generateMonth(nextTitle[1], nextTitle[0]);
+        })
     })
 })
 
-// update the calender when prev or next button is pressed
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
-
-next.addEventListener("click", () => {
-    nextMonth = activeMonth + 1;
-    if (nextMonth > 12){
-        nextMonth = 1;
-        nextYear = activeYear + 1;
-        activeMonth = nextMonth;
-        activeYear = nextYear;
-    }
-    updateCalenderTitle(activeMonth, activeYear);
-})
-
-prev.addEventListener("click", () => {
-    nextMonth = activeMonth - 1;
-    if (nextMonth < 1){
-        nextMonth = 12;
-        nextYear = activeYear - 1;
-        activeMonth = nextMonth;
-        activeYear = nextYear;
-    }
-    updateCalenderTitle(activeMonth, activeYear);
-})

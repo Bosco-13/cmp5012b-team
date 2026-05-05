@@ -2,9 +2,7 @@ console.log("running... sleep");
 // returns duration in milli seconds
 function getDuration(startTime, endTime){
     const end = splitTimeStamp(endTime);
-    console.log(end);
     const start = splitTimeStamp(startTime);
-    console.log(start);
     if(start[0] == end[0] && start[1] == end[1] && start[2] == end[2]){
         follow = 0;
         resultsecond = Number(end[5]) - Number(start[5]);
@@ -94,7 +92,6 @@ function updateProgress(target, time){ //fixed
         percentage = (diff / targetInSecond) * 100;
         bar.width = percentage + "%";
     }   
-        console.log(`${time[0]}h ${time[1]}m recorded (Goal: ${target[0]}h ${target[1]}m)`)
         progressText.textContent = `${time[0]}h ${time[1]}m recorded (Goal: ${target[0]}h ${target[1]}m)`;
     }
     
@@ -103,9 +100,6 @@ function updateProgress(target, time){ //fixed
 // week should be an sorted array of dates with the record sleep time of each day of the week
 days = ["Monday", "Tuesday", "Wedesday", "Thursday", "Friday", "Saturday", "Sunday"]
 function updateWeekStatus(week, target){
-    console.log(target);
-    console.log(time);
-    console.log("We are one")
     bars = document.getElementsByClassName("bar");
     barsText = document.getElementsByClassName("bar-text");
     if (week != null || target != null){
