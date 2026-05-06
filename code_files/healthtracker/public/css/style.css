@@ -1531,59 +1531,40 @@ h3 {
   }
 
 /* --------------------Edit plan page -------------------*/
-.editplan{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+.form__title{
+    text-align: center;
+    margin-bottom: 40px;
 }
-.editplan__title{
-    margin-left: 1.5rem;
+.form{
+    display: block;
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    width: 600px;
+    margin: 0 auto;
+    gap: 10px;
 }
-.editplan__rules{
-    margin-left:1.5rem;
-    display:flex;
+.form__info_select{
+    width: 100%;
+    display: block;
+    padding: 7px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #111827;
+    background: #fff;
+    font-family: var(--font-sans);
+    margin: 10px 0;
 }
-.editplan__rules input{
-    flex: 1;
+.form__info_btn{
+    padding: 12px 40px;
+    margin-top: 10px;
+    width: 100%;
+    background: linear-gradient(to right, #1e5aa8, #2ecc71);
 }
 
-.result{
-    flex:1;
-    margin-left: 1.5rem;
-}
-.result__header{
-    display:flex;
-    gap: 1rem;
-}
-.result__header h3{
-    flex: 1;
-}
-.result__header button{
-    justify-self: left;
-    background: green;
-    border: none;
-    border-radius: 10px;
-    color:white; 
-}
-.result__header button:hover{
-    max-height: 2rem;
-    text-decoration: underline;
-    color:blue;
-}
-.result__info{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background-color: lightgray;
-}
-.result__info img{
-    width: 10rem;
-    min-height: 10rem;
-    border: 2px solid
-}
-.result__info p{
-    margin-inline-start: 1rem;
-}
 
 /* -------------------- Settings Page -------------------*/
 
@@ -1940,4 +1921,54 @@ h3 {
     h1 {
         font-size: 24px;
     }
+}
+
+/*----------------Settings Css---------*/
+.settings-page {
+    background: #f4f6f9;
+}
+.settings-page .card{
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.settings-page .card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 94, 168, 0.12);
+}
+.settings-page .card h3{
+    color: var(--blue);
+}
+
+.settings-page .card p{
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.settings-page .card button{
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.settings-page .settings-row{
+    gap: 20px;
+}
+
+@media (max-width: 900px){
+    .settings-page .three,
+    .settings-page .two{
+        grid-template-columns: 1fr;
+    }
+}
+
+.settings-page .card button {
+    background: linear-gradient(135deg, #22C55E, #16A34A);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
 }
