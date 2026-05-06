@@ -22,36 +22,37 @@ otherdishes.addEventListener("click", showHidden(2));
 // num 0,1,2 - ingridients, recipe and otherdishes
 function loadRightInfo(num, text){
     content = document.querySelectorAll(".list__content")[num];
-    content.text = text;
+    content.textContent = text;
 }
 
-function loadLeftTitle(text){
+function loadLeftTitle(text){ // fixed
     title = document.querySelector(".nutrition-title");
-    title.text = text;
+    title.textContent = text;
 }
 
 // data[int: Carbs, int: Fats, int: Protein]
-function loadChart(data){
+function loadChart(data){ //fixed
     carbs = data[0];
     fat = data[1];
     protein = data[2];
     totalMass = carbs + fat + protein;
     carbPercent = carbs/totalMass * 100;
-    fatPercent = fat/tatalMass * 100;
+    fatPercent = fat/totalMass * 100;
     proteinPercent = protein/totalMass * 100;
 
-    element.style.setProperty("--carbs", `${carbsPercent}%`);
+    element = document.querySelector(".pie-overlay");
+    element.style.setProperty("--carbs", `${carbPercent}%`);
     element.style.setProperty("--fat", `${fatPercent}%`);
 
     legends = document.querySelectorAll(".chart__legends__text");
-    legends[0].text = "Carbs: " + carbsPercent + "%";
-    legends[1].text = "Fats: " + fatPercent + "%";
-    legends[2].text = "Protein: " + proteinPercent + "%";
+    legends[0].textContent = "Carbs: " + carbPercent.toPrecision(3) + "%";
+    legends[1].textContent = "Fats: " + fatPercent.toPrecision(3) + "%";
+    legends[2].textContent = "Protein: " + proteinPercent.toPrecision(3) + "%";
 
     summary = document.querySelectorAll(".macro-text");
-    summary[0].text = "Carbs: " + carbs + "g";
-    summary[1].text = "Fats: " + fat + "g";
-    summary[2].text = "Protein: " + protein + "g";
+    summary[0].textContent = "Carbs: " + carbs + "g";
+    summary[1].textContent = "Fats: " + fat + "g";
+    summary[2].textContent = "Protein: " + protein + "g";
 }
 
 //data{dish:{
@@ -61,19 +62,24 @@ function loadChart(data){
 // protein: Int,
 // ingridients: String,
 // recipe: String}}
+
 document.addEventListener("DOMContentLoaded", () =>{
-    fetch("http://localhost:3000/dish/:dishid")
+    const id = 9
+    fetch( `/nutrition/${id}`)
     .then(response => response.json())
     .then(data => {
-        title = data.dish.title;
-        carbs = data.dish.carbs;
-        fats = data.dish.fats;
-        protein = data.dish.protein;
-        ingridients = data.dish.ingridient;
-        recipe = data.dish.recipe;
-        loadRightInfo(0, ingridients);
-        loadRightInfo(1, recipe);
+        console.log(data);
+        dish = data.record[0]
+        title = dish.food_title;
+        nutritions = [dish.calories, dish.fat, dish.protein];
+        ingridient = dish.ingridient;
+        foodRecipe = dish.recipe;
+        //left hand side
         loadLeftTitle(title);
-        loadChart([carbs, fats, protein]);
+        loadChart(nutritions);
+
+        //right hand side
+        //ingridient
+        loadRightInfo(0, ingridients);
     })
 })

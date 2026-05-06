@@ -1307,9 +1307,9 @@ h3 {
     color: white;
     background-image: 
     conic-gradient(from 30deg,
-        #F59E0B var(--carbs),
-        #EF4444 var(--carbs) var(--fat),
-        #10B981 0
+        #F59E0B 0% var(--carbs), 
+        #EF4444 var(--carbs) calc(var(--carbs) + var(--fat)),
+        #10B981 calc(var(--carbs) + var(--fat)) 100%
     );
 }
 
