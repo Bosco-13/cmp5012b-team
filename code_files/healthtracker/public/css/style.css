@@ -1924,10 +1924,9 @@ h3 {
 }
 
 /*----------------Settings Css---------*/
-.settings-page{
-    background: var(--bg);
+.settings-page {
+    background: #f4f6f9;
 }
-
 .settings-page .card{
     box-shadow: var(--card-shadow);
     border: 1px solid var(--line);
@@ -1963,4 +1962,13 @@ h3 {
     .settings-page .two{
         grid-template-columns: 1fr;
     }
+}
+
+.settings-page .card button {
+    background: linear-gradient(135deg, #22C55E, #16A34A);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
 }
