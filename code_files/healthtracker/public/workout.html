@@ -23,11 +23,11 @@
             <div class="menu__profile">👤</div>
             <div class="menu__ddm">
                 <a href="settings.html" class="menu__ddm_link">Settings</a>
-                <a href="" class="menu__ddm_link">Logout</a>
+                <a href="#" class="menu__ddm_link logout-link">Logout</a>
             </div>
         </div>
-        
     </header>
+
     <main class="main">
         <section class="one">
             <div class="container">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="cards__card">
                         <h3 class="cards__card_title">Calories Burned</h3>
-                        <p class="cards__card_text"><b> 2840</b></p>
+                        <p class="cards__card_text"><b>2840</b></p>
                         <span class="cards__card_unit">kcal</span>
                     </div>
                     <div class="cards__card">
@@ -56,8 +56,9 @@
                 </div>
             </div>
         </section>
+
         <section class="record">
-            <div  class="record__log">
+            <div class="record__log">
                 <h3 class="record__log_title"><b>Log today's workout</b></h3>
 
                 <div class="record__log_name">
@@ -67,10 +68,9 @@
 
                 <div class="record__log_labels">
                     <label for="exercise" class="record__log_labels-lbl">Exercise</label>
-                    <label for="" class="record__log_labels-lbl">Sets</label>
-                    <label for="" class="record__log_labels-lbl">Reps</label>
+                    <label class="record__log_labels-lbl">Sets</label>
+                    <label class="record__log_labels-lbl">Reps</label>
                 </div>
-
 
                 <div id="exercise-list">
                     <div class="record__log_inputs workout-row">
@@ -82,19 +82,19 @@
                 </div>
 
                 <button type="button" class="record__log_addbtn" id="add-exercise-btn">+ add exercise</button>
+
                 <label for="duration" class="record__log_lbl">Duration(hrs): </label>
                 <input type="number" step="0.1" min="0.1" class="record__log_time" placeholder="Workout duration" id="duration">
+
                 <label for="workout-date" class="record__log_lbl">Date: </label>
                 <input type="date" class="record__log_time" id="workout-date">
+
                 <button type="button" class="record__log_savebtn" id="save-workout-btn">Save workout</button>
-
-              
-                
-
             </div>
 
             <div class="record__schedule">
                 <h3 class="record__schedule_title">Training schedule — last 4 weeks</h3>
+
                 <div class="record__schedule_days">
                     <span></span>
                     <span class="record__schedule_days-day">M</span>
@@ -105,7 +105,9 @@
                     <span class="record__schedule_days-day">S</span>
                     <span class="record__schedule_days-day">S</span>
                 </div>
+
                 <div id="calendar-grid"></div>
+
                 <div class="record__schedule_colors">
                     <label class="record__schedule_colors-lbl">Days Off - </label>
                     <div class="record__schedule_colors-box"></div>
@@ -117,9 +119,7 @@
 
         <section class="workout-list">
             <h3>Recent Workouts</h3>
-            <div class="workout-item">Push Day</div>
-            <div class="workout-item">Pull Day</div>
-            <div class="workout-item">Cardio</div>
+            <div id="recent-workouts"></div>
         </section>
     </main>
 
@@ -147,6 +147,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="head__pages">
                     <h4 class="head__pages_title">Features</h4>
                     <a href="" class="head__pages_link">Dashboard</a>
@@ -156,6 +157,7 @@
                     <a href="" class="head__pages_link">Goals</a>
                     <a href="" class="head__pages_link">Edit Planning</a>
                 </div>
+
                 <div class="head__contacts">
                     <h4 class="head__contacts_title">Support</h4>
                     <a href="" class="head__contacts_link">Help Center</a>
@@ -164,6 +166,7 @@
                     <a href="" class="head__contacts_link">Contact us</a>
                     <a href="" class="head__contacts_link">Report a Bug</a>
                 </div>
+
                 <div class="head__sub">
                     <h4 class="head_sub_title">Stay Updated</h4>
                     <p class="head__sub_text">Get weekly fitness tips and feature updates.</p>
@@ -173,6 +176,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="rights">
                 <span class="rights__span">© 2026 All rights reserved.</span>
                 <div class="rights__box">
@@ -183,6 +187,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Workout popup modal -->
     <div id="workout-modal" class="modal-overlay">
         <div class="modal-card">
@@ -190,10 +195,11 @@
             <p class="modal-date" id="modal-date"></p>
             <h3 class="modal-name" id="modal-name"></h3>
             <p class="modal-detail" id="modal-detail"></p>
+            <div id="modal-exercises"></div>
         </div>
     </div>
 
+    <script src="js/common.js"></script>
+    <script src="js/workout.js"></script>
 </body>
-<script src="js/common.js"></script>
-<script src="js/workout.js"></script>
 </html>
