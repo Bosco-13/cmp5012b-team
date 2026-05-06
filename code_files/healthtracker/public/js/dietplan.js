@@ -49,15 +49,13 @@ function updateCalenderTitle(month, year){ //fixed
     
 }
 
-function setActiveDate(date){
-    days = document.getElementsByClassName("diet-calender-day");
-    dayNum = daysInMonth(date[1], date[0]);
-
+// get date a number
+function setActiveDate(element){
+    element.classList.add("active");
 }
 
 weekdays = ["Monday", "Tuesday", "Wedesday", "Thursday", "Friday", "Saturday", "Sunday"]
 function loadDateTitle(date, element){ //fixed
-    console.log(element);
     weekday = new Date(date[0], date[1], date[2]);
     week  = weekday.getDay();
     if (week==0){
@@ -95,9 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dates = [];
         for(i = 0; i<5; i++){
             nextDate = [Number(activedate[0]), Number(activedate[1]), Number(activedate[2])];
-            console.log("i"+i);
             nextDate[2] = nextDate[2] + i;
-            console.log("d" + nextDate[2]);
             if(nextDate[2]>daysInMonth(nextDate[1], nextDate[0])){
                 nextDate[2] = nextDate[2] - daysInMonth(nextDate[1], nextDate[0]);
                 nextDate[1] =nextDate[1] + 1;
@@ -116,10 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
             formatedDate = `${dates[i][0]}-${String(dates[i][1]).padStart(2, '0')}-${String(dates[i][2]).padStart(2, '0')}`
             result = rows.filter(row => row.date_logged.startsWith(formatedDate));
             buttons = dayPlanLists[i].querySelectorAll("button");
-            console.log(dates[i].join("-"));
-            console.log(result);
-            console.log("");
-            console.log(buttons);
             if(result.length > 0){
                 for (j = 0; j < result.length; j++){
                     loadDishes(result[j].food_title, buttons[j]);
@@ -156,6 +148,66 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCalenderTitle(nextTitle[1], nextTitle[0]);
             generateMonth(nextTitle[1], nextTitle[0]);
         })
+
+        // update diet plan section when date is pressed
+        dateButtonArray = document.getElementsByClassName("diet-calender-day");
+        for(let i = 0; i < dateButtonArray.length; i++){
+            dateButtonArray[i].addEventListener("click", function () {
+                if(this.textContent != " "){
+                    titleMonth = document.querySelector("#title-month");
+					titleYear = titleMonth.querySelector("span");
+                    liArray  = document.querySelector(".days").querySelectorAll("li");
+                    activeMonth = monthArray.indexOf(titleMonth.childNodes[0].textContent.trim()) + 1;
+					activedate = [titleYear.textContent, String(activeMonth), this.textContent];
+					for (j = 0; j < liArray.length; j++){
+					    liArray[j].classList.remove("active");    
+					}
+                    setActiveDate(liArray[i]);
+					console.log(activedate); 
+
+                }
+                else{
+                    console.log("-: " + i);
+                }
+                //load diet plan
+                dates = [];
+                for(i = 0; i<5; i++){
+                    nextDate = [Number(activedate[0]), Number(activedate[1]), Number(activedate[2])];
+                    console.log("i"+i);
+                    nextDate[2] = nextDate[2] + i;
+                    console.log("d" + nextDate[2]);
+                    if(nextDate[2]>daysInMonth(nextDate[1], nextDate[0])){
+                        nextDate[2] = nextDate[2] - daysInMonth(nextDate[1], nextDate[0]);
+                        nextDate[1] =nextDate[1] + 1;
+                        if(nextDate[1] > 12){
+                            nextDate[0] = nextDate[0] + 1;
+                            nextDate[1] = 1;
+                        }
+                    }
+                    dates.push(nextDate);
+                }
+                console.log(dates);
+                dayTitles = document.getElementsByClassName("day__header");
+                dayPlanLists = document.getElementsByClassName("day__contentlist")
+                for(k = 0; k < dates.length; k++){ // load day title fixed, dish name fixed
+                    loadDateTitle(dates[k],dayTitles[k].querySelector('h3'));
+                    formatedDate = `${dates[k][0]}-${String(dates[k][1]).padStart(2, '0')}-${String(dates[k][2]).padStart(2, '0')}`
+                    result = rows.filter(row => row.date_logged.startsWith(formatedDate));
+                    buttons = dayPlanLists[k].querySelectorAll("button");
+                    console.log(dates[k].join("-"));
+                    console.log(result);
+                    console.log("");
+                    console.log(buttons);
+                    if(result.length > 0){
+                        for (j = 0; j < result.length; j++){
+                            loadDishes(result[j].food_title, buttons[j]);
+                        }
+                    }
+                }
+
+                
+            })
+        }
     })
 })
 
