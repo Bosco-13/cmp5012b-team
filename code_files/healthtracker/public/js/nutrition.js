@@ -21,8 +21,18 @@ otherdishes.addEventListener("click", showHidden(2));
 
 // num 0,1,2 - ingridients, recipe and otherdishes
 function loadRightInfo(num, text){
+    console.log(num);
     content = document.querySelectorAll(".list__content")[num];
-    content.textContent = text;
+    contentList = text.split("\n\t");
+    console.log(contentList);
+    ol = content.querySelector("ol");
+    for(i = 0; i < contentList.length; i++){
+        console.log(i);
+        li = document.createElement("li");
+        console.log(li);
+        li.textContent = contentList[i];
+        ol.appendChild(li);
+    }
 }
 
 function loadLeftTitle(text){ // fixed
@@ -73,13 +83,15 @@ document.addEventListener("DOMContentLoaded", () =>{
         title = dish.food_title;
         nutritions = [dish.calories, dish.fat, dish.protein];
         ingridient = dish.ingridient;
-        foodRecipe = dish.recipe;
+        foodRecipe = dish.receipe;
         //left hand side
         loadLeftTitle(title);
         loadChart(nutritions);
 
         //right hand side
         //ingridient
-        loadRightInfo(0, ingridients);
+        loadRightInfo(0, ingridient);
+        //console.log(foodRecipe);
+        loadRightInfo(1, foodRecipe);
     })
 })
