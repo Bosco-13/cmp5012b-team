@@ -477,13 +477,13 @@ button:active {
 footer {
     
     text-align: center;
-    background: #1a1f36;
-    color: #fff;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    background: #f8fafc;
+    color: #4b5563;
+    border-top: 1px solid #e2e8f0;
     border-radius: 12px 12px 0 0;
     width: 100%;
     padding: 20px 0;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 footer .container {
@@ -492,16 +492,19 @@ footer .container {
 
 /* Some title fixes */
 
-.footer h4 {
+footer h4 {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.6px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 8px;
+    color: #111827;
+    margin-bottom: 14px;
     text-transform: uppercase;
 }
 
-
+.head__info_head-title {
+    font-size: 23px;
+    color: #111827;
+}
 
 .head {
 
@@ -543,7 +546,7 @@ footer .container {
     font-size: 16px;
     text-align: left;
     width: 210px;
-    color: rgba(255, 255, 255, 0.5);
+    color: #4b5563;
     line-height: 22px;
     margin-bottom: 10px;
     
@@ -603,7 +606,7 @@ footer .container {
 .head__pages_link,
 .head__contacts_link {
     display: block;
-    color: rgba(255, 255, 255, 0.6);
+    color: #4b5563;
     text-decoration: none;
     text-align: left;
     margin-bottom: 6px;
@@ -620,7 +623,7 @@ footer .container {
 
 .head__pages_link:hover,
 .head__contacts_link:hover {
-    color: #fff;
+    color: #16a34a;
     transform: translateX(4px);
 }
 
@@ -638,13 +641,6 @@ footer .container {
    
 }
 
-.head__contacts_link {
-    display: block;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    text-align: left;
-    margin-bottom: 10px;
-}
 
 .head__contacts_link:hover {
     color: #fff;
@@ -662,7 +658,7 @@ footer .container {
 
 .head__sub_text{
     display: block;
-    color: rgba(255, 255, 255, 0.5);
+    color: #4b5563;
     text-align: left;
    
 }
@@ -672,13 +668,13 @@ footer .container {
     gap: 10px;
 }
 
-.head__sub_wrap-inpt{
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.head__sub_wrap-inpt {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
     padding: 8px 14px;
     font-size: 13px;
-    color: #fff;
+    color: #111827;
     outline: none;
     font-family: 'DM Sans', sans-serif;
     width: 200px;
@@ -692,10 +688,11 @@ footer .container {
     align-items: center;
     margin-top: 15px;
     flex-wrap: wrap;
+    
 }
 
 .rights__span {
-    color: rgba(255, 255, 255, 0.5);
+    color: #64748b;
 }
 
 .rights__box {
@@ -705,15 +702,66 @@ footer .container {
 
 .rights__box_link {
     display: block;
-    color: rgba(255, 255, 255, 0.5);
+    color: #64748b;
     text-decoration: none;
     transition: all 0.2s ease;
 
 }
 
 .rights__box_link:hover {
-    color: #fff;
+    color: #16a34a;
     transform: translateY(-2px);
+}
+
+footer .head__contacts h4 {
+    color: #111827 !important;
+}
+
+
+footer .head__pages_link,
+footer .head__contacts_link {
+    color: #4b5563 !important;
+    display: block;
+    margin-bottom: 14px;
+    line-height: 1.25;
+}
+
+footer .head__contacts_link:hover,
+footer .head__contacts_link:hover {
+    color: #16a34a !important;
+    transform: translateX(4px);
+}
+
+.dashboard-page footer {
+    padding: 14px 0;
+    margin-top: 20px;
+}
+
+.dashboard-page footer .head {
+    gap: 20px;
+}
+
+.dashboard-page footer h4 {
+    margin-bottom: 8px;
+}
+
+.dashboard-page footer .head__info_text {
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.dashboard-page footer .head__pages_link,
+.dashboard-page footer .head__contacts_link {
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+.dashboard-page footer .rights {
+    margin-top: 8px;
+}
+
+footer a:hover {
+    color: #16a34a !important;
 }
 
 /* Workout List */
@@ -747,6 +795,7 @@ footer .container {
 h3 {
     font-weight: 600;
 }
+
 
 
 /* -------------Sleep CSS------------- */
