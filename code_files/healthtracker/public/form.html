@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Setup Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,65 +23,73 @@
         <div class="form-card">
 
             <h1 class="form-h1">Set Up Your Profile</h1>
+
             <form id="profileForm">
-            <label class="form-label" for="real_name">Name</label>
-            <input type="text" class="form-input" placeholder="Enter your name" id="real_name" name="real_name">
+                <label class="form-label" for="real_name">Name</label>
+                <input type="text" class="form-input" placeholder="Enter your name" id="real_name" name="real_name">
 
-            <label class="form-label" for="age">Age</label>
-            <input type="number" class="form-input" placeholder="Enter your age" id="age" name="age">
+                <label class="form-label" for="age">Age</label>
+                <input type="number" class="form-input" placeholder="Enter your age" id="age" name="age" required>
 
-            <label class="form-label" for="gender">Gender</label>
-            <select class="form-select" id="gender" name="gender">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
+                <label class="form-label" for="gender">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
 
-            <label class="form-label" for="weight">Weight (kg)</label>
-            <input type="number" class="form-input" placeholder="e.g. 70" id="weight" name="weight">
+                <label class="form-label" for="weight">Weight (kg)</label>
+                <input type="number" class="form-input" placeholder="e.g. 70" id="weight" name="weight" required>
 
-            <label class="form-label" for="height">Height (cm)</label>
-            <input type="number" class="form-input" placeholder="e.g. 175" id="height" name="height">
+                <label class="form-label" for="height">Height (cm)</label>
+                <input type="number" class="form-input" placeholder="e.g. 175" id="height" name="height" required>
 
-            <label class="form-label" for="fitness_goal">Fitness Goal</label>
-            <select class="form-select" id="fitness_goal" name="fitness_goal">
-                <option>Lose weight</option>
-                <option>Build muscle</option>
-                <option>Maintain</option>
-            </select>
+                <label class="form-label" for="fitness_goal">Fitness Goal</label>
+                <select class="form-select" id="fitness_goal" name="fitness_goal" required>
+                    <option value="Lose weight">Lose weight</option>
+                    <option value="Build muscle">Build muscle</option>
+                    <option value="Maintain">Maintain</option>
+                </select>
 
-            <label class="form-label" for="activity_level">Activity Level</label>
-            <select class="form-select" id="activity_level" name="activity_level">
-                <option>Low</option>
-                <option>Moderate</option>
-                <option>High</option>
-            </select>
+                <label class="form-label" for="activity_level">Activity Level</label>
+                <select class="form-select" id="activity_level" name="activity_level" required>
+                    <option value="Low">Low</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="High">High</option>
+                </select>
 
-            <label class="form-label" for="target_weight">Target Weight (kg)</label>
-            <input type="number" class="form-input" placeholder="e.g. 65" id="target_weight" name="target_weight">
+                <label class="form-label" for="target_weight">Target Weight (kg)</label>
+                <input type="number" class="form-input" placeholder="e.g. 65" id="target_weight" name="target_weight">
 
-            <label class="form-label" for="preferred_workout_type">Preferred Workout Type</label>
-            <select class="form-select" id="preferred_workout_type" name="preferred_workout_type">
-                <option>Gym</option>
-                <option>Home</option>
-                <option>Cardio</option>
-                <option>Mixed</option>
-            </select>
+                <label class="form-label" for="preferred_workout_type">Preferred Workout Type</label>
+                <select class="form-select" id="preferred_workout_type" name="preferred_workout_type">
+                    <option value="Gym">Gym</option>
+                    <option value="Home">Home</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Mixed">Mixed</option>
+                </select>
 
-            <label class="form-label" for="dietary_preference">Dietary Preference</label>
-            <select class="form-select" id="dietary_preference" name="dietary_preference">
-                <option>None</option>
-                <option>Vegetarian</option>
-                <option>Vegan</option>
-                <option>High Protein</option>
-            </select>
+                <label class="form-label" for="dietary_preference">Dietary Preference</label>
+                <select class="form-select" id="dietary_preference" name="dietary_preference">
+                    <option value="None">None</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="High Protein">High Protein</option>
+                </select>
 
-            <label class="form-label" for="sleep_target">Target Sleep</label>
-            <input type="number" class="form-input" placeholder="e.g. 8" id="time" name="time">
+                <label class="form-label" for="target_sleep_hour">Target Sleep Hours</label>
+                <input type="number" class="form-input" placeholder="e.g. 8" id="target_sleep_hour" name="target_sleep_hour" min="0" max="23" required>
 
-            <button type="submit" class="form-btn" style="display:block; text-align:center; text-decoration: none;">Save & Continue</button>
-            <p id="message"></p>
+                <label class="form-label" for="target_sleep_minitues">Target Sleep Minutes</label>
+                <input type="number" class="form-input" placeholder="e.g. 30" id="target_sleep_minitues" name="target_sleep_minitues" min="0" max="59" required>
+
+                <button type="submit" class="form-btn" style="display:block; text-align:center; text-decoration: none;">
+                    Save & Continue
+                </button>
+
+                <p id="message"></p>
             </form>
+
         </div>
 
     </div>
@@ -89,6 +97,7 @@
 </main>
 
 </div>
+
 <script src="js/common.js"></script>
 <script src="js/form.js"></script>
 </body>
