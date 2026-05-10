@@ -39,8 +39,6 @@ Read the [student guide](student-guide.md) for more detailed information on how 
 
 ## Team Info
 
-Add your team details here:
-
 - Team name: The Six Men
 - Module: CMP-5012B – Software Engineering
 - Year: 2
