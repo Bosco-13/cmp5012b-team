@@ -5,21 +5,6 @@ const recipe = displaybuttons[1];
 const otherdishes = displaybuttons[2];
 
 // num 0,1,2 - ingridients, recipe and otherdishes
-function showHidden(num){
-    content = document.querySelectorAll(".list__content")[num];
-    contentStatus = content.display;
-    if (contentStatus == "none"){
-        content.display = "block";
-    }
-    else{
-        content.display = "none";
-    }
-}
-ingridients.addEventListener("click", showHidden(0));
-recipe.addEventListener("click", showHidden(1));
-otherdishes.addEventListener("click", showHidden(2));
-
-// num 0,1,2 - ingridients, recipe and otherdishes
 function loadRightInfo(num, text){
     console.log(num);
     content = document.querySelectorAll(".list__content")[num];
@@ -93,5 +78,20 @@ document.addEventListener("DOMContentLoaded", () =>{
         loadRightInfo(0, ingridient);
         //console.log(foodRecipe);
         loadRightInfo(1, foodRecipe);
+        let hideShowButtons = document.getElementsByClassName("list__header__btn");
+        listContentArray = document.getElementsByClassName("list__content");
+        for(let i = 0; i<hideShowButtons.length; i++){
+            hideShowButtons[i].addEventListener("click", function (){
+                if(this.textContent == "-"){
+                    this.textContent = "+";
+                    listContentArray[i].style.display="block";
+                }
+                else{
+                    this.textContent = "-";
+                    listContentArray[i].style.display = "none";
+                }
+            })
+        }
     })
 })
+
