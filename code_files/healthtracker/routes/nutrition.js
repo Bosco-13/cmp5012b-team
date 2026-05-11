@@ -5,7 +5,7 @@ const pool = require('../db');
 router.get("/nutrition/:dishid", async(req, res) => {
     try{
         const dish = await pool.query(`
-            SELECT food_title, calories, fat, protein, receipe, ingridient
+            SELECT food_title, calories, carbs, fat, protein, receipe, ingridient
             FROM healthsystem.dishinfo
             WHERE dish_id = $1`,
             [req.params.dishid]

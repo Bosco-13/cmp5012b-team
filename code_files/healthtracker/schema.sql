@@ -41,6 +41,7 @@ CREATE TABLE dishinfo (
     food_title VARCHAR(100),
     food_image VARCHAR(150),
     calories INTEGER CHECK (calories > 0),
+    carbs INTEGER CHECK (carbs > 0),
     fat INTEGER CHECK (fat > 0),
     protein INTEGER CHECK (protein > 0),
     receipe VARCHAR(1000),

@@ -27,9 +27,12 @@ function loadLeftTitle(text){ // fixed
 
 // data[int: Carbs, int: Fats, int: Protein]
 function loadChart(data){ //fixed
-    carbs = data[0];
+    console.log(data);
+    carbs = data[3];
     fat = data[1];
     protein = data[2];
+    calories = data[0]
+    
     totalMass = carbs + fat + protein;
     carbPercent = carbs/totalMass * 100;
     fatPercent = fat/totalMass * 100;
@@ -48,6 +51,10 @@ function loadChart(data){ //fixed
     summary[0].textContent = "Carbs: " + carbs + "g";
     summary[1].textContent = "Fats: " + fat + "g";
     summary[2].textContent = "Protein: " + protein + "g";
+
+    caloriesText = document.getElementsByClassName("calories")[0];
+    console.log(caloriesText);
+    caloriesText.textContent = `${calories}cal`;
 }
 
 //data{dish:{
@@ -66,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         console.log(data);
         dish = data.record[0]
         title = dish.food_title;
-        nutritions = [dish.calories, dish.fat, dish.protein];
+        nutritions = [dish.calories, dish.fat, dish.protein, dish.carbs];
         ingridient = dish.ingridient;
         foodRecipe = dish.receipe;
         //left hand side
