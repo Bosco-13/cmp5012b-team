@@ -66,7 +66,9 @@ function loadChart(data){ //fixed
 // recipe: String}}
 
 document.addEventListener("DOMContentLoaded", () =>{
-    const id = 9
+    const id = sessionStorage.getItem("dish_id");
+    sessionStorage.removeItem("dish_id");
+    console.log(id);
     fetch( `/nutrition/${id}`)
     .then(response => response.json())
     .then(data => {

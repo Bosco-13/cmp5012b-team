@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
+// dietplan.html
 router.get('/dietplan', async (req,res) => {
     try{
         const result = await pool.query(
@@ -33,30 +34,50 @@ router.get('/dietplan', async (req,res) => {
     }
 })
 
-router.get('./routes/dietplan/:date', (req,res) => {
-    res.sendFile(path.join(__dirname, "/dietplan.html"));
+// router.get('./routes/dietplan/:date', (req,res) => {
+//     res.sendFile(path.join(__dirname, "/dietplan.html"));
+//     try{
+//         const result = pool.query(
+//             `SELECT food_title, calories, fat, protein, date_logged 
+//             FROM dishes 
+//             WHERE user_id = $1`,
+//             [res.session.userId]
+//         )
+//         if (result.rows.length == 0){
+//             return res.json({
+//                 message: "No record of diet plan",
+//                 records: null,
+//                 active_date: req.params.date.getDate()
+//             })
+//         }
+//         res.json({
+//             message: "Record found: " + result.rows.length + " records",
+//             records: result.rows,
+//             active_date: req.params.date.getDate()
+//         })
+//     }
+//     catch(error){
+
+//     }
+// })
+
+// nutrition.html
+router.get("/nutrition/:dishid", async(req, res) => {
     try{
-        const result = pool.query(
-            `SELECT food_title, calories, fat, protein, date_logged 
-            FROM dishes 
-            WHERE user_id = $1`,
-            [res.session.userId]
+        const dish = await pool.query(`
+            SELECT food_title, calories, carbs, fat, protein, receipe, ingridient
+            FROM healthsystem.dishinfo
+            WHERE dish_id = $1`,
+            [req.params.dishid]
         )
-        if (result.rows.length == 0){
-            return res.json({
-                message: "No record of diet plan",
-                records: null,
-                active_date: req.params.date.getDate()
-            })
-        }
-        res.json({
-            message: "Record found: " + result.rows.length + " records",
-            records: result.rows,
-            active_date: req.params.date.getDate()
-        })
+        return res.json({message: "Reord found", record: dish.rows})
     }
     catch(error){
-
+        console.error("Nutrition route error:", error);
+        return res.status(500).json({
+            message: "Server error",
+            records: null,
+        });
     }
 })
 

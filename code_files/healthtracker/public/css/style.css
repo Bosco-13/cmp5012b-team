@@ -1579,6 +1579,16 @@ h3 {
     color: white !important
   }
 
+  .diet-calender-day {
+    font-family: Arial, sans-serif;
+    color: grey;
+    text-decoration: none;
+  }
+
+  .days .active .diet-calender-day{
+    color: white;
+  }
+
 /* --------------------Edit plan page -------------------*/
 .form__title{
     text-align: center;
