@@ -6,7 +6,7 @@ const requireLogin = require('../middleware/requireLogin');
 
 console.log('settings routes loaded');
 
-
+//edit profile router 
 router.get('/settings/profile', requireLogin, async (req, res) => {
   try {
     const result = await pool.query(
@@ -56,7 +56,7 @@ router.post('/settings/profile', requireLogin, async (req, res) => {
     return res.status(500).json({ message: 'Server error' });
   }
 });
-
+//route for the change password page
 router.post('/settings/password', requireLogin, async (req, res) => {
   const { current_password, new_password, confirm_password } = req.body;
 
@@ -100,6 +100,7 @@ router.post('/settings/password', requireLogin, async (req, res) => {
   }
 });
 
+//route for the edit goals page
 router.get('/settings/goals', requireLogin, async (req, res) => {
   try{
     const result = await pool.query(
@@ -151,6 +152,30 @@ router.post('/settings/goals', requireLogin, async (req, res) => {
     return res.json({ message: 'Goals updated successfully' });
   } catch (error) {
     console.error('Settings POST goals error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
+//route for the preferences page
+router.post('/settings/preferences', requireLogin, async (req, res) => {
+  const { theme, units } = req.body;
+
+  if (!['light', 'dark'].includes(theme)) {
+    return res.status(400).json({ message: 'invalid theme' });
+  }
+  if (!['metric', 'imperial'].includes(units)) {
+    return res.status(400).json({ message: 'invalid units' });
+  }
+
+  try{
+    await pool.query(
+      `INSERT INTO healthsystem.users (user_id, theme, units) VALUES ($1, $2, $3) ON CONFLICT (user_id) DO UPDATE
+      SET theme = EXCLUDED.theme, units = EXCLUDED.units`,
+      [req.session.userId, theme, units]
+    );
+    return res.json({ message: 'Preferences updated successfully' });
+  } catch (error) {
+    console.error('Settings POST preferences error:', error);
     return res.status(500).json({ message: 'Server error' });
   }
 });
