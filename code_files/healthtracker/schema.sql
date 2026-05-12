@@ -98,3 +98,7 @@ CREATE TABLE healthsystem.goals (
     UNIQUE (user_id, goal_type)
 );
 
+alter table healthsystem.users(
+    add column if not exists theme varchar(10) default 'light',
+    add column if not exists units varchar(10) default 'metric';
+);
