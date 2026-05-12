@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         showText('#goals-calories', 'Calories: ' + (goals.calories || 'Not set'));
         showText('#goals-sleep', 'Sleep: ' + (goals.sleep || 'Not set'));
 
+        const preferences = await getJson('settings/preferences');
+        showText('#preferences-theme', 'Theme: ' + (preferences.theme || 'light'));
+        showText('#preferences-units', 'Units: ' + (preferences.units || 'metric'));
+        
     } catch (error){
         console.error('Could not load profile:', error);
     }
@@ -33,6 +37,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     if ( changePasswordButton){
         changePasswordButton.addEventListener('click', () => {
             goTo('passwordChange.html');
+        });
+    }
+
+    const preferencesButton = document.querySelector('.card-preferences button');
+    if ( preferencesButton){
+        preferencesButton.addEventListener('click', () => {
+            goTo('preferences.html');
         });
     }
 });
