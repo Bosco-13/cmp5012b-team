@@ -97,3 +97,8 @@ CREATE TABLE healthsystem.goals (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE (user_id, goal_type)
 );
+
+alter table goals 
+add column if not exists steps integer check (steps > 0),
+add column if not exists calories integer check (calories > 0),
+add column if not exists sleep numeric(4,2) check (sleep > 0);
