@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try{
-        const data = await getJson('settings/preferences');
+        const data = await getJson('/settings/preferences');
         byId('theme').value = data.theme || 'light';
         byId('units').value = data.units || 'metric';
 
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Could not load preferences:', error);
     }
 
-    byId('save-button').addEventListener('click', async () => {
+    byId('save-btn').addEventListener('click', async () => {
         const theme = byId('theme').value;
         const units = byId('units').value;
 
-        const{response, result} = await postJson('settings/preferences', {theme: theme, units: units});
+        const{response, result} = await postJson('/settings/preferences', {theme: theme, units: units});
         if (!response.ok) {
             showMessage('Failed to save preferences');
             return;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout(() => goTo('settings.html'),1500);
     });
 
-    byId('cancel-button').addEventListener('click', () => {
+    byId('cancel-btn').addEventListener('click', () => {
         goTo('settings.html');
     });
 });
