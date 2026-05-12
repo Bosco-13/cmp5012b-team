@@ -14,8 +14,8 @@ const debugRoutes = require('./routes/debug');
 const sleepRoutes = require('./routes/sleep');
 const goalRoutes = require('./routes/goals');
 const dietPlanRoutes = require('./routes/dietplan');
-const editPlanRoutes =  require('./routes/editplan');
-
+const editPlanRoutes = require('./routes/editplan');
+const settingsRoutes = require('./routes/settings');
 // const dashboardRoutes = require('./routes/dashboard');
 
 
@@ -54,6 +54,7 @@ app.use((req, res, next) => {
 });
 
 app.use(pageRoutes);
+app.use(settingsRoutes);
 app.use(express.static(publicPath));
 
 app.use(loginRoutes);
@@ -65,10 +66,7 @@ app.use(workoutRoutes);
 
 app.use(sleepRoutes);
 app.use(goalRoutes);
-
 app.use(dietPlanRoutes);
-app.use(editPlanRoutes);
-
 //app.use(dashboardRoutes);
 
 
