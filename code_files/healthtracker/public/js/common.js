@@ -124,9 +124,26 @@ function setupLogout() {
     });
   });
 }
+async function applyPreferences(){
+  try{
+    const response = await fetch('/settings/preferences', {
+      credentials: 'same-origin'
+    });
+    if(!response.ok) return;
+    const preferences = await response.json();
+    document.body.classList.remove('theme-light', 'theme-dark');
+    document.body.classList.add('theme-' + (preferences.theme || 'light'));
+    window.userUnits = preferences.units || 'metric';
+  }
+  catch (error){
+    console.error('Could not load preferences:', error);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   setActiveNavLink();
   setupMobileNav();
   setupLogout();
+  applyPreferences();
 });
+
