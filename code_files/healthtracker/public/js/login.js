@@ -14,8 +14,9 @@ if (loginForm) {
       }
 
       if (response.ok) {
-        window.location.href = '/index.html';
+        window.location.href = result.redirectTo || '/index.html';
       }
+
     } catch (error) {
       console.error('Login error:', error);
 

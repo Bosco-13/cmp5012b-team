@@ -14,7 +14,9 @@ router.post('/login', async (req, res) => {
 
   try {
     const result = await pool.query(
-      'SELECT id, real_name, email, password_hash FROM healthsystem.users WHERE email = $1',
+      `SELECT id, real_name, email, password_hash
+       FROM healthsystem.users
+       WHERE email = $1`,
       [normalizedEmail]
     );
 
@@ -32,27 +34,45 @@ router.post('/login', async (req, res) => {
 
     req.session.userId = user.id;
 
-    req.session.save((err) => {
+    req.session.save(async (err) => {
       if (err) {
         console.error('Session save error:', err);
         return res.status(500).json({ message: 'Server error' });
       }
 
-      console.log('Logged in DB user id:', user.id);
-      console.log('Stored session user id:', req.session.userId);
+      try {
+        const profileResult = await pool.query(
+          `SELECT user_id
+           FROM healthsystem.profiles
+           WHERE user_id = $1`,
+          [user.id]
+        );
 
-      res.json({
-        message: 'Login successful',
-        user: {
-          id: user.id,
-          real_name: user.real_name,
-          email: user.email
-        }
-      });
+        const hasProfile = profileResult.rows.length > 0;
+
+        console.log('Logged in DB user id:', user.id);
+        console.log('Stored session user id:', req.session.userId);
+        console.log('Has profile:', hasProfile);
+
+        return res.json({
+          message: 'Login successful',
+          redirectTo: hasProfile ? '/index.html' : '/form.html',
+          user: {
+            id: user.id,
+            real_name: user.real_name,
+            email: user.email
+          }
+        });
+
+      } catch (profileError) {
+        console.error('Profile check error:', profileError);
+        return res.status(500).json({ message: 'Server error' });
+      }
     });
+
   } catch (error) {
     console.error('Login route error:', error);
-    res.status(500).json({ message: 'Server error' });
+    return res.status(500).json({ message: 'Server error' });
   }
 });
 

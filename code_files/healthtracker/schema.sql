@@ -86,3 +86,14 @@ CREATE TABLE workout_exercises (
     sets INTEGER NOT NULL CHECK (sets > 0),
     reps INTEGER NOT NULL CHECK (reps > 0)
 );
+
+CREATE TABLE healthsystem.goals (
+    goal_id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES healthsystem.users(id) ON DELETE CASCADE,
+    goal_category VARCHAR(50) NOT NULL,
+    goal_type VARCHAR(50) NOT NULL,
+    target_value INTEGER NOT NULL CHECK (target_value > 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (user_id, goal_type)
+);

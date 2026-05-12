@@ -103,6 +103,41 @@
                     <p class = "streak-number">🔥 <span id="active-streak">--</span></p>
                 </div>
 
+                <div class="card">
+                    <h3>Sleep Goals:</h3>
+
+                    <div id="sleep-goals-list">
+                        <p class="goal-sub">No sleep goals set yet.</p>
+                    </div>
+
+                    <form id="sleep-goal-form">
+                        <label class="form-label" for="sleep-goal-type">Choose sleep goal</label>
+
+                        <select id="sleep-goal-type" class="form-input" required>
+                            <option value="">Select a goal</option>
+                            <option value="sleep_streak">Sleep streak</option>
+                            <option value="sleep_score">Sleep score</option>
+                        </select>
+
+                        <label class="form-label" for="sleep-goal-target">Target value</label>
+
+                        <input
+                            type="number"
+                            id="sleep-goal-target"
+                            class="form-input"
+                            min="1"
+                            placeholder="Example: 7 or 85"
+                            required
+                        >
+
+                        <button type="submit" class="add-goal">
+                            Add Sleep Goal
+                        </button>
+
+                        <p class="goal-sub" id="sleep-goal-message"></p>
+                    </form>
+                </div>
+
                 <div class = "card">
                     <h3>Fitness Goals:</h3>
 
