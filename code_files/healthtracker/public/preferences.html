@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preferences</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="settings-page">
+        <header>
+            <img src="img/logo.png" class="logo">
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="dietplan.html">Diet Planning</a>
+                <a href="workout.html">Workouts</a>
+                <a href="Sleep_Monitoring.html">Sleep</a>
+                <a href="Goal_Management.html">Goals</a>
+                <a href="editplan.html">Edit Planning</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+            <div class="menu">
+                <div class ="menu__profile">👤</div>
+                <div class="menu__ddm">
+                    <a href="settings.html" class="menu__ddm_link">Settings</a>
+                    <a href="#" class="menu__ddm_link logout-link">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <main>
+                <div class="edit-preferences-container">
+                    <h1>Preferences</h1>
+
+                    <div id="message" class="message"></div>
+                    <div class="form-group">
+                        <label for="theme">Theme</label>
+                        <select id="theme">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="units">Units</label>
+                        <select id="units">
+                            <option value="metric">Metric</option>
+                            <option value="imperial">Imperial</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn-save" id="save-btn">Save Changes</button>
+                        <button type="button" class="btn-cancel" id="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer>A Track © 2026</footer>
+        <script src="js/common.js"></script>
+        <script src="js/preferences.js"></script>
+    </body>
+</html>
