@@ -84,14 +84,14 @@ function loadDietPlan(activeDate, data){
         result = data.filter(data => data.date_logged.startsWith(formatedDate));
         if(result.length > 0){
         for(let j = 0; j<result.length; j++){
+            let nId = result[j].dish_id;
             button = document.createElement("button");
             button.textContent = result[j].food_title;
             button.classList.add("dish_button")
             button.addEventListener("click", function(){
-                id = result[j].dish_id;
+                id = nId;
                 sessionStorage.setItem("dish_id", id);
-                console.log(id);
-                //window.location.href = "/nutrition.html";
+                window.location.href = "/nutrition.html";
             })
             dayPlanLists[i].appendChild(button);
         }}
