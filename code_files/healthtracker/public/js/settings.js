@@ -33,17 +33,33 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    const changePasswordButton = document.querySelector('.card-security button');
-    if ( changePasswordButton){
-        changePasswordButton.addEventListener('click', () => {
-            goTo('passwordChange.html');
-        });
-    }
-
     const preferencesButton = document.querySelector('.card-preferences button');
     if ( preferencesButton){
         preferencesButton.addEventListener('click', () => {
             goTo('preferences.html');
         });
+    }
+
+    const changePasswordButton = document.querySelector('.card-security button');
+    if ( changePasswordButton){
+        changePasswordButton.addEventListener('click', () => {
+            goTo('updatePassword.html');
+        });
+    }
+
+    const deleteAccountButton = document.querySelector('.card-account button');
+    if(deleteAccountButton){
+        deleteAccountButton.addEventListener('click', async() => {
+            const confirmed = confirm('This is irreversible, are you sure you want to delete?');
+            if(!confirmed) return;
+
+            const{response, result} = await postJson('/settings/account/delete', {});
+
+            if(!response.ok){
+                alert(result.message || 'Could not delete account');
+                return;
+            }
+            window.location.href = 'login.html';
+        })
     }
 });
