@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             rows = data.records;
-            if(rows.length() >= 1){
+            if(rows.length >= 1){
                 rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
             }
             console.log(rows);
