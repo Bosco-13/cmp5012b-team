@@ -120,11 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             rows = data.records;
+            if(rows.length() >= 1){
+                rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
+            }
             rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
             console.log(rows);
             // for debug uses
-            activedate = ["2026", "4", "29", "00", "00","00"];
-            //activedate = splitTimeStamp(data.active_date);
+            //activedate = ["2026", "4", "29", "00", "00","00"];
+            activedate = splitTimeStamp(data.active_date);
             console.log(activedate);
             calender = document.getElementsByClassName("days")[0].querySelectorAll("li");
             startOfMonth = new Date(activedate[0], activedate[1]-1, 1);
