@@ -999,28 +999,28 @@ h3 {
     color: #000;
 }
 
-.goal-page .main-grid {
+.goal-page .goals-layout {
     display: flex;
-    gap: 40px;
-    align-items: start;
-    width: 100%;
-    justify-content: flex-start;
-}
-
-.goal-page .column {
-    display: flex; 
     flex-direction: column;
     gap: 25px;
+    width: 100%;
+}
+
+.goal-page .goals-top-row {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.goal-page .goals-bottom-row {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.goal-page .goals-bottom-row .card {
     flex: 1;
     min-width: 0;
-}
-
-.goal-page .column:first-child {
-    flex: 2;
-}
-
-.goal-page .column:last-child {
-    flex: 1;
 }
 
 
@@ -1163,6 +1163,15 @@ h3 {
     flex-direction: column;
     gap: 6px;
     margin-top: 15px;
+}
+
+.goal-page .insights li {
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.goal-page .insights li:last-child {
+    margin-bottom: 0;
 }
 
 .goal-sub {
@@ -1892,15 +1901,9 @@ h3 {
         gap: 20px;
     }
 
-    .goal-page .main-grid {
+    .goal-page .goals-top-row,
+    .goal-page .goals-bottom-row {
         flex-direction: column;
-    }
-
-    .goal-page .column,
-    .goal-page .column:first-child,
-    .goal-page .column:last-child {
-        flex: unset;
-        width: 100%;
     }
 
     .top-cards {

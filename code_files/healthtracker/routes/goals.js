@@ -37,6 +37,15 @@ router.get('/goals', requireLogin, async (req, res) => {
             [req.session.userId]
         );
 
+        const workoutGoalsResult = await pool.query(
+            `SELECT goal_id, goal_category, goal_type, target_value
+             FROM healthsystem.goals
+             WHERE user_id = $1
+             AND goal_category = 'workout'
+             ORDER BY goal_id`,
+            [req.session.userId]
+        );
+
         const latestSleepResult = await pool.query(
             `SELECT start_time, end_time
              FROM healthsystem.sleep
@@ -54,6 +63,13 @@ router.get('/goals', requireLogin, async (req, res) => {
         const sleepStreak = Number(profile.sleep_streak) || 0;
         const sleepScore = calculateSleepScore(profile, latestSleepResult.rows[0]);
 
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+        sevenDaysAgo.setHours(0, 0, 0, 0);
+
+        const weeklyWorkouts = workoutDates.filter(d => new Date(d) >= sevenDaysAgo).length;
+        const totalWorkouts = workoutDates.length;
+
         return res.json({
             profile,
             workout_dates: workoutDates,
@@ -61,6 +77,11 @@ router.get('/goals', requireLogin, async (req, res) => {
             sleep_metrics: {
                 sleep_streak: sleepStreak,
                 sleep_score: sleepScore
+            },
+            workout_goals: workoutGoalsResult.rows,
+            workout_metrics: {
+                weekly_workouts: weeklyWorkouts,
+                total_workouts: totalWorkouts
             }
         });
 
@@ -115,6 +136,55 @@ router.post('/goals/sleep', requireLogin, async (req, res) => {
 
     } catch (error) {
         console.error('Sleep goal POST error:', error);
+        return res.status(500).json({ message: 'Server error: ' + error.message });
+    }
+});
+
+router.post('/goals/workout', requireLogin, async (req, res) => {
+    try {
+        const goalType = req.body.goal_type;
+        const targetValue = Number(req.body.target_value);
+
+        const allowedGoalTypes = ['weekly_workouts', 'total_workouts'];
+
+        if (!allowedGoalTypes.includes(goalType)) {
+            return res.status(400).json({
+                message: 'Invalid workout goal type.'
+            });
+        }
+
+        if (!Number.isInteger(targetValue) || targetValue <= 0) {
+            return res.status(400).json({
+                message: 'Target must be a positive whole number.'
+            });
+        }
+
+        if (goalType === 'weekly_workouts' && targetValue > 7) {
+            return res.status(400).json({
+                message: 'Weekly workouts target cannot be more than 7.'
+            });
+        }
+
+        const result = await pool.query(
+            `INSERT INTO healthsystem.goals
+                (user_id, goal_category, goal_type, target_value)
+             VALUES
+                ($1, 'workout', $2, $3)
+             ON CONFLICT (user_id, goal_type)
+             DO UPDATE SET
+                target_value = EXCLUDED.target_value,
+                updated_at = CURRENT_TIMESTAMP
+             RETURNING goal_id, goal_category, goal_type, target_value`,
+            [req.session.userId, goalType, targetValue]
+        );
+
+        return res.json({
+            message: 'Workout goal saved.',
+            goal: result.rows[0]
+        });
+
+    } catch (error) {
+        console.error('Workout goal POST error:', error);
         return res.status(500).json({ message: 'Server error: ' + error.message });
     }
 });
