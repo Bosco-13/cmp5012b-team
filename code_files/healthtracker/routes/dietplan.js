@@ -16,7 +16,7 @@ router.get('/dietplan', async (req,res) => {
         if (result.rows.length == 0){
             return res.json({
                 message: "No record of diet plan",
-                records: null,
+                records: [],
                 active_date: new Date()
             })
         }

@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(rows.length() >= 1){
                 rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
             }
-            rows.sort((a,b) =>{ return new Date(a.date_logged) - new Date(b.date_logged);});
             console.log(rows);
             // for debug uses
             //activedate = ["2026", "4", "29", "00", "00","00"];
