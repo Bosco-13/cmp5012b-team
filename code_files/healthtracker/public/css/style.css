@@ -297,7 +297,7 @@ nav {
 nav a {
   text-decoration: none;
   color: #555;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
 }
 
@@ -831,11 +831,6 @@ footer .head__contacts_link:hover {
   transform: translateX(4px);
 }
 
-.dashboard-page footer {
-  padding: 14px 0;
-  margin-top: 20px;
-}
-
 .dashboard-page footer .head {
   gap: 20px;
 }
@@ -901,6 +896,14 @@ h3 {
 
 .sleep-page {
   color: #222;
+}
+
+.sleep-page .container {
+  padding-top: 10px;
+}
+
+.one .container {
+  padding-top: 10px;
 }
 
 .wrap {
@@ -1130,6 +1133,21 @@ h3 {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding-top: 10px;
+}
+
+.goal-page .card.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-page .card.streak-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .goal-page .profile-header {
