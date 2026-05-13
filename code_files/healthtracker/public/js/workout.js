@@ -22,9 +22,45 @@ async function loadCalendarAndRecentWorkouts() {
 
     buildCalendar(workoutMap);
     renderRecentWorkouts(workouts);
+    updateStatCards(workouts);
   } catch (error) {
     console.error('Workout load error:', error);
   }
+}
+
+function updateStatCards(workouts) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const dayOfWeek = today.getDay() === 0 ? 6 : today.getDay() - 1;
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - dayOfWeek);
+
+  const thisWeekWorkouts = workouts.filter(w => {
+    const d = new Date(w.workout_date.toString().slice(0, 10));
+    return d >= monday && d <= today;
+  });
+
+  const thisWeekCount = thisWeekWorkouts.length;
+  const totalHours = workouts.reduce((sum, w) => sum + parseFloat(w.duration_hours || 0), 0);
+  const calories = Math.round(totalHours * 348);
+
+  const workoutDates = new Set(workouts.map(w => w.workout_date.toString().slice(0, 10)));
+  let streak = 0;
+  const check = new Date(today);
+  if (!workoutDates.has(check.toISOString().slice(0, 10))) {
+    check.setDate(check.getDate() - 1);
+  }
+  while (workoutDates.has(check.toISOString().slice(0, 10))) {
+    streak++;
+    check.setDate(check.getDate() - 1);
+  }
+
+  const el = id => document.getElementById(id);
+  if (el('stat-this-week')) el('stat-this-week').textContent = thisWeekCount;
+  if (el('stat-calories')) el('stat-calories').textContent = calories;
+  if (el('stat-hours')) el('stat-hours').textContent = parseFloat(totalHours.toFixed(1));
+  if (el('stat-streak')) el('stat-streak').textContent = streak;
 }
 
 function buildCalendar(workoutMap) {
