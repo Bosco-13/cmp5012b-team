@@ -16,7 +16,7 @@ const goalRoutes = require('./routes/goals');
 const dietPlanRoutes = require('./routes/dietplan');
 const editPlanRoutes = require('./routes/editplan');
 const settingsRoutes = require('./routes/settings');
-// const dashboardRoutes = require('./routes/dashboard');
+const dashboardRoutes = require('./routes/dashboard');
 
 
 const app = express();
@@ -67,7 +67,7 @@ app.use(workoutRoutes);
 app.use(sleepRoutes);
 app.use(goalRoutes);
 app.use(dietPlanRoutes);
-//app.use(dashboardRoutes);
+app.use(dashboardRoutes);
 
 
 app.listen(PORT, () => {

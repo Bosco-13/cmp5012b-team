@@ -20,6 +20,7 @@ async function loadGoals() {
         updateWorkoutStreak(data.workout_dates);
         updateSleepGoals(data.sleep_goals, data.sleep_metrics);
         updateWorkoutGoals(data.workout_goals, data.workout_metrics);
+        updateOverallProgress(data.sleep_goals, data.workout_goals, data.sleep_metrics, data.workout_metrics);
 
     } catch (err) {
         console.error('Failed to load goals:', err);
@@ -387,4 +388,36 @@ async function saveSleepGoal(event) {
             messageEl.textContent = 'Failed to save sleep goal.';
         }
     }
+}
+
+function updateOverallProgress(sleepGoals, workoutGoals, sleepMetrics, workoutMetrics) {
+    const barEl = byId('overall-progress-bar');
+    const textEl = byId('overall-progress-text');
+    const circleEl = byId('overall-progress-circle');
+
+    if (!barEl && !textEl && !circleEl) return;
+
+    const allGoals = [...(sleepGoals || []), ...(workoutGoals || [])];
+    const total = allGoals.length;
+
+    if (total === 0) {
+        if (barEl) barEl.style.width = '0%';
+        if (textEl) textEl.textContent = 'No goals set yet!';
+        if (circleEl) circleEl.textContent = '0%';
+        return;
+    }
+
+    let achieved = 0;
+    allGoals.forEach(goal => {
+        const current = goal.goal_category === 'sleep'
+            ? getCurrentSleepValue(goal.goal_type, sleepMetrics)
+            : getCurrentWorkoutValue(goal.goal_type, workoutMetrics);
+        if (current >= Number(goal.target_value)) achieved++;
+    });
+
+    const pct = Math.round((achieved / total) * 100);
+
+    if (barEl) barEl.style.width = pct + '%';
+    if (textEl) textEl.textContent = `${achieved}/${total} goals achieved!`;
+    if (circleEl) circleEl.textContent = pct + '%';
 }
