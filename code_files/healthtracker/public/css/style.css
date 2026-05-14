@@ -6,6 +6,9 @@ body {
 /*********** Sign up ***********/
 .body {
   background: url(../img/backg.png) no-repeat center top/cover;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .background {
@@ -22,6 +25,7 @@ body {
   padding: 30px 10px;
   text-align: center;
   border-radius: 18px;
+  margin-bottom: 150px;
 }
 
 .wrapper > *:not(:last-child) {
@@ -55,6 +59,7 @@ body {
 .wrapper__form_lbl {
   display: block;
   float: left;
+  margin-bottom: 5px;
 }
 .wrapper__form_input {
   display: block;
@@ -123,6 +128,17 @@ input:focus {
 }
 
 .wrapper__switch_login:hover {
+  color: #2ecc71;
+}
+
+.wrapper__form_password {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  float: right;
+}
+.wrapper__form_password:hover {
   color: #2ecc71;
 }
 
@@ -1718,8 +1734,28 @@ h3 {
   text-align: center;
   margin-bottom: 40px;
 }
+.popup {
+  display: none !important;
+}
+.popup-body {
+  overflow: hidden;
+}
+
 .form {
-  display: block;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+.form__info {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   padding: 12px 20px;
   border-radius: 14px;
@@ -1728,6 +1764,15 @@ h3 {
   width: 600px;
   margin: 0 auto;
   gap: 10px;
+}
+.form__info_cross {
+  width: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+.form__info_top {
+  display: block;
 }
 .form__info_select {
   width: 100%;
@@ -1740,12 +1785,17 @@ h3 {
   background: #fff;
   font-family: var(--font-sans);
   margin: 10px 0;
+  box-sizing: border-box;
 }
 .form__info_btn {
   padding: 12px 40px;
   margin-top: 10px;
   width: 100%;
   background: linear-gradient(to right, #1e5aa8, #2ecc71);
+}
+
+.select-input {
+  width: 300px;
 }
 
 /* -------------------- Settings Page -------------------*/
