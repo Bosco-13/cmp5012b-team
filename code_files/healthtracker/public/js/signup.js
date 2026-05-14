@@ -21,6 +21,11 @@ signupForm.addEventListener('submit', async (event) => {
     return;
   }
 
+  if (formData.password.length < 8) {
+    showText(messageEl, 'Password must be at least 8 characters.');
+    return;
+  }
+
   try {
     const { response, result } = await postJson('/signup', {
       real_name: formData.real_name,

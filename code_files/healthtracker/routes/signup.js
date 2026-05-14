@@ -15,6 +15,18 @@ router.post('/signup', async (req, res) => {
     const normalizedRealName = real_name.trim();
     const normalizedEmail = email.trim().toLowerCase();
 
+    if (normalizedRealName.length === 0 || normalizedEmail.length === 0) {
+        return res.status(400).json({
+            message: 'All fields are required.'
+        });
+    }
+
+    if (password.length < 8) {
+        return res.status(400).json({
+            message: 'Password must be at least 8 characters.'
+        });
+    }
+
     try {
         const existingUser = await pool.query(
             'SELECT id FROM healthsystem.users WHERE email = $1',
