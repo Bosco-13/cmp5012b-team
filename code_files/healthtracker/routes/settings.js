@@ -4,6 +4,9 @@ const router = express.Router();
 const pool = require('../db');
 const requireLogin = require('../middleware/requireLogin');
 
+console.log('settings routes loaded');
+
+//edit profile router 
 router.get('/settings/profile', requireLogin, async (req, res) => {
   try {
     const result = await pool.query(
@@ -53,7 +56,7 @@ router.post('/settings/profile', requireLogin, async (req, res) => {
     return res.status(500).json({ message: 'Server error' });
   }
 });
-
+//route for the change password page
 router.post('/settings/password', requireLogin, async (req, res) => {
   const { current_password, new_password, confirm_password } = req.body;
 
@@ -97,4 +100,117 @@ router.post('/settings/password', requireLogin, async (req, res) => {
   }
 });
 
+//route for the edit goals page
+router.get('/settings/goals', requireLogin, async (req, res) => {
+  try{
+    const result = await pool.query(
+      `SELECT goal_type, target_value FROM healthsystem.goals WHERE user_id = $1 AND goal_type IN ('steps', 'calories', 'sleep')`,
+      [req.session.userId]
+    );
+
+    const goals = {steps: '', calories: '', sleep: ''};
+    result.rows.forEach(row => {
+      goals[row.goal_type] = row.target_value;
+    });
+
+    return res.json(goals);
+  } catch (error) {
+    console.error('Settings GET goals error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
+router.post('/settings/goals', requireLogin, async (req, res) => {
+  const { steps, calories, sleep } = req.body;
+
+  const stepsNum = parseInt(steps);
+  const caloriesNum = parseInt(calories);
+  const sleepNum = parseInt(sleep);
+
+  if (!Number.isInteger(stepsNum) || stepsNum <= 0) {
+    return res.status(400).json({ message: 'Error Invalid Steps Goal' });
+  }
+  if(!Number.isInteger(caloriesNum) || caloriesNum <= 0) {
+    return res.status(400).json({ message: 'Error Invalid Calories Goal' });
+  }
+  if(!Number.isInteger(sleepNum) || sleepNum <= 0) {
+    return res.status(400).json({ message: 'Error Invalid Sleep Goal' });
+  }
+
+  try{
+    const upsert = (goalType, value) => pool.query(
+      `INSERT INTO healthsystem.goals (user_id, goal_category, goal_type, target_value) VALUES ($1,'fitness', $2, $3) ON CONFLICT (user_id, goal_type) DO UPDATE SET target_value = EXCLUDED.target_value`,
+      [req.session.userId, goalType, value]
+    );
+
+    await Promise.all([
+      upsert('steps', stepsNum),
+      upsert('calories', caloriesNum),
+      upsert('sleep', sleepNum)
+    ]);
+
+    return res.json({ message: 'Goals updated successfully' });
+  } catch (error) {
+    console.error('Settings POST goals error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
+//route for the preferences page
+
+router.get('/settings/preferences', requireLogin, async (req, res) => {
+    try {
+        const result = await pool.query(
+            'SELECT theme, units FROM healthsystem.profiles WHERE user_id = $1',
+            [req.session.userId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.json({ theme: 'light', units: 'metric' });
+        }
+
+        return res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Settings GET preferences error:', error);
+        return res.status(500).json({ message: 'Server error' });
+    }
+});
+
+router.post('/settings/preferences', requireLogin, async (req, res) => {
+    const { theme, units } = req.body;
+
+    if (!['light', 'dark'].includes(theme)) {
+        return res.status(400).json({ message: 'invalid theme' });
+    }
+    if (!['metric', 'imperial'].includes(units)) {
+        return res.status(400).json({ message: 'invalid units' });
+    }
+
+    try {
+        await pool.query(
+            `INSERT INTO healthsystem.profiles (user_id, theme, units) VALUES ($1, $2, $3) ON CONFLICT (user_id) DO UPDATE
+            SET theme = EXCLUDED.theme, units = EXCLUDED.units`,
+            [req.session.userId, theme, units]
+        );
+        return res.json({ message: 'Preferences updated successfully' });
+    } catch (error) {
+        console.error('Settings POST preferences error:', error);
+        return res.status(500).json({ message: 'Server error' });
+    }
+});
+
+router.post('/settings/account/delete', requireLogin, async (req, res) => {
+  console.log('delete account hit');
+  try {
+    await pool.query('DELETE FROM healthsystem.users WHERE id = $1', [req.session.userId]);
+
+    req.session.destroy();
+    return res.json({
+      message: 'Account deleted successfully'
+    });
+  } catch (error) {
+    console.error('Settings DELETE account error:', error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
 module.exports = router;
