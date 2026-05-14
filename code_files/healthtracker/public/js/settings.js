@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(goals);
         showText('#goals-steps', 'Steps: ' + (goals.steps || 'Not set'));
         showText('#goals-calories', 'Calories: ' + (goals.calories || 'Not set'));
-        showText('#goals-sleep', 'Sleep: ' + (goals.sleep || 'Not set'));
+        showText('#goals-sleep', 'Sleep (hours): ' + (goals.sleep || 'Not set'));
 
         const preferences = await getJson('settings/preferences');
         showText('#preferences-theme', 'Theme: ' + (preferences.theme || 'light'));
