@@ -67,6 +67,7 @@ app.use(workoutRoutes);
 app.use(sleepRoutes);
 app.use(goalRoutes);
 app.use(dietPlanRoutes);
+app.use(editPlanRoutes);
 //app.use(dashboardRoutes);
 
 

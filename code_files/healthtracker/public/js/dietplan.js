@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((data) => {
         rows = data.records;
+        console.log(rows);
         if (rows.length >= 1) {
           rows.sort((a, b) => {
             return new Date(a.date_logged) - new Date(b.date_logged);
@@ -236,9 +237,24 @@ document.addEventListener("DOMContentLoaded", () => {
 const form = document.querySelector(".form");
 const body = document.body;
 const cross = document.getElementById("cross");
+const cross1 = document.getElementById("results-cross");
 const editBtns = document.querySelectorAll(".editBtn");
+const editPlanForm = document.getElementsByClassName("form__info")[0];
+const editMessage = document.getElementById("form__info__message");
+let editDate;
+
+const resultForm = document.getElementById("dish__results");
+const resultList = document.getElementById("results__list");
+
 
 function openPopup() {
+  date = this.parentElement.querySelector("h3").textContent;
+  date1 = date.split(" ");
+  dateMonth = date1[0].split("/");
+  year = document.getElementById("title-month").querySelector("span").textContent;
+  const formatedDate1 = `${year}-${String(monthArray.indexOf(dateMonth[1])+1).padStart(2, '0')}-${String(dateMonth[0]).padStart(2, '0')}`;
+  editDate = formatedDate1;
+  editMessage.textContent = "";
   form.classList.remove("popup");
   body.classList.add("popup-body");
 }
@@ -248,8 +264,93 @@ function closePopup() {
   body.classList.remove("popup-body");
 }
 
+function openResults() {
+  resultForm.classList.remove("popup");
+  body.classList.add("popup-body");
+}
+
+function closeResults(){
+  resultForm.classList.add("popup");
+  body.classList.remove("popup-body");   
+}
+
 editBtns.forEach((btn) => {
   btn.addEventListener("click", openPopup);
 });
 
 cross.addEventListener("click", closePopup);
+cross1.addEventListener("click", closeResults);
+
+editPlanForm.addEventListener("submit", async(e)=>{
+  e.preventDefault();
+  try{
+    const data = formToObject(editPlanForm);
+    console.log(data)
+    if(data.diet == "" || data.type == ""){
+        editMessage.textContent = "Please enter required fields"
+    }
+    else{
+      const { response, result } = await postJson('/editplan', data);
+      if(result.message.startsWith("Server error")){
+          editMessage.textContent = "Something went wrong"
+      } 
+      else{
+          form.classList.add("popup");
+          body.classList.remove("popup-body");
+          resultForm.classList.remove("popup");
+          body.classList.add("popup-body");
+      } 
+      console.log(result);
+      
+      while (toClear) {
+        //clear the lists
+        resultList.removeChild(toClear);
+        toClear = resultList.lastElementChild;
+      }
+      for (i = 0; i < result.records.length; i++){
+      const record = result.records[i];
+      console.log(record);
+       const dish = document.createElement("li");
+       dish.innerHTML =`
+       <h3 class="results__title">
+         <a>${record.food_title}</a></h3>
+           <div class="results__content">
+             <p>
+               Calories: ${record.calories}, 
+               Crabs: ${record.carbs}, 
+               Proteins: ${record.protein}, 
+               Fats: ${record.fat}</p>
+             <button class="editResultBtn">Add to plan</button>
+           </div>
+         `;
+         resultList.appendChild(dish);
+         const titleBtn = dish.querySelector("a");
+           titleBtn.addEventListener("click", function(){
+           sessionStorage.setItem("dish_id", record.dish_id);
+           window.location.href = "/nutrition.html";
+         })
+         const addBtn = dish.querySelector("button");
+         addBtn.addEventListener("click", async function(){
+          const data1 = {
+            dish_id: record.dish_id, 
+            log_date: editDate
+          }
+          console.log(data1);
+          const response1 = await fetch(`/adddietplan`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"  
+            },
+            body: JSON.stringify(data1)
+          });
+          const result1 = await response1.json();
+          console.log(result1);
+         })
+      }
+    }
+  }
+  catch(error){
+    console.error("Server error: " + error);
+  }
+
+})

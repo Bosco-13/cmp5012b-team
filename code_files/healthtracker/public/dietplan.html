@@ -176,29 +176,42 @@
             <option value="">-- Select --</option>
             <option value="vegan">Vegan</option>
             <option value="vegetarian">Vegetarian</option>
-            <option value="pescatarian">Pescatarian</option>
+            <option value="pescetarian">Pescatarian</option>
             <option value="none">No specific diet</option>
           </select>
-          <label for="goal" class="form__info_lbl">Your goal:</label>
-          <select id="goal" name="goal" class="form__info_select">
+          <label for="goal" class="form__info_lbl">Meal type: </label>
+          <select id="goal" name="type" class="form__info_select">
             <option value="">-- Select --</option>
-            <option value="lose">Lose weight</option>
-            <option value="maintain">Maintain weight</option>
-            <option value="gain">Gain weight</option>
+            <option value="main-course">Main course</option>
+            <option value="side-dish">Side dish</option>
+            <option value="salad">Salad</option>
           </select>
           <label for="calories" class="form__info_lbl select-input"
             >Daily calorie intake (optional):</label
           >
           <input id="calories" name="calories" class="form__info_select" />
-          <label for="activity" class="form__info_lbl">Activity level:</label>
-          <select id="activity" name="activity" class="form__info_select">
-            <option value="">-- Select --</option>
-            <option value="low">Low (little exercise)</option>
-            <option value="moderate">Moderate</option>
-            <option value="high">High (very active)</option>
-          </select>
+          <p id="form__info__message"></p>
           <button class="form__info_btn" type="submit">Submit</button>
         </form>
+      </div>
+
+      <div class="popup" id="dish__results">
+        <div class="results__div">
+          <div class="results__header">
+            <h2>Results:</h2>
+            <div class="form__info_top">
+              <img
+                src="img/cross.svg"
+                alt=""
+                class="form__info_cross"
+                id="results-cross"
+              />
+            </div>
+          </div>  
+          <ul id="results__list">
+            
+          </ul>
+        </div>
       </div>
     </main>
 

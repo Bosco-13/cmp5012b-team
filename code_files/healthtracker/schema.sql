@@ -31,7 +31,8 @@ CREATE TABLE dashboard (
 );
 
 CREATE TABLE dishes (
-    dish_id INTEGER,
+    record_id SERIAL  PRIMARY KEY,
+    dish_id INTEGER REFERENCES dishinfo(dish_id),
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     date_logged DATE
 );
@@ -39,7 +40,10 @@ CREATE TABLE dishes (
 CREATE TABLE dishinfo (
     dish_id INTEGER,
     food_title VARCHAR(100),
-    food_image VARCHAR(150),
+    meal_type VARCHAR(150) 
+    CHECK(meal_type IN ('main-course', 'side-dish', 'salad')),
+    diet VARCHAR(150)
+    CHECK(diet IN ('vegan', 'vegetarian', 'pescetarian', 'none')),
     calories INTEGER CHECK (calories > 0),
     carbs INTEGER CHECK (carbs > 0),
     fat INTEGER CHECK (fat > 0),

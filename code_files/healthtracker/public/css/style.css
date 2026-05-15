@@ -1651,7 +1651,7 @@ h3 {
 
 /* Month header */
 .month {
-  padding: 70px 25px;
+  padding: 70px 0px;
   width: 100%;
   background: #2f6bff;
   text-align: center;
@@ -1798,6 +1798,73 @@ h3 {
   width: 300px;
 }
 
+#dish__results {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.results__div {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.results__header h2 {
+  display: inline;
+  padding-left: 40px;
+}
+
+.results__header div {
+  display: inline;
+
+}
+
+#dish__results ul{
+  background: white;
+  list-style: none;
+  margin-top: 0;
+}
+
+.results__title {
+  background: white;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.results__title a{
+  color:#000;
+  text-decoration: none;
+}
+
+.results__content {
+  background: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.results__content p {
+  display: inline;
+  padding-right: 5rem;
+}
+
+.results__content button {
+  background: lightgray;
+  display: inline;
+}
 /* -------------------- Settings Page -------------------*/
 
 .settings-page .card button {

@@ -6,7 +6,7 @@ const pool = require('../db');
 router.get('/dietplan', async (req,res) => {
     try{
         const result = await pool.query(
-            `SELECT d.dish_id, di.food_title, d.date_logged 
+            `SELECT d.record_id, d.dish_id, di.food_title, d.date_logged 
             FROM healthsystem.dishes d 
             INNER JOIN healthsystem.dishinfo di
             ON d.dish_id = di.dish_id
