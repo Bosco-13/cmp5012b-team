@@ -874,6 +874,7 @@ footer a:hover {
 }
 
 /* Workout List */
+
 .workout-list {
   margin-top: 40px;
   width: 100%;
@@ -2208,6 +2209,7 @@ h3 {
 
 /*------------------Dark mode------------------*/
 
+
 body.theme-dark {
   background-color: #1a1a1a;
   color: #f0f0f0;
@@ -2289,6 +2291,12 @@ body.theme-dark footer .head__contacts h4 {
   color: #f9fafb !important;
 }
 
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
 body.theme-dark.sleep-page .card {
   background: #2a2a2a;
   color: #e5e7eb;
@@ -2305,7 +2313,7 @@ body.theme-dark section {
   color: #f0f0f0;
 }
 
-body.theme-dark .container {
+body.theme-dark main > .container {
   background-color: transparent;
   color: #f0f0f0;
 }
@@ -2318,5 +2326,61 @@ body.theme-dark p,
 body.theme-dark label {
   color: #f0f0f0;
 }
+
+body.theme-dark .card,
+body.theme-dark .cards__card,
+body.theme-dark .record__log,
+body.theme-dark .record__schedule,
+body.theme-dark .dashboard
+body.theme-dark .dashboard__card__workouts-card
+body.theme-dark .dashboard__card__sleep-card
+body.theme-dark .dashboard__card_title__purple
+body.theme-dark .dashboard__card_data__purple-back
+body.theme-dark .dashboard__card__diet-card
+body.theme-dark .dashboard__card_data__green-back
+
+
+body.theme-dark .panel,
+body.theme-dark .dashboard__card_data__blue-back
+body.theme-dark .box,
+body.theme-dark .summary-card,
+body.theme-dark .stats-card,
+body.theme-dark form {
+  background-color: #2a2a2a;
+  color: #e5e7eb;
+}
+
+/* Dark Mode for the workout cards: */
+
+body.theme-dark .cards__card_title,
+body.theme-dark .cards__card_text,
+body.theme-dark .cards__card_unit {
+  color: #f0f0f0;
+}
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea {
+  background-color: #1a1a1a;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder {
+  color: #9ca3af;
+}
+
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
+body.theme-dark footer .container {
+  background-color: transparent !important;
+}
+
+
 
 
