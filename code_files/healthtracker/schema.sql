@@ -1,5 +1,13 @@
 CREATE SCHEMA healthsystem;
 SET search_path TO healthsystem, public;
+CREATE TABLE healthsystem.session (
+    sid varchar NOT NULL COLLATE "default",
+    sess json NOT NULL,
+    expire timestamp(6) NOT NULL,
+    PRIMARY KEY (sid)
+);
+
+CREATE INDEX idx_session_expire ON healthsystem.session (expire);
 
 CREATE TABLE healthsystem.session (
     sid varchar NOT NULL COLLATE "default",
