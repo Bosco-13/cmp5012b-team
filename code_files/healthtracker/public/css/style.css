@@ -1940,7 +1940,7 @@ h3 {
   opacity: 0.4;
 }
 
-/* ------------------- WORKOUT MODAL ------------------- */
+/* ------------------- WORKOUT MODEL ------------------- */
 
 .modal-overlay {
   position: fixed;
@@ -2209,6 +2209,7 @@ h3 {
 }
 
 /*------------------Dark mode------------------*/
+
 body.theme-dark {
   background-color: #1a1a1a;
   color: #f0f0f0;
@@ -2220,5 +2221,72 @@ body.theme-dark header {
 
 body.theme-dark .card {
   background-color: #2a2a2a;
-  color: #f0f0f0;
+  color: #e5e7eb;
+}
+
+body.theme-dark .card h3 {
+  color: #f9fafb;
+}
+
+body.theme-dark .card p {
+  color: #e5e7eb;
+}
+
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
+body.theme-dark footer h3,
+body.theme-dark footer h4 {
+  color: #f9fafb;
+}
+
+body.theme-dark footer p {
+  color: #e5e7eb;
+}
+
+body.theme-dark footer a {
+  color: #cbd5e1;
+}
+
+body.theme-dark footer a:hover {
+  color: #ffffff;
+}
+
+body.theme-dark footer input {
+  background-color: #1a1a1a;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+body.theme-dark footer input::placeholder {
+  color: #9ca3af;
+}
+
+/* Footer dark mode needs to be overriden to work: */
+
+body.theme-dark footer .head__info_head-title {
+  color: #f9fafb !important;
+}
+
+body.theme-dark footer .head__info_text,
+body.theme-dark footer .head__sub_text {
+  color: #e5e7eb !important;
+}
+
+body.theme-dark footer .head__pages_link,
+body.theme-dark footer .head__contacts_link,
+body.theme-dark footer .rights__box_link {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dark footer .rights__span {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dark footer h4,
+body.theme-dark footer .head__contacts h4 {
+  color: #f9fafb !important;
 }
