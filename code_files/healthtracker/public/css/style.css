@@ -2288,3 +2288,35 @@ body.theme-dark footer h4,
 body.theme-dark footer .head__contacts h4 {
   color: #f9fafb !important;
 }
+
+body.theme-dark.sleep-page .card {
+  background: #2a2a2a;
+  color: #e5e7eb;
+}
+
+
+body.theme-dark main {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.theme-dark section {
+  background-color: transparent;
+  color: #f0f0f0;
+}
+
+body.theme-dark .container {
+  background-color: transparent;
+  color: #f0f0f0;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark p,
+body.theme-dark label {
+  color: #f0f0f0;
+}
+
+
