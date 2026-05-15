@@ -26,11 +26,6 @@ const publicPath = path.join(__dirname, "public");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-console.log("SERVER FILE UPDATED");
-app.get("/server-test", (req, res) => {
-  res.send("server route works");
-});
-
 app.use("/", forgotPasswordRoutes);
 app.use(
   session({
