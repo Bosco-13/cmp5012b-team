@@ -101,3 +101,7 @@ CREATE TABLE healthsystem.goals (
 ALTER TABLE healthsystem.users
     ADD COLUMN IF NOT EXISTS theme VARCHAR(10) DEFAULT 'light',
     ADD COLUMN IF NOT EXISTS units VARCHAR(10) DEFAULT 'metric';
+
+ALTER TABLE healthsystem.users
+ADD COLUMN reset_token TEXT,
+ADD COLUMN reset_token_expiry BIGINT;
