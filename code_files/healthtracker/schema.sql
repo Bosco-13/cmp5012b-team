@@ -30,15 +30,8 @@ CREATE TABLE dashboard (
     page_name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE dishes (
-    record_id SERIAL  PRIMARY KEY,
-    dish_id INTEGER REFERENCES dishinfo(dish_id),
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    date_logged DATE
-);
-
 CREATE TABLE dishinfo (
-    dish_id INTEGER,
+    dish_id INTEGER PRIMARY KEY,
     food_title VARCHAR(100),
     meal_type VARCHAR(150) 
     CHECK(meal_type IN ('main-course', 'side-dish', 'salad')),
@@ -51,6 +44,15 @@ CREATE TABLE dishinfo (
     receipe VARCHAR(1000),
     ingridient VARCHAR(1000)
 );
+
+CREATE TABLE dishes (
+    record_id SERIAL  PRIMARY KEY,
+    dish_id INTEGER REFERENCES dishinfo(dish_id),
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    date_logged DATE
+);
+
+
 
 CREATE TABLE activity (
     activity_id SERIAL PRIMARY KEY,

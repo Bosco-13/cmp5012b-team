@@ -57,7 +57,7 @@ router.post('/adddietplan', requireLogin, async(req, res)=>{
         log_date
     } = req.body;
     console.log(dish_id);
-    console.log(log_date)
+    console.log(log_date);
     await pool.query(
       'INSERT INTO healthsystem.dishes ( user_id, dish_id, date_logged) VALUES($1, $2, $3)',
       [req.session.userId, dish_id, log_date]

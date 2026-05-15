@@ -252,7 +252,7 @@ function openPopup() {
   date1 = date.split(" ");
   dateMonth = date1[0].split("/");
   year = document.getElementById("title-month").querySelector("span").textContent;
-  const formatedDate1 = `${year}-${String(monthArray.indexOf(dateMonth[1])+1).padStart(2, '0')}-${String(dateMonth[0]).padStart(2, '0')}`;
+  const formatedDate1 = `${year}-${String(monthArray.indexOf(dateMonth[1])+1).padStart(2, '0')}-${String(Number(dateMonth[0])+1).padStart(2, '0')}`;
   editDate = formatedDate1;
   editMessage.textContent = "";
   form.classList.remove("popup");
@@ -304,6 +304,7 @@ editPlanForm.addEventListener("submit", async(e)=>{
       
       while (toClear) {
         //clear the lists
+        console.log("clearing");
         resultList.removeChild(toClear);
         toClear = resultList.lastElementChild;
       }
@@ -344,6 +345,7 @@ editPlanForm.addEventListener("submit", async(e)=>{
             body: JSON.stringify(data1)
           });
           const result1 = await response1.json();
+          window.location.href = "/dietplan.html";
           console.log(result1);
          })
       }
