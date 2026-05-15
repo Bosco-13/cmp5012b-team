@@ -536,7 +536,6 @@ nav a.active {
   background-color: #0f5ea8;
 }
 
-
 .box-color {
   background-color: #16a34a;
 }
@@ -1108,29 +1107,28 @@ h3 {
 }
 
 .goal-page .goals-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
 }
 
 .goal-page .goals-top-row {
-    display: flex;
-    gap: 25px;
-    align-items: stretch;
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
 }
 
 .goal-page .goals-bottom-row {
-    display: flex;
-    gap: 25px;
-    align-items: stretch;
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
 }
 
 .goal-page .goals-bottom-row .card {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
-
 
 .goal-page .card {
   background: #fff;
@@ -1295,12 +1293,12 @@ h3 {
 }
 
 .goal-page .insights li {
-    margin-bottom: 18px;
-    line-height: 1.5;
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
 
 .goal-page .insights li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .goal-sub {
@@ -1651,7 +1649,7 @@ h3 {
 
 /* Month header */
 .month {
-  padding: 70px 25px;
+  padding: 70px 0;
   width: 100%;
   background: #2f6bff;
   text-align: center;
@@ -2074,15 +2072,15 @@ h3 {
     gap: 20px;
   }
 
-    .goal-page .goals-top-row,
-    .goal-page .goals-bottom-row {
-        flex-direction: column;
-    }
+  .goal-page .goals-top-row,
+  .goal-page .goals-bottom-row {
+    flex-direction: column;
+  }
 
-    .top-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+  .top-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
   .sleep-page .card,
   .goal-page .card {
