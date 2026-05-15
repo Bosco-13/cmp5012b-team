@@ -31,7 +31,6 @@ CREATE TABLE dashboard (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     page_name VARCHAR(50) NOT NULL
 );
-
 CREATE TABLE dishinfo (
     dish_id INTEGER PRIMARY KEY,
     food_title VARCHAR(100),
@@ -46,15 +45,12 @@ CREATE TABLE dishinfo (
     receipe VARCHAR(1000),
     ingridient VARCHAR(1000)
 );
-
 CREATE TABLE dishes (
     record_id SERIAL  PRIMARY KEY,
     dish_id INTEGER REFERENCES dishinfo(dish_id),
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     date_logged DATE
 );
-
-
 
 CREATE TABLE activity (
     activity_id SERIAL PRIMARY KEY,
@@ -113,10 +109,15 @@ CREATE TABLE healthsystem.goals (
 
 -- ALTER TABLE healthsystem.profiles
 -- ADD COLUMN units VARCHAR(10) DEFAULT 'metric';
+ALTER TABLE healthsystem.users
+ADD COLUMN IF NOT EXISTS theme VARCHAR(10) DEFAULT 'light',
+ADD COLUMN IF NOT EXISTS units VARCHAR(10) DEFAULT 'metric';
 
 ALTER TABLE healthsystem.users
 ADD COLUMN reset_token TEXT,
 ADD COLUMN reset_token_expiry BIGINT;
+
+
 
 
 
