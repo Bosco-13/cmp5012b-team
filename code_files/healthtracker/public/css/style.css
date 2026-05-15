@@ -2456,6 +2456,16 @@ body.theme-dark footer {
 body.theme-dark footer .container {
   background-color: transparent !important;
 }
+/* dark mode for the dashboard*/
+
+ .dashboard__card {
+  background-color: #1a1a1a;
+  color: #e5e7eb;
+}
+.dashboard__card_data {
+  background-color: #443d3d;
+  
+}
 
 
 
