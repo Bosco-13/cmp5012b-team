@@ -21,7 +21,9 @@ CREATE TABLE profiles (
     dietary_preference VARCHAR(50),
     target_sleep_hour INTEGER CHECK (target_sleep_hour BETWEEN 0 AND 23),
     target_sleep_minitues INTEGER CHECK (target_sleep_minitues BETWEEN 0 AND 59),
-    sleep_streak INTEGER DEFAULT 0
+    sleep_streak INTEGER DEFAULT 0,
+    theme VARCHAR(10) DEFAULT 'light',
+    units VARCHAR(10) DEFAULT 'metric'
 );
 
 CREATE TABLE dashboard (
@@ -109,10 +111,6 @@ CREATE TABLE healthsystem.goals (
 
 -- ALTER TABLE healthsystem.profiles
 -- ADD COLUMN units VARCHAR(10) DEFAULT 'metric';
-
-ALTER TABLE healthsystem.users
-    ADD COLUMN IF NOT EXISTS theme VARCHAR(10) DEFAULT 'light',
-    ADD COLUMN IF NOT EXISTS units VARCHAR(10) DEFAULT 'metric';
 
 ALTER TABLE healthsystem.users
 ADD COLUMN reset_token TEXT,
