@@ -1667,6 +1667,7 @@ h3 {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  list-style-type: none;
 }
 
 /* Previous button inside month header */
@@ -1675,10 +1676,18 @@ h3 {
   padding-top: 10px;
 }
 
+.month .prev:hover {
+  cursor: pointer;
+}
+
 /* Next button */
 .month .next {
   float: right;
   padding-top: 10px;
+}
+
+.month .next:hover {
+  cursor: pointer;
 }
 
 /* Weekdays (Mon-Sun) */
