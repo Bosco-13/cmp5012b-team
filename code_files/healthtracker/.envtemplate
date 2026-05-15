@@ -4,3 +4,5 @@ DB_NAME=outlookid/localhost
 DB_PASSWORD= s v
 DB_PORT=5432
 SESSION_SECRET="fjdajfdjklafjdslafj"
+EMAIL_USER=galik25022005@gmail.com
+EMAIL_PASS=seqpowsheminzbda
