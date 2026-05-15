@@ -127,6 +127,28 @@ ADD COLUMN reset_token TEXT,
 ADD COLUMN reset_token_expiry BIGINT;
 
 
-
+-- INSERT INTO dishinfo (
+--     dish_id,
+--     food_title,
+--     meal_type,
+--     diet,
+--     calories,
+--     carbs,
+--     fat,
+--     protein,
+--     receipe,
+--     ingridient
+-- ) VALUES (
+--     1,
+--     'Grilled Chicken Salad',
+--     'salad',
+--     'none',
+--     350,
+--     20,
+--     12,
+--     40,
+--     'Grill chicken and mix with fresh vegetables and dressing.',
+--     'chicken, lettuce, tomato, cucumber, olive oil, salt'
+-- );
 
 
