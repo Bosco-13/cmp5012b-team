@@ -2458,15 +2458,14 @@ body.theme-dark footer .container {
 }
 /* dark mode for the dashboard*/
 
- .dashboard__card {
+ body.theme-dark .dashboard__card {
   background-color: #1a1a1a;
   color: #e5e7eb;
 }
-.dashboard__card_data {
+body.theme-dark .dashboard__card_data {
   background-color: #443d3d;
   
 }
-
 
 
 
