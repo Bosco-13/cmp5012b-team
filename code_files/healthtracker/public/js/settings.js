@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const changePasswordButton = document.querySelector('.card-security button');
     if ( changePasswordButton){
         changePasswordButton.addEventListener('click', () => {
-            goTo('updatePassword.html');
+            goTo('passwordChange.html');
         });
     }
 
