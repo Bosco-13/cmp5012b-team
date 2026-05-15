@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const{response, result} = await postJson('/settings/preferences', {theme: theme, units: units});
         if (!response.ok) {
-            showMessage('Failed to save preferences');
+            showMessage('Failed to save preferences', 'error');
             return;
         }
-        showMessage('Preferences saved successfully');
+        showMessage('Preferences saved successfully', 'success');
         setTimeout(() => goTo('settings.html'),1500);
     });
 

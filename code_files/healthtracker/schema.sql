@@ -102,6 +102,21 @@ CREATE TABLE healthsystem.goals (
     UNIQUE (user_id, goal_type)
 );
 
+-- These lines are needed for dark mode to be used in settings page, do not run again unless dark mode is not working!
+
+-- ALTER TABLE healthsystem.profiles
+-- ADD COLUMN theme VARCHAR(10) DEFAULT 'light';
+
+-- ALTER TABLE healthsystem.profiles
+-- ADD COLUMN units VARCHAR(10) DEFAULT 'metric';
+
 ALTER TABLE healthsystem.users
     ADD COLUMN IF NOT EXISTS theme VARCHAR(10) DEFAULT 'light',
     ADD COLUMN IF NOT EXISTS units VARCHAR(10) DEFAULT 'metric';
+
+ALTER TABLE healthsystem.users
+ADD COLUMN reset_token TEXT,
+ADD COLUMN reset_token_expiry BIGINT;
+
+
+

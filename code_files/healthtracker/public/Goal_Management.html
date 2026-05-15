@@ -6,6 +6,7 @@
     <title>Goal Management</title>
     <link rel = "stylesheet" href = "css/style.css">
 
+    <link rel="icon" href="img/logo.png" type="image/png" />
 </head> 
 <body class = "goal-page">
 
@@ -59,14 +60,14 @@
                         <p>Goal Completion Rate:</p>
 
                         <div class="progress-bar">
-                            <div class="progress" style="width: 70%"></div>
+                            <div class="progress" id="overall-progress-bar" style="width: 0%"></div>
                         </div>
 
-                        <p>7/10 goals achieved!</p>
+                        <p id="overall-progress-text">0/0 goals achieved!</p>
                     </div>
 
                     <div class="progress-circle">
-                        <span class="progress-circle__span">70%</span>
+                        <span class="progress-circle__span" id="overall-progress-circle">0%</span>
                     </div>
                 </div>
             </div>
@@ -165,7 +166,7 @@
                         <img src="img/logo.png" alt="" class="head__info_head-logo">
                         <h2 class="head__info_head-title">HealthTracker</h2>
                     </div>
-                    <p class="head__info_text">Your all in one fitness companion. Track workouts, plan meals, and crush your goals every day</p>
+                    <p class="head__info_text">Your all in one fitness companion. Track workouts, plan meals, and crush your goals every day!</p>
                     <div class="head__info_media">
                         <a class="head__info_media-link">
                             <img src="img/inst.svg" alt="" class="media-inst">

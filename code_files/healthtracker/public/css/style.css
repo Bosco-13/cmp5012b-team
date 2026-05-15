@@ -536,7 +536,6 @@ nav a.active {
   background-color: #0f5ea8;
 }
 
-
 .box-color {
   background-color: #16a34a;
 }
@@ -875,6 +874,7 @@ footer a:hover {
 }
 
 /* Workout List */
+
 .workout-list {
   margin-top: 40px;
   width: 100%;
@@ -1108,29 +1108,28 @@ h3 {
 }
 
 .goal-page .goals-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
 }
 
 .goal-page .goals-top-row {
-    display: flex;
-    gap: 25px;
-    align-items: stretch;
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
 }
 
 .goal-page .goals-bottom-row {
-    display: flex;
-    gap: 25px;
-    align-items: stretch;
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
 }
 
 .goal-page .goals-bottom-row .card {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
-
 
 .goal-page .card {
   background: #fff;
@@ -1295,12 +1294,12 @@ h3 {
 }
 
 .goal-page .insights li {
-    margin-bottom: 18px;
-    line-height: 1.5;
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
 
 .goal-page .insights li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .goal-sub {
@@ -1651,7 +1650,7 @@ h3 {
 
 /* Month header */
 .month {
-  padding: 70px 0px;
+  padding: 70px 0;
   width: 100%;
   background: #2f6bff;
   text-align: center;
@@ -1668,6 +1667,7 @@ h3 {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  list-style-type: none;
 }
 
 /* Previous button inside month header */
@@ -1676,10 +1676,18 @@ h3 {
   padding-top: 10px;
 }
 
+.month .prev:hover {
+  cursor: pointer;
+}
+
 /* Next button */
 .month .next {
   float: right;
   padding-top: 10px;
+}
+
+.month .next:hover {
+  cursor: pointer;
 }
 
 /* Weekdays (Mon-Sun) */
@@ -1871,31 +1879,41 @@ h3 {
   margin-top: 15px;
 }
 
+.settings-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .settings-page main {
-  align-items: stretch;
-  width: 100%;
+  flex: 1;
+  width: 100%
+}
+
+.settings-page footer {
+  margin-top: auto;
 }
 
 .settings-page h1 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .settings-page .container {
   max-width: 1500px;
   width: 100%;
-  padding: 20px 40px;
+  padding: 20px 40px 10px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .settings-page .card {
   width: 100%;
-  min-height: 220px;
-  padding: 28px 24px;
+  min-height: 190px;
+  padding: 24px 24px;
   box-sizing: border-box;
   border: none;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   max-width: none;
 
   background: #ffffff;
@@ -1913,7 +1931,7 @@ h3 {
 .settings-page .settings-row {
   display: grid;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .settings-page .three {
@@ -1997,7 +2015,7 @@ h3 {
   opacity: 0.4;
 }
 
-/* ------------------- WORKOUT MODAL ------------------- */
+/* ------------------- WORKOUT MODEL ------------------- */
 
 .modal-overlay {
   position: fixed;
@@ -2131,15 +2149,15 @@ h3 {
     gap: 20px;
   }
 
-    .goal-page .goals-top-row,
-    .goal-page .goals-bottom-row {
-        flex-direction: column;
-    }
+  .goal-page .goals-top-row,
+  .goal-page .goals-bottom-row {
+    flex-direction: column;
+  }
 
-    .top-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+  .top-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
   .sleep-page .card,
   .goal-page .card {
@@ -2266,6 +2284,8 @@ h3 {
 }
 
 /*------------------Dark mode------------------*/
+
+
 body.theme-dark {
   background-color: #1a1a1a;
   color: #f0f0f0;
@@ -2277,5 +2297,166 @@ body.theme-dark header {
 
 body.theme-dark .card {
   background-color: #2a2a2a;
+  color: #e5e7eb;
+}
+
+body.theme-dark .card h3 {
+  color: #f9fafb;
+}
+
+body.theme-dark .card p {
+  color: #e5e7eb;
+}
+
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
+body.theme-dark footer h3,
+body.theme-dark footer h4 {
+  color: #f9fafb;
+}
+
+body.theme-dark footer p {
+  color: #e5e7eb;
+}
+
+body.theme-dark footer a {
+  color: #cbd5e1;
+}
+
+body.theme-dark footer a:hover {
+  color: #ffffff;
+}
+
+body.theme-dark footer input {
+  background-color: #1a1a1a;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+body.theme-dark footer input::placeholder {
+  color: #9ca3af;
+}
+
+/* Footer dark mode needs to be overriden to work: */
+
+body.theme-dark footer .head__info_head-title {
+  color: #f9fafb !important;
+}
+
+body.theme-dark footer .head__info_text,
+body.theme-dark footer .head__sub_text {
+  color: #e5e7eb !important;
+}
+
+body.theme-dark footer .head__pages_link,
+body.theme-dark footer .head__contacts_link,
+body.theme-dark footer .rights__box_link {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dark footer .rights__span {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dark footer h4,
+body.theme-dark footer .head__contacts h4 {
+  color: #f9fafb !important;
+}
+
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
+body.theme-dark.sleep-page .card {
+  background: #2a2a2a;
+  color: #e5e7eb;
+}
+
+
+body.theme-dark main {
+  background-color: #1a1a1a;
   color: #f0f0f0;
 }
+
+body.theme-dark section {
+  background-color: transparent;
+  color: #f0f0f0;
+}
+
+body.theme-dark main > .container {
+  background-color: transparent;
+  color: #f0f0f0;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark p,
+body.theme-dark label {
+  color: #f0f0f0;
+}
+
+body.theme-dark .card,
+body.theme-dark .cards__card,
+body.theme-dark .record__log,
+body.theme-dark .record__schedule,
+body.theme-dark .dashboard
+body.theme-dark .dashboard__card__workouts-card
+body.theme-dark .dashboard__card__sleep-card
+body.theme-dark .dashboard__card_title__purple
+body.theme-dark .dashboard__card_data__purple-back
+body.theme-dark .dashboard__card__diet-card
+body.theme-dark .dashboard__card_data__green-back
+
+
+body.theme-dark .panel,
+body.theme-dark .dashboard__card_data__blue-back
+body.theme-dark .box,
+body.theme-dark .summary-card,
+body.theme-dark .stats-card,
+body.theme-dark form {
+  background-color: #2a2a2a;
+  color: #e5e7eb;
+}
+
+/* Dark Mode for the workout cards: */
+
+body.theme-dark .cards__card_title,
+body.theme-dark .cards__card_text,
+body.theme-dark .cards__card_unit {
+  color: #f0f0f0;
+}
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea {
+  background-color: #1a1a1a;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder {
+  color: #9ca3af;
+}
+
+body.theme-dark footer {
+  background-color: #2a2a2a;
+  color: #d1d5db;
+  border-top: 1px solid #3a3a3a;
+}
+
+body.theme-dark footer .container {
+  background-color: transparent !important;
+}
+
+
+
+

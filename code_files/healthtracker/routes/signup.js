@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 const pool = require('../db');
 
+
 router.post('/signup', async (req, res) => {
     const { real_name, email, password } = req.body;
 
